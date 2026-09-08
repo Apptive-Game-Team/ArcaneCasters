@@ -56,6 +56,14 @@ Each submodule has an independent Git history. For submodule changes:
 
 Do not commit a parent-repository submodule pointer that references an unpublished submodule commit.
 
+### The magic-card branch
+
+On this branch, `game`, `lobby`, `client`, `database`, and `admin` track their own `magic-card` branch instead of `main`. `.gitmodules` records `branch = magic-card` for those five, so `git submodule update --remote` follows it. Update and commit the pointer here every time a submodule pull request merges into that submodule's `magic-card`.
+
+`account`, `website`, and `infra` are not part of the redesign and keep pointing at `main`.
+
+This configuration exists only on the `magic-card` branch. Do not carry it to `main`. See [`docs/magic-card.md`](docs/magic-card.md).
+
 ## 6. Component Versioning
 
 Deployable components use independent Semantic Versions:

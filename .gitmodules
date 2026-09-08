@@ -1,18 +1,23 @@
 [submodule "game"]
 	path = game
 	url = https://github.com/Apptive-Game-Team/WordOnlineServer
+	branch = magic-card
 [submodule "lobby"]
 	path = lobby
 	url = https://github.com/Apptive-Game-Team/WordOnlineMatching
+	branch = magic-card
 [submodule "client"]
 	path = client
 	url = https://github.com/Apptive-Game-Team/WordOnlineClient
+	branch = magic-card
 [submodule "database"]
 	path = database
 	url = https://github.com/Apptive-Game-Team/WordOnlineDatabase
+	branch = magic-card
 [submodule "admin"]
 	path = admin
 	url = https://github.com/Apptive-Game-Team/WordOnlineAdmin
+	branch = magic-card
 [submodule "account"]
 	path = account
 	url = https://github.com/Apptive-Game-Team/AccountServer
