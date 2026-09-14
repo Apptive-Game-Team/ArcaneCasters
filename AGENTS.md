@@ -87,3 +87,28 @@ only input to the released version number.
 
 Do not use `-SNAPSHOT` for deployable versions. Server builds embed their Gradle
 version through Spring Boot build info; do not maintain a second version value.
+
+## 7. Branch Tracks
+
+`main` and `magic-card` are two long-lived tracks that exist in every repository
+of this workspace. They are not merged into each other, in either direction.
+`magic-card` will not land on `main`.
+
+- Work on the track the request targets. Branch from it, open the pull request
+  against it, and stack on that track's open chain.
+- A feature both tracks need is built twice, against each track's own data
+  model, rather than cherry-picked across. The two models differ: `magic-card`
+  drops `magics.cast_type`, adds `element`, `cast_kind` and `prefab`, and moves
+  ownership onto magics, while `main` keeps cards and recipes. A file written
+  for one track does not apply on the other.
+- Something already built on `magic-card` is not available to `main`. When
+  `main` needs it, write it again for `main`'s model.
+- The worked example is the aim indicator document: WordOnlineDatabase V090
+  (magic-card) and V091 (main), WordOnlineClient #657 and #661, root #30 and
+  #32. Each pair carries the same contract against a different chain.
+- WordOnlineDatabase migration numbers must be unique across **both** tracks.
+  The validation workflow only compares a pull request against its own base
+  branch, so a number that passes on one track can still collide on the other.
+- The redesign's design notes live on the root `magic-card` branch
+  (`docs/magic-card.md`, `.plan/issues/2026-09-08-issue-23-magic-card-redesign.md`).
+  `main` carries no copy, so read them from that branch.
