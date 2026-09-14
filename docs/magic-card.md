@@ -81,17 +81,32 @@ layer 공통 항목
 
 | 항목 | 필수 | 값 |
 | --- | --- | --- |
-| `end` | 예 | `target` 이면 조준점까지, `forward` 면 전방으로 `length` 만큼 |
-| `length` | `end` 가 `forward` 일 때만 | lane 길이 |
+| `end` | 예 | `target`, `aim`, `forward` 중 하나. 아래 표 참고 |
+| `length` | `end` 가 `forward` 일 때만 | lane 길이. `target` 에서는 선택 항목이다 |
 | `halfWidth` | 예 | lane 절반 폭 |
 
-크기를 나타내는 값은 셋 중 하나다.
+`end` 가 정하는 것은 방향과 길이다.
+
+| `end` | 방향 | 길이 |
+| --- | --- | --- |
+| `target` | 조준점 쪽 | `length` 가 있으면 그 값, 없으면 마법의 cast range |
+| `aim` | 조준점 쪽 | origin 에서 조준점까지 거리 그대로 |
+| `forward` | 시전자 진영이 보는 쪽(+X 또는 -X) | `length` |
+
+`target` 과 `aim` 의 차이가 중요하다. 조준점을 지나 계속 날아가는 투사체는 `target` 이다 — `wind_blade` 는 맵 끝까지 관통하므로 cast range 만큼 그리는 게 맞다. 조준점에서 끝나는 것은 `aim` 이다 — `spirit_bomb` 의 빔은 시전자와 조준점 사이 거리만큼만 뻗는다. 사거리가 둘 중 어느 것도 아닌 고정 값이면 `target` 에 `length` 를 적는다 — `vine_toss` 의 넝쿨은 조준 방향으로 언제나 6 만큼 나간다.
+
+크기를 나타내는 값은 넷 중 하나다.
 
 - 숫자 그대로. 예: `0.08`
 - `{"parameter": "attack_range"}` — 클라이언트가 `/api/data/parameters` 에서 그 마법의 parameter 를 읽는다
-- `{"parameter": "attack_offset", "fallback": 0}` — parameter 가 없을 때 쓸 값까지 적는다
+- `{"object": "electric_shot", "parameter": "radius"}` — 그 이름의 game object 에서 읽는다
+- 어느 쪽이든 `"fallback": 0` 을 덧붙이면 값을 못 찾았을 때 쓸 숫자가 된다
 
 문서를 쓸 때는 parameter 이름 참조를 기본으로 한다. 대응하는 parameter 가 없는 값만 숫자로 적는다. 밸런스 수치가 `parameter_values` 한 곳에만 남아서, 수치를 고칠 때 문서를 다시 쓸 일이 없다.
+
+`object` 를 적는 이유는 마법 이름과 값이 들어 있는 game object 이름이 다른 경우가 많기 때문이다. `lightning_shot` 의 숫자는 `electric_shot` 에, `vine_toss` 의 숫자는 `vine` 에, `crater` 가 닿는 거리는 `crater_ember` 에 있다. `object` 없이 쓰면 클라이언트는 `magic_id` 로 이어진 object 를, 없으면 이름이 같은 object 를 보는데 두 경로 다 실패해서 그 layer 가 통째로 사라진다. 값을 `parameter_values` 에 복사해 두는 것은 답이 아니다 — 밸런스를 고칠 때 한쪽만 고쳐지고 조준 표시가 조용히 어긋난다.
+
+도형이 뜻하는 것은 두 가지로 나눈다. 속을 채운 도형은 시전하면 그 자리에 실제로 들어가는 범위이고, `edgeWidth` 를 준 테두리 원은 조건이 맞아야 닿는 범위다 — 건물의 공격 사거리, chain 의 다음 hop, 맞았을 때만 생기는 폭발이 여기 해당한다.
 
 설치 지점과 실제로 때리는 지점이 다른 타워는 layer 를 하나 더 얹는다.
 
@@ -99,7 +114,7 @@ layer 공통 항목
 {"shape": "circle", "origin": "target", "forwardOffset": {"parameter": "attack_offset", "fallback": 0}, "radius": {"parameter": "attack_range"}, "edgeWidth": 0.08}
 ```
 
-클라이언트는 이 문서를 `/api/data/magics` 응답 안에서 통째로 받아 `MagicInfoData` 라는 PlayerPrefs 키에 저장해 두고, 다음 요청에 `currentVersion` 을 실어 보내 `requiresRefresh` 가 `true` 일 때만 교체한다. 마법 데이터가 이미 쓰던 방식 그대로라 새로 만든 것은 없다. version 이나 `shape` 이나 `origin` 값을 클라이언트가 모르면 그 layer 만 건너뛰고 나머지를 그린다.
+클라이언트는 이 문서를 `/api/data/magics` 응답 안에서 통째로 받아 `MagicInfoData` 라는 PlayerPrefs 키에 저장해 두고, 다음 요청에 `currentVersion` 을 실어 보내 `requiresRefresh` 가 `true` 일 때만 교체한다. 마법 데이터가 이미 쓰던 방식 그대로라 새로 만든 것은 없다. version 이나 `shape` 이나 `origin` 이나 `end` 값을 클라이언트가 모르면 그 layer 만 건너뛰고 나머지를 그린다. 그래서 계약에 항목을 더하는 쪽이 데이터보다 먼저 나갈 필요가 없다 — 모르는 client 는 지금 그리던 것을 계속 그린다.
 
 ## 덱과 소유 데이터는 새로 만든다
 
