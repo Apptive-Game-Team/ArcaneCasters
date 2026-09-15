@@ -72,6 +72,10 @@ load_config() {
   : "${LOCAL_DB_USER:=wordonline}"
   : "${LOCAL_DB_PASSWORD:=wordonline}"
   : "${LOCAL_REDIS_PORT:=56379}"
+  # The address the game server registers itself at, and so the address the lobby
+  # hands the client. The IPv4 literal, never `localhost` - see
+  # retire_foreign_game_servers.
+  : "${LOCAL_GAME_DOMAIN:=127.0.0.1}"
   : "${LOCAL_MANAGEMENT_PORT_BASE:=58080}"
   : "${LOCAL_POSTGRES_IMAGE:=}"
   : "${FLYWAY_IMAGE:=flyway/flyway:11}"
@@ -367,16 +371,34 @@ cannot be replayed from empty either (WordOnlineDatabase issue #23)."
 # revives a server the moment one health check succeeds, so the rows have to go.
 # A game server started by this script registers itself on startup, which puts the
 # only row that can work here back in the table.
+#
+# `localhost` and `::1` go too, even though they name this very machine. The client
+# runs on Windows and the servers run in WSL, and the Windows-to-WSL loopback
+# forwarding carries IPv4 only. Measured on 2026-09-15 with networkingMode=mirrored:
+#
+#   from WSL      [::1]:7777        -> 200          (the server does listen dual stack)
+#   from Windows  [::1]:7777        -> ETIMEDOUT    (black-holed, not refused)
+#   from Windows  127.0.0.1:7777    -> connects in 2ms
+#   from Windows  localhost:7777    -> connects, after 266ms of trying ::1 first
+#
+# Windows resolves `localhost` to `::1` before `127.0.0.1`. Node and curl fall back to
+# IPv4 after the timeout, so a probe still succeeds and the address looks fine; Unity's
+# System.Net.WebSockets.ClientWebSocket does not. The symptom is nasty to read, because
+# nothing reports an error: the WebSocket handshake reaches the game server and gets its
+# 101, a session is created, and the client then drops the connection 19-35ms later
+# without ever sending a STOMP CONNECT frame. Against dev the same client is fine,
+# because a real host never touches loopback forwarding. Only the IPv4 literal is safe
+# to hand a client, so any other spelling is deleted here.
 retire_foreign_game_servers() {
   local removed
   removed=$(local_psql "$LOCAL_DB_NAME" -v ON_ERROR_STOP=1 -qtAc \
     "DELETE FROM servers
       WHERE type = 'GAME'
-        AND domain NOT IN ('localhost', '127.0.0.1', '::1')
+        AND domain <> '$LOCAL_GAME_DOMAIN'
       RETURNING id" 2>/dev/null | grep -c '[0-9]') || removed=0
 
   if [ "${removed:-0}" -gt 0 ]; then
-    log "removed $removed game server row(s) pointing at another environment"
+    log "removed $removed game server row(s) the client here cannot reach"
   fi
 }
 
@@ -466,7 +488,12 @@ module_boot_args() {
       printf -- '--management.server.port=%s ' "$(module_management_port game)"
       printf -- '--spring.datasource.url=%s ' "$(local_jdbc_url "$LOCAL_DB_NAME")"
       printf -- '--spring.datasource.username=%s ' "$LOCAL_DB_USER"
-      printf -- '--spring.datasource.password=%s' "$LOCAL_DB_PASSWORD"
+      printf -- '--spring.datasource.password=%s ' "$LOCAL_DB_PASSWORD"
+      # The address the game server writes into `servers.domain`, which the lobby
+      # hands the client as `webSocketUrl`. It must be the IPv4 literal; see
+      # retire_foreign_game_servers below for what `localhost` costs. Overriding it
+      # here means the module .env can keep whatever it holds.
+      printf -- '--server.domain=%s' "$LOCAL_GAME_DOMAIN"
       ;;
     lobby)
       printf -- '--management.server.port=%s ' "$(module_management_port lobby)"
