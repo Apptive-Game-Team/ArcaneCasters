@@ -356,6 +356,30 @@ cannot be replayed from empty either (WordOnlineDatabase issue #23)."
   flyway_run "$db" "$dir" info | tail -n 25 >&2 || true
 }
 
+# The clone carries the source environment's server registry, not just its content:
+# `servers` lists whichever game servers were alive in dev, and the lobby matches a
+# player onto any row it finds ACTIVE. A local match then runs on dev's game server,
+# reading dev's database - so a deck edited here never reaches the match and a value
+# changed here never takes effect. That cost an hour on 2026-09-15 before the lobby
+# log gave it away (issue #36).
+#
+# Marking those rows INACTIVE does not hold. The lobby's GameServerManagementService
+# revives a server the moment one health check succeeds, so the rows have to go.
+# A game server started by this script registers itself on startup, which puts the
+# only row that can work here back in the table.
+retire_foreign_game_servers() {
+  local removed
+  removed=$(local_psql "$LOCAL_DB_NAME" -v ON_ERROR_STOP=1 -qtAc \
+    "DELETE FROM servers
+      WHERE type = 'GAME'
+        AND domain NOT IN ('localhost', '127.0.0.1', '::1')
+      RETURNING id" 2>/dev/null | grep -c '[0-9]') || removed=0
+
+  if [ "${removed:-0}" -gt 0 ]; then
+    log "removed $removed game server row(s) pointing at another environment"
+  fi
+}
+
 migrate_all() {
   migrate_database "$LOCAL_DB_NAME" "$ROOT/database/migration" "database/migration"
 
@@ -673,6 +697,7 @@ cmd_up() {
   fi
 
   migrate_all
+  retire_foreign_game_servers
 
   if [ -n "$with" ]; then
     step "starting servers: $with"
@@ -835,7 +860,7 @@ main() {
     migrate)
       preflight; load_config
       container_running "$PG_CONTAINER" || die "$PG_CONTAINER is not running. Run: $0 up"
-      migrate_all ;;
+      migrate_all; retire_foreign_game_servers ;;
     serve) [ $# -ge 1 ] || die "serve needs a module: $SERVE_MODULES"; load_config; serve "$1" ;;
     env-patch) [ $# -ge 1 ] || die "env-patch needs a module: $ALL_MODULES"; load_config; env_patch "$1" ;;
     env-restore) [ $# -ge 1 ] || die "env-restore needs a module: $ALL_MODULES"; env_restore "$1" ;;

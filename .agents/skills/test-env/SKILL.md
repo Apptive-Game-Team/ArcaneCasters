@@ -116,6 +116,27 @@ actuator port:
 .agents/skills/test-env/scripts/testenv.sh run-cmd lobby
 ```
 
+### The server registry travels with the clone
+
+`servers` lists which game servers are alive, and the clone brings the source
+environment's rows along with its content. The lobby will match a player onto any
+row it finds `ACTIVE`, so a local match can run on **dev's** game server against
+**dev's** database: a deck edited here never reaches the match, and a value changed
+here never takes effect. `up` and `migrate` therefore delete every `GAME` row that
+is not a loopback address. A server started by this script registers itself, which
+puts the only usable row back.
+
+Do not repair this by setting `state = 'INACTIVE'` by hand. The lobby's
+`GameServerManagementService` revives a server as soon as one health check
+succeeds, and the row comes back.
+
+The local game server must advertise a **loopback** address. The Unity client ships
+with `insecureHttpOption: 0` in `ProjectSettings`, which blocks plain `http` to
+anything but loopback: point the server at a LAN address and the client fails with
+`InvalidOperationException: Insecure connection not allowed` before it ever reaches
+the game server. `DOMAIN=localhost` in `game/.env` is what makes the registered row
+usable from the editor.
+
 ### Ports
 
 Every module's `application.yml` defaults `management.server.port` to `8081`,
