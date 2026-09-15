@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+#
+# Entry point for this project's development commands.
+#
+#   ./dev                  list the available commands
+#   ./dev <command>        list that command's subcommands
+#   ./dev <command> <sub>  run it
+#
+# .dev/dispatch.sh does the actual dispatching. This file only locates the
+# project root and hands over, so updating the dispatcher never touches it.
+
+set -euo pipefail
+
+self=${BASH_SOURCE[0]}
+while [ -L "$self" ]; do
+  target=$(readlink "$self")
+  case $target in
+    /*) self=$target ;;
+    *) self=$(dirname -- "$self")/$target ;;
+  esac
+done
+
+DEV_ROOT=$(cd -- "$(dirname -- "$self")" && pwd)
+export DEV_ROOT
+
+exec bash "$DEV_ROOT/.dev/dispatch.sh" "$@"

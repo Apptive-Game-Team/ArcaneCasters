@@ -41,7 +41,7 @@ cd WordOnline
 git submodule update --init --recursive
 ```
 
-루트에는 전체 시스템을 한 번에 빌드하거나 실행하는 도구가 없습니다. 각 구성 요소는 해당 모듈 디렉터리에서 개별적으로 빌드하고 실행합니다.
+루트의 `./dev`로 로컬 테스트 환경을 세우고 서버를 실행합니다. 전체 시스템을 한 번에 빌드하는 도구는 없으며, 각 구성 요소는 해당 모듈 디렉터리에서 개별적으로 빌드합니다.
 
 ## 주요 명령
 
@@ -63,6 +63,23 @@ npm run dev
 
 `client/`는 Unity `2022.3.34f1`에서 엽니다. WebGL 빌드는 Unity Editor 또는 모듈에 정의된 빌드 스크립트를 사용합니다.
 
+## 로컬 테스트 환경
+
+루트의 `./dev`가 공유 dev 데이터베이스를 로컬 Docker Postgres로 복제하고, `database/migration`의 Flyway 마이그레이션을 적용하고, 서버를 그 복제본에 붙여 실행합니다.
+
+```bash
+./dev setup env     # game/.env에서 값을 가져와 .db.env를 만듭니다
+./dev setup check   # Docker, 서브모듈, 포트 상태를 점검합니다
+./dev db clone      # 데이터베이스를 로컬로 복제합니다
+./dev server up     # game과 lobby를 복제본에 붙여 실행합니다
+```
+
+`./dev`만 치면 사용할 수 있는 명령이 나오고, `./dev <명령>`은 그 명령의 하위 명령을 보여줍니다. 여러 서브모듈에 걸친 브랜치를 한 번에 맞추는 `./dev branch`도 있습니다.
+
+전체 사용법, 준비물, 문제 해결은 [`DEV_TOOL.md`](DEV_TOOL.md)를 참고합니다.
+
+`./dev db clone`은 `.db.env`가 가리키는 실제 데이터베이스를 복제합니다. 실행 전에 화면에 뜨는 대상을 확인하고, 복제본은 로컬에만 둡니다.
+
 ## 환경 설정
 
 백엔드 서비스는 각 모듈의 `src/main/resources/application.yml`과 선택적인 로컬 `.env` 파일에서 실행 설정을 읽습니다. 서비스 포트, 데이터베이스 접속 정보, 서비스 URL, Redis 설정, 인증 키 등이 필요할 수 있습니다.
@@ -83,4 +100,4 @@ npm run dev
 
 ## 저장소 지침
 
-저장소 공통 에이전트 지침, 모듈 소유권, Graphify 사용법, 보안 규칙, 서브모듈 변경 절차는 [`AGENTS.md`](AGENTS.md)를 참고합니다.
+저장소 공통 에이전트 지침, 모듈 소유권, Graphify 사용법, 보안 규칙, 서브모듈 변경 절차는 [`AGENTS.md`](AGENTS.md)를 참고합니다. 루트 `./dev` 명령의 사용법은 [`DEV_TOOL.md`](DEV_TOOL.md)에 있습니다.
