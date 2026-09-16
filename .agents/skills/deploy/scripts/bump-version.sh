@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Commit a version bump straight onto origin/main through the GitHub Contents
+# Commit a version bump straight onto origin/dev through the GitHub Contents
 # API, so no local checkout, branch, or working tree is touched.
 # Usage: bump-version.sh <owner/repo> <file> <kind> <old> <new>
 set -euo pipefail
@@ -15,8 +15,8 @@ esac
 work=$(mktemp -d)
 trap 'rm -rf "$work"' EXIT
 
-sha=$(gh api "repos/$repo/contents/$file?ref=main" --jq .sha)
-gh api "repos/$repo/contents/$file?ref=main" --jq .content | tr -d '\n' | base64 -d > "$work/old"
+sha=$(gh api "repos/$repo/contents/$file?ref=dev" --jq .sha)
+gh api "repos/$repo/contents/$file?ref=dev" --jq .content | tr -d '\n' | base64 -d > "$work/old"
 
 matches=$(grep -Fxc "$old_line" "$work/old" || true)
 [ "$matches" = 1 ] || { echo "expected exactly one \"$old_line\" in $repo:$file, found $matches" >&2; exit 1; }
@@ -31,7 +31,7 @@ import base64, json, sys
 path, sha, message = sys.argv[1:4]
 with open(path, 'rb') as handle:
     content = base64.b64encode(handle.read()).decode()
-json.dump({'message': message, 'content': content, 'sha': sha, 'branch': 'main'}, sys.stdout)
+json.dump({'message': message, 'content': content, 'sha': sha, 'branch': 'dev'}, sys.stdout)
 PY
 
 gh api -X PUT "repos/$repo/contents/$file" --input "$work/body.json" --jq '.commit.sha'

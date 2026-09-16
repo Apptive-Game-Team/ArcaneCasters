@@ -1,4 +1,4 @@
 interface:
   display_name: "Deploy"
-  short_description: "Bump, merge, tag, and release changed main branches into deploy"
-  default_prompt: "Use $deploy to bump, merge, tag, and release eligible main branches into deploy."
+  short_description: "Bump, merge, tag, and release changed dev branches into deploy"
+  default_prompt: "Use $deploy to bump, merge, tag, and release eligible dev branches into deploy."
