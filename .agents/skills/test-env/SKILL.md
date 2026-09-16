@@ -116,6 +116,63 @@ actuator port:
 .agents/skills/test-env/scripts/testenv.sh run-cmd lobby
 ```
 
+### The server registry travels with the clone
+
+`servers` lists which game servers are alive, and the clone brings the source
+environment's rows along with its content. The lobby will match a player onto any
+row it finds `ACTIVE`, so a local match can run on **dev's** game server against
+**dev's** database: a deck edited here never reaches the match, and a value changed
+here never takes effect. `up` and `migrate` therefore delete every `GAME` row whose
+domain is not `127.0.0.1`. A server started by this script registers itself, which
+puts the only usable row back.
+
+Do not repair this by setting `state = 'INACTIVE'` by hand. The lobby's
+`GameServerManagementService` revives a server as soon as one health check
+succeeds, and the row comes back.
+
+### The registered address must be `127.0.0.1`
+
+Not `localhost`, not `::1`. The script passes `--server.domain=127.0.0.1` when it
+starts the game server, so `game/.env` can hold whatever it holds; override it with
+`LOCAL_GAME_DOMAIN` only if you know why.
+
+Two separate rules force this, and only the IPv4 literal satisfies both.
+
+**It has to be loopback.** The Unity client ships with `insecureHttpOption: 0` in
+`ProjectSettings`, which blocks plain `http` to anything but loopback. Point the
+server at a LAN address and the client fails with
+`InvalidOperationException: Insecure connection not allowed` before it ever reaches
+the game server.
+
+**It has to be IPv4.** The client runs on Windows, the servers run in WSL, and the
+Windows-to-WSL loopback forwarding carries IPv4 only. Measured 2026-09-15 with
+`networkingMode=mirrored`:
+
+| from | to | result |
+|---|---|---|
+| WSL | `[::1]:7777` | 200 — the server does listen dual stack |
+| Windows | `[::1]:7777` | `ETIMEDOUT` — black-holed, not refused |
+| Windows | `127.0.0.1:7777` | connects in 2ms |
+| Windows | `localhost:7777` | connects, after 266ms of trying `::1` first |
+
+Windows resolves `localhost` to `::1` before `127.0.0.1`. Node and curl fall back to
+IPv4 after the timeout, so probing the address by hand makes it look fine. Unity's
+`System.Net.WebSockets.ClientWebSocket` does not fall back.
+
+**Recognise the symptom, because nothing reports an error.** The WebSocket handshake
+reaches the game server and gets its `101`, a session is created, and the client then
+drops the connection 19-35ms later without ever sending a STOMP `CONNECT` frame. The
+game server logs `Upgrading to WebSocket`, `New StandardWebSocketSession`, then
+`java.io.EOFException`. The client logs only `[STOMP] 연결 재시도` and ends at
+`[SessionLoss] 판정: Lost (404)`. The same client connects to dev without trouble,
+because a real host never touches loopback forwarding — so "works on dev, fails
+locally" is the tell.
+
+To check the Windows side of the boundary, run a probe through Windows `node.exe`
+over interop rather than PowerShell: `Invoke-WebRequest` times out on WinHTTP proxy
+handling even when the port is fine, and PowerShell 5.1's `ClientWebSocket` refuses
+its own request once `Options.Proxy` is set. Both give false negatives.
+
 ### Ports
 
 Every module's `application.yml` defaults `management.server.port` to `8081`,

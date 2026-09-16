@@ -26,7 +26,23 @@ Module-specific instructions supplement this file. When instructions conflict, t
 
 Keep changes within the owning module unless the task requires an explicit cross-module contract change.
 
-## 3. Graphify Knowledge Graph
+## 3. Project Skills
+
+This repository keeps its own skills under `.agents/skills/`. Read the one that
+covers the task before starting. An agent that only auto-loads skills from its
+own home directory does not see these, so open the file by path.
+
+- `.agents/skills/deploy/SKILL.md` — create or reuse pull requests from `main`
+  to `deploy` across the monorepo root and its submodules, bump each versioned
+  component once per promotion, then merge, tag, and release.
+- `.agents/skills/game-capacity-test/SKILL.md` — measure how many concurrent
+  game sessions a game server holds at a given CPU and memory limit by binary
+  searching the bot session count against the loop frame rate.
+- `.agents/skills/test-env/SKILL.md` — clone the shared game database into a
+  local Docker Postgres, apply the WordOnlineDatabase Flyway migrations, and
+  run the game, lobby, account, and admin servers against it.
+
+## 4. Graphify Knowledge Graph
 
 This repository maintains a Graphify knowledge graph in `graphify-out/`. Use it as the primary navigation and architecture-discovery source when the graph is available.
 
@@ -40,13 +56,13 @@ This repository maintains a Graphify knowledge graph in `graphify-out/`. Use it 
 
 Treat Graphify output as navigational evidence, not a substitute for validating relevant source files before editing.
 
-## 4. Security
+## 5. Security
 
 - Never commit `.env` files from the repository root or any submodule.
 - When environment-related files change, verify the applicable root or module-level `.gitignore`.
 - Never expose credentials, tokens, private endpoints, or other secrets in source, logs, tests, documentation, or generated artifacts.
 
-## 5. Submodule Change Management
+## 6. Submodule Change Management
 
 Each submodule has an independent Git history. For submodule changes:
 
@@ -64,7 +80,7 @@ On this branch, `game`, `lobby`, `client`, `database`, and `admin` track their o
 
 This configuration exists only on the `magic-card` branch. Do not carry it to `main`. See [`docs/magic-card.md`](docs/magic-card.md).
 
-## 6. Component Versioning
+## 7. Component Versioning
 
 Deployable components use independent Semantic Versions:
 
@@ -87,3 +103,28 @@ only input to the released version number.
 
 Do not use `-SNAPSHOT` for deployable versions. Server builds embed their Gradle
 version through Spring Boot build info; do not maintain a second version value.
+
+## 8. Branch Tracks
+
+`main` and `magic-card` are two long-lived tracks that exist in every repository
+of this workspace. They are not merged into each other, in either direction.
+`magic-card` will not land on `main`.
+
+- Work on the track the request targets. Branch from it, open the pull request
+  against it, and stack on that track's open chain.
+- A feature both tracks need is built twice, against each track's own data
+  model, rather than cherry-picked across. The two models differ: `magic-card`
+  drops `magics.cast_type`, adds `element`, `cast_kind` and `prefab`, and moves
+  ownership onto magics, while `main` keeps cards and recipes. A file written
+  for one track does not apply on the other.
+- Something already built on `magic-card` is not available to `main`. When
+  `main` needs it, write it again for `main`'s model.
+- The worked example is the aim indicator document: WordOnlineDatabase V090
+  (magic-card) and V091 (main), WordOnlineClient #657 and #661, root #30 and
+  #32. Each pair carries the same contract against a different chain.
+- WordOnlineDatabase migration numbers must be unique across **both** tracks.
+  The validation workflow only compares a pull request against its own base
+  branch, so a number that passes on one track can still collide on the other.
+- The redesign's design notes live on the root `magic-card` branch
+  (`docs/magic-card.md`, `.plan/issues/2026-09-08-issue-23-magic-card-redesign.md`).
+  `main` carries no copy, so read them from that branch.
