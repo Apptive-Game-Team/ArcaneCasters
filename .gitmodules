@@ -1,23 +1,23 @@
 [submodule "game"]
 	path = game
-	url = https://github.com/Apptive-Game-Team/WordOnlineServer
-	branch = magic-card
+	url = https://github.com/Apptive-Game-Team/ArcaneCastersGame
+	branch = dev
 [submodule "lobby"]
 	path = lobby
-	url = https://github.com/Apptive-Game-Team/WordOnlineMatching
-	branch = magic-card
+	url = https://github.com/Apptive-Game-Team/ArcaneCastersLobby
+	branch = dev
 [submodule "client"]
 	path = client
-	url = https://github.com/Apptive-Game-Team/WordOnlineClient
-	branch = magic-card
+	url = https://github.com/Apptive-Game-Team/ArcaneCastersClient
+	branch = dev
 [submodule "database"]
 	path = database
-	url = https://github.com/Apptive-Game-Team/WordOnlineDatabase
-	branch = magic-card
+	url = https://github.com/Apptive-Game-Team/ArcaneCastersDatabase
+	branch = dev
 [submodule "admin"]
 	path = admin
-	url = https://github.com/Apptive-Game-Team/WordOnlineAdmin
-	branch = magic-card
+	url = https://github.com/Apptive-Game-Team/ArcaneCastersAdmin
+	branch = dev
 [submodule "account"]
 	path = account
 	url = https://github.com/Apptive-Game-Team/AccountServer
@@ -26,4 +26,4 @@
 	url = https://github.com/Apptive-Game-Team/theevilent
 [submodule "infra"]
 	path = infra
-	url = https://github.com/Apptive-Game-Team/WordOnlineInfra
+	url = https://github.com/Apptive-Game-Team/ArcaneCastersInfra
