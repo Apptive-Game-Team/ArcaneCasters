@@ -1,4 +1,4 @@
-# Agent Instructions for the WordOnline Monorepo
+# Agent Instructions for the ArcaneCasters Monorepo
 
 This repository is a multi-module monorepo composed of Git submodules. Agents working in this repository must follow the repository-level rules below and the module-specific instructions for the target component.
 
@@ -32,7 +32,7 @@ This repository keeps its own skills under `.agents/skills/`. Read the one that
 covers the task before starting. An agent that only auto-loads skills from its
 own home directory does not see these, so open the file by path.
 
-- `.agents/skills/deploy/SKILL.md` — create or reuse pull requests from `main`
+- `.agents/skills/deploy/SKILL.md` — create or reuse pull requests from `dev`
   to `deploy` across the monorepo root and its submodules, bump each versioned
   component once per promotion, then merge, tag, and release.
 - `.agents/skills/game-capacity-test/SKILL.md` — measure how many concurrent
@@ -72,13 +72,11 @@ Each submodule has an independent Git history. For submodule changes:
 
 Do not commit a parent-repository submodule pointer that references an unpublished submodule commit.
 
-### The magic-card branch
+### Submodule branch tracking
 
-On this branch, `game`, `lobby`, `client`, `database`, and `admin` track their own `magic-card` branch instead of `main`. `.gitmodules` records `branch = magic-card` for those five, so `git submodule update --remote` follows it. Update and commit the pointer here every time a submodule pull request merges into that submodule's `magic-card`.
+`game`, `lobby`, `client`, `database`, and `admin` track their own `dev` branch. `.gitmodules` records `branch = dev` for those five, so `git submodule update --remote` follows it. Update and commit the pointer here every time a submodule pull request merges into that submodule's `dev`.
 
-`account`, `website`, and `infra` are not part of the redesign and keep pointing at `main`.
-
-This configuration exists only on the `magic-card` branch. Do not carry it to `main`. See [`docs/magic-card.md`](docs/magic-card.md).
+`account`, `website`, and `infra` also track `dev`: `.gitmodules` leaves them without an explicit `branch =` line, so `git submodule update --remote` follows each submodule's own default branch, which is `dev`.
 
 ## 7. Component Versioning
 
@@ -92,7 +90,7 @@ Deployable components use independent Semantic Versions:
 
 Do not bump a version in a feature pull request. Every version bump happens once
 per promotion, in the `deploy` skill: it commits `chore(release): <repo> vX.Y.Z`
-to `main`, merges `main` into `deploy`, then tags and releases `vX.Y.Z` on the
+to `dev`, merges `dev` into `deploy`, then tags and releases `vX.Y.Z` on the
 merge commit. Bumping per pull request produced constant conflicts on the same
 version line, so the single bump per release replaced it.
 

@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Print the release plan for every versioned component, one TSV row per row:
-#   path  owner/repo  file  kind  commits  deploy_version  main_version  level  next_version  state
-# Run from the WordOnline monorepo root. Reads only remote-tracking refs; never
+#   path  owner/repo  file  kind  commits  deploy_version  dev_version  level  next_version  state
+# Run from the ArcaneCasters monorepo root. Reads only remote-tracking refs; never
 # touches a working tree, index, or local branch.
 set -uo pipefail
 
@@ -18,9 +18,9 @@ read_version() { # <path> <ref> <file> <kind>
   esac
 }
 
-classify() { # <path>: conventional-commit level over origin/deploy..origin/main
+classify() { # <path>: conventional-commit level over origin/deploy..origin/dev
   local log
-  log=$(git -C "$1" log --no-merges --format='%s%n%b%n--' origin/deploy..origin/main 2>/dev/null)
+  log=$(git -C "$1" log --no-merges --format='%s%n%b%n--' origin/deploy..origin/dev 2>/dev/null)
   if grep -qE '^[a-z]+(\([^)]*\))?!:' <<<"$log" || grep -q 'BREAKING[ -]CHANGE' <<<"$log"; then
     echo major
   elif grep -qE '^feat(\([^)]*\))?:' <<<"$log"; then
@@ -44,23 +44,23 @@ while IFS='|' read -r path file kind; do
   [ -d "$path/.git" ] || [ -f "$path/.git" ] || { printf '%s\t-\t%s\t%s\t-\t-\t-\t-\t-\tskipped: not initialized\n' "$path" "$file" "$kind"; continue; }
   slug=$(git -C "$path" remote get-url origin | sed -E 's#^.*[:/]([^/]+/[^/]+?)(\.git)?$#\1#')
   git -C "$path" fetch --prune --quiet origin || { printf '%s\t%s\t%s\t%s\t-\t-\t-\t-\t-\tfailed: fetch\n' "$path" "$slug" "$file" "$kind"; continue; }
-  for ref in main deploy; do
+  for ref in dev deploy; do
     git -C "$path" show-ref --verify --quiet "refs/remotes/origin/$ref" || {
       printf '%s\t%s\t%s\t%s\t-\t-\t-\t-\t-\tskipped: missing %s\n' "$path" "$slug" "$file" "$kind" "$ref"
       continue 2
     }
   done
-  commits=$(git -C "$path" rev-list --count origin/deploy..origin/main)
+  commits=$(git -C "$path" rev-list --count origin/deploy..origin/dev)
   deploy_version=$(read_version "$path" origin/deploy "$file" "$kind")
-  main_version=$(read_version "$path" origin/main "$file" "$kind")
-  [ -n "$main_version" ] || { printf '%s\t%s\t%s\t%s\t%s\t-\t-\t-\t-\tfailed: no version in main\n' "$path" "$slug" "$file" "$kind" "$commits"; continue; }
+  dev_version=$(read_version "$path" origin/dev "$file" "$kind")
+  [ -n "$dev_version" ] || { printf '%s\t%s\t%s\t%s\t%s\t-\t-\t-\t-\tfailed: no version in dev\n' "$path" "$slug" "$file" "$kind" "$commits"; continue; }
   if [ "$commits" = 0 ]; then
-    state='skipped: up to date'; level='-'; next="$main_version"
-  elif [ "$main_version" != "$deploy_version" ]; then
-    state='already bumped'; level='-'; next="$main_version"
+    state='skipped: up to date'; level='-'; next="$dev_version"
+  elif [ "$dev_version" != "$deploy_version" ]; then
+    state='already bumped'; level='-'; next="$dev_version"
   else
-    level=$(classify "$path"); next=$(next_version "$main_version" "$level"); state='bump'
+    level=$(classify "$path"); next=$(next_version "$dev_version" "$level"); state='bump'
   fi
   printf '%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\n' \
-    "$path" "$slug" "$file" "$kind" "$commits" "${deploy_version:--}" "$main_version" "$level" "$next" "$state"
+    "$path" "$slug" "$file" "$kind" "$commits" "${deploy_version:--}" "$dev_version" "$level" "$next" "$state"
 done <<<"$COMPONENTS"
