@@ -197,25 +197,59 @@ release. Every other repository is promoted without any of the three.
 
    Do not pass `--admin`, `--auto`, or `--delete-branch`.
 
-10. Tag and release each merged versioned component:
+10. Tag and release each merged versioned component. A tag without a release is
+    not done: the client build workflow triggers on `release: published`, so a
+    bare tag ships nothing. Always end this step with a release that exists.
+
+    Refresh refs including tags, then check the release and the tag separately:
 
     ```bash
-    git -C <path> fetch --prune origin
-    gh release view -R <owner/repo> v<new>
-    gh release create -R <owner/repo> v<new> \
-      --target "$(git -C <path> rev-parse origin/deploy)" \
-      --title "<path> v<new>" \
-      --generate-notes
+    git -C <path> fetch --prune --tags --force origin
+    gh release view -R <owner/repo> v<new> --json tagName   # release present?
+    git -C <path> rev-parse -q --verify refs/tags/v<new>    # tag present?
+    git -C <path> rev-parse origin/deploy                   # what deploy points at
     ```
 
-    - Run the `release view` first. When the release already exists, mark
-      `released: existing` and create nothing.
-    - `release create` creates the tag on the merge commit now at the tip of
-      `deploy`, so the tag names exactly what is deployed.
+    Then take exactly one branch:
+
+    - Release exists: mark `released: existing`, create nothing.
+    - No release, no tag: create both on the tip of `deploy`.
+
+      ```bash
+      gh release create -R <owner/repo> v<new> \
+        --target "$(git -C <path> rev-parse origin/deploy)" \
+        --title "<path> v<new>" \
+        --generate-notes
+      ```
+
+    - No release, tag already points at the tip of `deploy`: create the release
+      on the existing tag. Omit `--target`; it is ignored for an existing tag.
+
+      ```bash
+      gh release create -R <owner/repo> v<new> \
+        --title "<path> v<new>" \
+        --generate-notes
+      ```
+
+    - No release, tag points at a different commit: report `blocked: tag exists`.
+      Never move or delete the tag.
+
+    Verify before reporting success:
+
+    ```bash
+    gh release view -R <owner/repo> v<new> --json tagName,isDraft,publishedAt
+    ```
+
+    - A missing release, or one with `isDraft: true` or a null `publishedAt`,
+      counts as a failure, not a success: the build workflow never fires.
     - Tag name is always `v<version>`, matching the version file value.
     - Never tag a repository whose merge was `blocked` or `failed`.
     - A release failure after a successful merge is reported as
       `merged, release failed: <reason>`. It never rolls back the merge.
+    - Before the final report, re-check every versioned repository that carries a
+      tag from an earlier promotion but no matching release, and backfill it
+      through the existing-tag branch above. Report each backfill as
+      `released: backfilled v<version>`.
 
 11. Report one row per repository:
 
@@ -242,3 +276,8 @@ release. Every other repository is promoted without any of the three.
 - Merge command failure: refresh PR state once, report exact GitHub reason, continue to next repository.
 - Tag name already taken by a different commit: report `blocked: tag exists`, and
   do not move or delete the existing tag.
+- `release create` refusing with `tag already exists`: the `--target` was passed
+  for a tag that is already on the remote. Retry once without `--target`.
+- Release created but `gh release view` reports it as a draft: publish it with
+  `gh release edit -R <owner/repo> v<new> --draft=false`. `release: published`
+  never fires for a draft.
