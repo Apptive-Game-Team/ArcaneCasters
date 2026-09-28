@@ -32,6 +32,10 @@ This repository keeps its own skills under `.agents/skills/`. Read the one that
 covers the task before starting. An agent that only auto-loads skills from its
 own home directory does not see these, so open the file by path.
 
+- `.agents/skills/adventure-authoring/SKILL.md` — design and add an adventure
+  (stages, scenarios, waves, boss phases, win conditions, rewards, battle
+  theme) across the database and client, with pressure checked against the
+  player's mana income.
 - `.agents/skills/deploy/SKILL.md` — create or reuse pull requests from `dev`
   to `deploy` across the monorepo root and its submodules, bump each versioned
   component once per promotion, then merge, tag, and release.
