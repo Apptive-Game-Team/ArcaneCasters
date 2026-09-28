@@ -167,12 +167,15 @@ is not localized. Match the language of the existing lines.
 1. `database/scripts/ci/validate-migrations.sh origin/dev`.
 2. Bring the migration up on a clone with the `test-env` skill
    (`.agents/skills/test-env/SKILL.md`), then run
-   `.agents/skills/adventure-authoring/scripts/adventure-check.py <adventure_id>`.
-   It fails on references that would make a scenario unwinnable or crash the
+   `.agents/skills/adventure-authoring/scripts/adventure-check.py <adventure_id>`
+   from the monorepo root checkout (it reads `.db.env`, including
+   `LOCAL_INSTANCE`, and the `game` submodule from there). It fails on references that would make a scenario unwinnable or crash the
    loader, and prints each scenario's pressure per 30 seconds; compare it to
    the band table and fix the design before moving on.
 3. Play every scenario once against the test-env game server with a starter
-   deck. Record the clear time and the lowest player hp for each in the pull
+   deck, through the client. There is no headless shortcut yet: the game
+   server's `POST /api/server/game-sessions` needs a `WORDONLINE_SERVER` JWT
+   issued by the account server, which test-env does not mint. Record the clear time and the lowest player hp for each in the pull
    request. A scenario cleared in under 60 seconds or lost twice with a starter
    deck is out of band.
 

@@ -7,6 +7,10 @@ migration under review. The host needs no psql.
 
     .agents/skills/adventure-authoring/scripts/adventure-check.py <adventure_id>
 
+Run it from the monorepo root checkout that holds `.db.env` and the `game`
+submodule: the root is found from the working directory first, so a copy of
+this skill in another worktree still reads the live test-env settings.
+
 Exit status 1 when any lint error is found. Warnings do not fail the run.
 """
 
@@ -17,8 +21,6 @@ import subprocess
 import sys
 from collections import defaultdict
 from pathlib import Path
-
-PG_CONTAINER = "wordonline-testenv-db"
 
 # Player economy, from the game server: ManaCharger adds 1 mana every 0.25 s,
 # and the `player` parameters hold max_mana 120 and hp 1000.
@@ -41,40 +43,53 @@ TARGETED_TRIGGERS = {"InstallerHpPercentLte", "InstallerDestroyed"}
 FPS = 20
 
 
-def load_db_env():
-    root = Path(__file__).resolve().parents[4]
+def find_root():
+    """The monorepo root: the nearest directory above the working directory, then
+    above this script, that has both `.gitmodules` and `.db.env`."""
+    for start in (Path.cwd(), Path(__file__).resolve().parent):
+        for path in (start, *start.parents):
+            if (path / ".gitmodules").exists() and (path / ".db.env").exists():
+                return path
+    sys.exit("no monorepo root with .db.env found; run from the root checkout")
+
+
+def load_db_env(root):
     env = {"LOCAL_DB_NAME": "wordonline_test", "LOCAL_DB_USER": "wordonline",
-           "LOCAL_DB_PASSWORD": "wordonline"}
-    path = root / ".db.env"
-    if path.exists():
-        for line in path.read_text().splitlines():
-            m = re.match(r"\s*([A-Z_]+)=(.*)", line)
-            if m and m.group(1) in env:
-                env[m.group(1)] = m.group(2).strip().strip('"').strip("'")
+           "LOCAL_DB_PASSWORD": "wordonline", "LOCAL_INSTANCE": "wordonline-testenv"}
+    for line in (root / ".db.env").read_text().splitlines():
+        m = re.match(r"\s*([A-Z_]+)=(.*)", line)
+        if m and m.group(1) in env:
+            env[m.group(1)] = m.group(2).strip().strip('"').strip("'")
+    # testenv.sh names its Postgres container after LOCAL_INSTANCE.
+    env["PG_CONTAINER"] = f"{env['LOCAL_INSTANCE']}-db"
     return env
 
 
 def query(env, sql):
     out = subprocess.run(
-        ["docker", "exec", "-i", "-e", f"PGPASSWORD={env['LOCAL_DB_PASSWORD']}", PG_CONTAINER,
+        ["docker", "exec", "-i", "-e", f"PGPASSWORD={env['LOCAL_DB_PASSWORD']}", env["PG_CONTAINER"],
          "psql", "-U", env["LOCAL_DB_USER"], "-d", env["LOCAL_DB_NAME"],
          "-v", "ON_ERROR_STOP=1", "--csv", "-c", sql],
-        check=True, capture_output=True, text=True).stdout
-    return list(csv.DictReader(io.StringIO(out)))
+        capture_output=True, text=True)
+    if out.returncode != 0:
+        sys.exit(f"query on {env['PG_CONTAINER']} failed: {out.stderr.strip()}\n"
+                 "Is the test-env clone up with the migration applied? (testenv.sh status)")
+    return list(csv.DictReader(io.StringIO(out.stdout)))
 
 
 def snake(prefab_type):
     return re.sub(r"(?<!^)(?=[A-Z])", "_", prefab_type).lower()
 
 
-def prefab_types():
+def prefab_types(root):
     """PrefabType names from the game server source on origin/dev."""
-    game = Path(__file__).resolve().parents[4] / "game"
+    game = root / "game"
     path = "src/main/java/com/wordonline/server/game/domain/object/prefab/PrefabType.java"
     try:
         src = subprocess.run(["git", "-C", str(game), "show", f"origin/dev:{path}"],
                              check=True, capture_output=True, text=True).stdout
     except subprocess.CalledProcessError:
+        print("warning: could not read PrefabType from game origin/dev; prefab names unchecked")
         return None
     return set(re.findall(r"^\s*([A-Z][A-Za-z0-9]*)\(\"", src, re.M))
 
@@ -83,7 +98,8 @@ def main():
     if len(sys.argv) != 2 or not sys.argv[1].isdigit():
         sys.exit(__doc__)
     adventure_id = int(sys.argv[1])
-    env = load_db_env()
+    root = find_root()
+    env = load_db_env(root)
 
     scenarios = query(env, f"""
         SELECT sc.id AS scenario_id, st.id AS stage_id
@@ -121,7 +137,7 @@ def main():
             return s["mana_cost"] / max(1.0, s.get("quantity", 1.0))
         return FALLBACK_UNIT_VALUE.get(name)
 
-    known_prefabs = prefab_types()
+    known_prefabs = prefab_types(root)
     line_count = {l["event_row_id"]: int(l["n"]) for l in lines}
     errors, warnings = [], []
 
