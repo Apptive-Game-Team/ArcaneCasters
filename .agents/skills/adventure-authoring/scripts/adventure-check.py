@@ -36,7 +36,7 @@ FALLBACK_UNIT_VALUE = {
 }
 
 # Pressure bands, as a share of the player's mana income. See SKILL.md.
-PEAK_WARN = 1.3
+PEAK_WARN = 2.0
 
 VALID_TRIGGERS = {"FrameNumGte", "SecondsGte", "InstallerHpPercentLte", "InstallerDestroyed"}
 TARGETED_TRIGGERS = {"InstallerHpPercentLte", "InstallerDestroyed"}

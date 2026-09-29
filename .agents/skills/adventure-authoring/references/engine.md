@@ -14,7 +14,10 @@ and what each value does. Anything not listed here needs a game server change.
 | `max_hp` | NULL keeps the prefab's `hp` parameter; a value overrides it for this installer only |
 | `sort_order` | install order |
 
-A scenario with no installer row fails to load.
+A scenario with no installer row fails to load. Installed objects never expire:
+the engine removes a borrowed building's `TimedSelfDestroyer` once it starts,
+and applies `max_hp` at that same moment (components exist only after the
+object's first frame).
 
 ## Win condition — `pve_scenario_rules` (optional, one row per scenario)
 

@@ -36,7 +36,7 @@ and stage ids must increase with them.
 
 ## Design rules
 
-These exist because the first adventure broke every one of them: four matches,
+These exist because the first adventure broke most of them: four matches,
 each "destroy one static structure", one reward at the very end.
 
 1. **Size.** 2–3 stages of 3–4 scenarios. A scenario lasts 90–180 seconds.
@@ -50,7 +50,7 @@ each "destroy one static structure", one reward at the very end.
    mid-match (`InstallObject`).
 4. **Shape every scenario the same way:** a calm opening (0–15 s: one line of
    speech, at most one small wave), pressure (timed waves), a peak (a boss
-   phase or the largest wave), and a finish. After any wave above pressure 1.0,
+   phase or the largest wave), and a finish. After any wave above pressure 1.5,
    give 10 seconds with no new wave.
 5. **Bosses get phases.** The last scenario of every stage has a boss with at
    least two `InstallerHpPercentLte` events (for example at 60 and 30). Each
@@ -64,7 +64,13 @@ each "destroy one static structure", one reward at the very end.
 8. **One line per event.** The in-match bubble shows only the last line of an
    event and stays 3.5 seconds, so a two-line event hides its first line. Put
    each line in its own event, at least 4 seconds apart.
-9. **Theme.** Every adventure names a battle theme; forest is the default.
+9. **Check what a borrowed structure attacks.** Player-magic buildings used as
+   enemy structures keep their own targeting: `GroundTower` hits only air units
+   and never the player's ground army, while `GroundCannon` and `RockTurret`
+   hit ground. Read the prefab initializer's `TargetMask` before placing one.
+   Their lifetime (`TimedSelfDestroyer`) is removed by the engine for scenario
+   structures, so an objective never expires on its own.
+10. **Theme.** Every adventure names a battle theme; forest is the default.
    Enemies should fit it or the story should explain them (the fortress
    adventure's story is that the witch's vines took the fortress).
 
@@ -82,10 +88,14 @@ Measure enemy pressure against what the player can spend.
 
 | Scenario position | Pressure band | Boss hp (`max_hp`) |
 |---|---|---|
-| first scenario of the adventure | 0.3 – 0.5 | 600 – 1000 |
-| middle scenarios | 0.5 – 0.8 | 1000 – 1500 |
-| last scenario of a stage | 0.8 – 1.0, peaks to 1.2 | 1500 – 2000 |
-| final scenario of the adventure | 0.8 – 1.0, one peak ≤ 1.3 for ≤ 20 s | 2000 – 2500 |
+| first scenario of the adventure | 0.45 – 0.75 | 800 – 1300 |
+| middle scenarios | 0.75 – 1.2 | 1300 – 2000 |
+| last scenario of a stage | 1.2 – 1.5, peaks to 1.8 | 2000 – 2600 |
+| final scenario of the adventure | 1.2 – 1.5, one peak ≤ 2.0 for ≤ 20 s | 2600 – 3300 |
+
+These bands were raised by half on 2026-09-29 after the first playtest found
+the original ones (0.3 – 1.3) far too easy with a starter deck. Treat them as
+the floor, not the target, until more playtests say otherwise.
 
 The adventure after this one starts again near the bottom band: a new
 adventure is chosen freely from the list, so it must not assume the player
