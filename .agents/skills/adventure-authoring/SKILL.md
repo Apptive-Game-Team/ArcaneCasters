@@ -147,15 +147,26 @@ Follow `client/AGENTS.md`, especially `hand-edited-assets.md` and
 
 - `Assets/ScriptableObject/Adventures/<Name>Adventure.asset`: `adventureId`
   matching the database, `iconImage`, `adventureName`, `stages`, `battleTheme`.
-- One `AdventureStageScriptableObject` per stage: `stageId`, `backgroundImage`
-  (the story overlay), `stagePanelPrefab`, and `scenarioStories` for the story
-  shown before each scenario (portraits and localized lines, both languages).
+- One `AdventureStageScriptableObject` per stage: `stageId`, `backgroundImage`,
+  `stageName`, and `scenarioStories` for the story shown before each scenario
+  (portraits and localized lines, both languages).
+- **A stage-select map for every new adventure.** The adventure map screen
+  (`AdventureMapController`) shows the first stage's `backgroundImage` as an
+  867×256 banner and puts one node per stage at fixed normalized waypoints
+  `(0.24, 0.70)`, `(0.42, 0.70)`, `(0.58, 0.70)`, `(0.71, 0.58)`. Draw a new
+  banner in the adventure's theme at that size, with a road that passes under
+  those waypoints, and check it by compositing node circles on it before
+  committing. Reusing another adventure's banner makes every adventure look
+  like the first one. Save it under `Assets/Art/Images/Adventure/`.
+- The map node is one stage, and its play button starts the stage's first
+  unfinished scenario; the caption shows how many of the stage's scenarios are
+  cleared.
 - Localization rows for the adventure name and every story line, in both the
   English and Korean `Adventure` tables.
 - Battle theme: reuse a `BattleThemeScriptableObject` under
   `Assets/ScriptableObject/BattleThemes/`, or make a new one. New theme art
   must match the forest set's canvas sizes and bottom-center pivots listed in
-  `.art/concept/field-environment-prompts/README.md`; the 76 prop placements in
+  `.art/concept/field-environment-prompts/README.md`; the 271 prop placements in
   `GameScene.unity` are shared by every theme and tuned to those sizes. Use the
   client's `make-game-art` skill to generate it.
 
