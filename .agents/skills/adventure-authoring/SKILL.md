@@ -39,7 +39,10 @@ and stage ids must increase with them.
 These exist because the first adventure broke most of them: four matches,
 each "destroy one static structure", one reward at the very end.
 
-1. **Size.** 2–3 stages of 3–4 scenarios. A scenario lasts 90–180 seconds.
+1. **Size follows the story.** An adventure ends at the boss its story builds
+   to; do not pad it with stages after that. The forest is one stage of four
+   matches ending at the vine witch, the fortress two stages of three. A
+   scenario lasts 90–180 seconds. The map shows one node per scenario.
 2. **One new thing per scenario.** Each scenario introduces exactly one element
    the player has not seen in this adventure — a unit type, a trigger reaction,
    a second structure, a win condition — and keeps the earlier ones. Write the
