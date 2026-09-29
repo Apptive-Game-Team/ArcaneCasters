@@ -180,8 +180,11 @@ Follow `client/AGENTS.md`, especially `hand-edited-assets.md` and
   `GameScene.unity` are shared by every theme and tuned to those sizes. Use the
   client's `make-game-art` skill to generate it.
 
-In-match speech (`pve_scenario_event_lines`) is raw text sent by the server and
-is not localized. Match the language of the existing lines.
+In-match speech is localized on the client by the event's `message_key`
+(`pve_<scenario>_<event_id>`): `PveScriptEventHandler` looks the key up in the
+`Adventure` string table and shows the server's `pve_scenario_event_lines` text
+only when the key is missing. Add every new `message_key` to the `Adventure`
+table in English and Korean; the server line stays as the English fallback.
 
 ### 4. Check
 
