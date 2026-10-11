@@ -39,9 +39,13 @@ own home directory does not see these, so open the file by path.
 - `.agents/skills/deploy/SKILL.md` — create or reuse pull requests from `dev`
   to `deploy` across the monorepo root and its submodules, bump each versioned
   component once per promotion, then merge, tag, and release.
+- `.agents/skills/itch-devlog/SKILL.md` — draft an English itch.io devlog
+  with images from the player-facing changes in a commit range.
 - `.agents/skills/game-capacity-test/SKILL.md` — measure how many concurrent
   game sessions a game server holds at a given CPU and memory limit by binary
   searching the bot session count against the loop frame rate.
+- `.agents/skills/x-post/SKILL.md` — draft an English X post with one image
+  from the player-facing changes in a commit range.
 - `.agents/skills/test-env/SKILL.md` — clone the shared game database into a
   local Docker Postgres, apply the WordOnlineDatabase Flyway migrations, and
   run the game, lobby, account, and admin servers against it.
