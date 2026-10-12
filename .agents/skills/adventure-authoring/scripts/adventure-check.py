@@ -33,6 +33,8 @@ FALLBACK_UNIT_VALUE = {
     "electric_slime": 3, "wind_slime": 4, "slime": 3,
     "ember_spirit": 6, "seed_spirit": 8, "fire_child_spirit": 12,
     "fire_tadpole": 5, "lightning_tadpole": 5, "mini_rock": 12,
+    "pve_fire_tadpole": 5, "pve_lightning_tadpole": 5,
+    "pve_corrupted_vine_spirit": 7.5, "pve_corrupted_wind_spirit": 10,
 }
 
 # Pressure bands, as a share of the player's mana income. See SKILL.md.
@@ -154,8 +156,8 @@ def main():
         late = {a["installer_id"] for a in sc_act if a["action_type"] == "InstallObject"}
         every = installed | late
 
-        if not sc_inst:
-            errors.append(f"{tag}: no installer row; the game server rejects the scenario")
+        if not sc_inst and not sc_obj and rule["win_condition"] != "Survive":
+            errors.append(f"{tag}: no installer, no objective and no Survive rule; the game server rejects the scenario")
         for pref in [i["prefab_type"] for i in sc_inst] + [a["prefab_type"] for a in sc_act if a["prefab_type"]]:
             if known_prefabs is not None and pref not in known_prefabs:
                 errors.append(f"{tag}: prefab_type {pref} is not a PrefabType name")
