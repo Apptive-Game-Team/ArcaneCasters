@@ -96,7 +96,7 @@ layer 공통 항목
 
 `target` 과 `aim` 의 차이가 중요하다. 조준점을 지나 계속 날아가는 투사체는 `target` 이다. `wind_blade` 는 맵 끝까지 관통하므로 cast range 만큼 그리는 게 맞다. 조준점에서 끝나는 것은 `aim` 이다. 사거리가 둘 중 어느 것도 아닌 고정 값이면 `target` 에 `length` 를 적는다 — `vine_toss` 의 넝쿨은 조준 방향으로 언제나 6 만큼 나간다.
 
-`grounded` 는 마법이 조준점의 높이까지 겨누는지를 정한다. 유닛을 눌러 시전하면 client 는 그 유닛의 위치를 높이까지 보낸다. 비행 유닛은 높이가 2~3 이다. 대부분의 마법은 server 가 높이를 버리고 바닥 위에서 처리하므로 기본값 `true` 그대로 둔다. `spirit_bomb` 처럼 server 가 높이를 포함한 3차원 ray 를 쏘는 마법만 `false` 를 적는다.
+`grounded` 는 마법이 조준점의 높이까지 겨누는지를 정한다. 유닛을 눌러 시전하면 client 는 그 유닛의 위치를 높이까지 보낸다. 비행 유닛은 높이가 2~3 이다. server 가 그 좌표를 향해 높이까지 3차원으로 겨누는 마법만 `false` 를 적는다. 지금은 `spirit_bomb`(3차원 ray)와 `Shot` 계열로 날아가는 `fire_shot`, `lightning_shot`, `water_shot`, `chain_lightning`, `tide_call`, `boulder_strike`, `wind_blade`, `will_o_wisp` 이다. 높이를 버리는 마법은 기본값 `true` 그대로 둔다. `rock_rolling` 은 높이를 0 으로 눌러 바닥으로 구르고, `vine_toss` 는 바닥에 넝쿨을 깐다.
 
 `grounded` 가 `false` 이면 client 는 lane 을 두 부분으로 그린다.
 
