@@ -189,7 +189,7 @@ EOF
     log "  account source : $SRC_ACCOUNT_HOST:$SRC_ACCOUNT_PORT/$SRC_ACCOUNT_DB (read-only)"
   fi
   cat >&2 <<EOF
-  local clone    : localhost:$LOCAL_DB_PORT/$LOCAL_DB_NAME (container $PG_CONTAINER)
+  local clone    : 127.0.0.1:$LOCAL_DB_PORT/$LOCAL_DB_NAME (container $PG_CONTAINER)
 EOF
 }
 
@@ -223,7 +223,7 @@ start_containers() {
       -e POSTGRES_DB="$LOCAL_DB_NAME" \
       -p "$LOCAL_DB_PORT:5432" \
       "$PG_IMAGE" >/dev/null
-    log "started $PG_CONTAINER on localhost:$LOCAL_DB_PORT"
+    log "started $PG_CONTAINER on 127.0.0.1:$LOCAL_DB_PORT"
   fi
 
   if container_running "$REDIS_CONTAINER"; then
@@ -232,7 +232,7 @@ start_containers() {
     docker rm -f "$REDIS_CONTAINER" >/dev/null 2>&1 || true
     docker run -d --name "$REDIS_CONTAINER" --network "$NET" \
       -p "$LOCAL_REDIS_PORT:6379" redis:7-alpine >/dev/null
-    log "started $REDIS_CONTAINER on localhost:$LOCAL_REDIS_PORT"
+    log "started $REDIS_CONTAINER on 127.0.0.1:$LOCAL_REDIS_PORT"
   fi
 
   wait_for_db
@@ -427,8 +427,8 @@ migrate_all() {
 
 # --- module wiring -----------------------------------------------------------
 
-local_jdbc_url() { printf 'jdbc:postgresql://localhost:%s/%s' "$LOCAL_DB_PORT" "$1"; }
-local_r2dbc_url() { printf 'r2dbc:postgresql://localhost:%s/%s' "$LOCAL_DB_PORT" "$1"; }
+local_jdbc_url() { printf 'jdbc:postgresql://127.0.0.1:%s/%s' "$LOCAL_DB_PORT" "$1"; }
+local_r2dbc_url() { printf 'r2dbc:postgresql://127.0.0.1:%s/%s' "$LOCAL_DB_PORT" "$1"; }
 
 # Every module's application.yml defaults management.server.port to 8081, so
 # the second server to start fails with "Port 8081 was already in use". The
@@ -458,7 +458,7 @@ module_env_pairs() {
       printf 'DATABASE_URL=%s\n' "$(local_r2dbc_url "$LOCAL_DB_NAME")"
       printf 'DATABASE_USERNAME=%s\n' "$LOCAL_DB_USER"
       printf 'DATABASE_PASSWORD=%s\n' "$LOCAL_DB_PASSWORD"
-      printf 'REDIS_HOST=%s\n' localhost
+      printf 'REDIS_HOST=%s\n' 127.0.0.1
       printf 'REDIS_PORT=%s\n' "$LOCAL_REDIS_PORT"
       ;;
     admin)
@@ -500,7 +500,7 @@ module_boot_args() {
       printf -- '--spring.r2dbc.url=%s ' "$(local_r2dbc_url "$LOCAL_DB_NAME")"
       printf -- '--spring.r2dbc.username=%s ' "$LOCAL_DB_USER"
       printf -- '--spring.r2dbc.password=%s ' "$LOCAL_DB_PASSWORD"
-      printf -- '--spring.data.redis.host=localhost '
+      printf -- '--spring.data.redis.host=127.0.0.1 '
       printf -- '--spring.data.redis.port=%s' "$LOCAL_REDIS_PORT"
       ;;
     # The database settings come from .env via env-patch, but the actuator port
@@ -742,10 +742,10 @@ cmd_status() {
   for c in "$PG_CONTAINER" "$REDIS_CONTAINER"; do
     if container_running "$c"; then log "  $c: running"; else log "  $c: stopped"; fi
   done
-  log "  clone   : jdbc:postgresql://localhost:$LOCAL_DB_PORT/$LOCAL_DB_NAME"
-  log "  r2dbc   : r2dbc:postgresql://localhost:$LOCAL_DB_PORT/$LOCAL_DB_NAME"
+  log "  clone   : jdbc:postgresql://127.0.0.1:$LOCAL_DB_PORT/$LOCAL_DB_NAME"
+  log "  r2dbc   : r2dbc:postgresql://127.0.0.1:$LOCAL_DB_PORT/$LOCAL_DB_NAME"
   log "  user/pw : $LOCAL_DB_USER / $LOCAL_DB_PASSWORD"
-  log "  redis   : localhost:$LOCAL_REDIS_PORT"
+  log "  redis   : 127.0.0.1:$LOCAL_REDIS_PORT"
 
   local module pidfile
   for module in $SERVE_MODULES; do

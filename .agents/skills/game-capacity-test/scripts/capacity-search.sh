@@ -54,7 +54,7 @@ while [ $# -gt 0 ]; do
 done
 
 metric() { # metric <name>; prints the value or nothing
-    curl -sf --max-time 5 "http://localhost:$MGMT_PORT/actuator/prometheus" 2>/dev/null \
+    curl -sf --max-time 5 "http://127.0.0.1:$MGMT_PORT/actuator/prometheus" 2>/dev/null \
         | awk -v name="$1" '$1 ~ "^"name"[{ ]" { print $NF; exit }'
 }
 
@@ -106,7 +106,7 @@ trial() { # trial <target sessions>
     start_container "$target"
 
     while [ "$waited" -lt "$BOOT_TIMEOUT" ]; do
-        curl -sf --max-time 5 "http://localhost:$MGMT_PORT/actuator/health" 2>/dev/null | grep -q '"UP"' && break
+        curl -sf --max-time 5 "http://127.0.0.1:$MGMT_PORT/actuator/health" 2>/dev/null | grep -q '"UP"' && break
         alive || { T_NOTE="container exited during boot"; return; }
         sleep 3; waited=$((waited + 3))
     done
