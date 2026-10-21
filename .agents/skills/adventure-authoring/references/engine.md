@@ -8,13 +8,14 @@ and what each value does. Anything not listed here needs a game server change.
 | column | meaning |
 |---|---|
 | `installer_id` | name used by objectives, events, and actions in this scenario |
-| `prefab_type` | a `PrefabType` enum name; bosses are `PveNatureSlimeNest`, `PveWaterSlimeNest`, `PveVineColony`, `PveVineWitch`, but any unit or building works |
+| `prefab_type` | a `PrefabType` enum name; bosses are `PveNatureSlimeNest`, `PveWaterSlimeNest`, `PveVineColony`, `PveVineWitch`, `PveBrickGolem`, but any unit or building works. `PveBrickGolem` never moves and hits ground units only: every `attack_interval` it marks a spot for 1.0 s and slams it (`damage` within `effect_radius`), and every `sub_attack_interval` it sweeps a 120 degree arc within `sub_attack_range` of its centre (`sub_damage` and a knockback) |
 | `master` | always `RightPlayer` for enemies |
 | `position_x`, `position_y`, `position_z` | enemy side is x = 14, y = 0, lanes z = 3, 5, 7 |
 | `max_hp` | NULL keeps the prefab's `hp` parameter; a value overrides it for this installer only |
 | `sort_order` | install order |
 
-A scenario with no installer row fails to load. Installed objects never expire:
+A scenario with no installer row and no objective row fails to load, unless its `pve_scenario_rules`
+row says `Survive`: a `Survive` scenario may start with no structure. Installed objects never expire:
 the engine removes a borrowed building's `TimedSelfDestroyer` once it starts,
 and applies `max_hp` at that same moment (components exist only after the
 object's first frame).
@@ -61,6 +62,8 @@ Every object an action creates belongs to `RightPlayer`.
 | `SpawnWave` | spawn `count` × `prefab_type` at (`position_x`, `position_z`), 0.5 apart on x | `prefab_type`, `count`, `position_x`, `position_z` |
 | `InstallObject` | install a new structure under `installer_id`; later events, speakers, and objectives can name it | `installer_id`, `prefab_type`, `position_x`, `position_z`, optional `max_hp` |
 | `SetSpawner` | replace the periodic spawner on `installer_id` with `count` × `prefab_type` every `interval_seconds`; `count = 0` removes it | `installer_id`, `count`, and `prefab_type` + `interval_seconds` when `count > 0` |
+| `PlayBgm` | switch the match music to the client's `bgmEntries` entry named `bgm_key` (`boss` is the boss track); NULL returns to the scene's default track. A reconnecting client gets the current value back | `bgm_key` |
+| `PullPlayerUnits` | every live `LeftPlayer` summon (a moving unit; not the player master, not buildings) stops acting, is dragged to the position of `installer_id` over 1.5 s, then destroyed; if that installer is not installed, the summons are destroyed in place. Leave about 12 s without a wave after it so the player's mana refills | `installer_id` |
 
 Wave units keep their normal parameters, shared with PVP. Difficulty comes from
 count, timing, lane, and structure `max_hp`.

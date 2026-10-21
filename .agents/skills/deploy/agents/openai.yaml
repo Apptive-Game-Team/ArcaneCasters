@@ -1,4 +1,4 @@
 interface:
   display_name: "Deploy"
-  short_description: "Bump, merge, tag, and release changed dev branches into deploy"
+  short_description: "Bump, merge, tag, release, then suggest X and itch.io posts"
   default_prompt: "Use $deploy to bump, merge, tag, and release eligible dev branches into deploy."

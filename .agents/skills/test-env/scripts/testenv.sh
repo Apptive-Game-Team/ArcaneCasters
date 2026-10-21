@@ -13,10 +13,17 @@ set -euo pipefail
 
 # --- constants ---------------------------------------------------------------
 
-NET=wordonline-testenv
-PG_CONTAINER=wordonline-testenv-db
-REDIS_CONTAINER=wordonline-testenv-redis
-DUMP_VOLUME=wordonline-testenv-dumps
+# Every Docker name this script owns is derived from one prefix so that two
+# checkouts can hold two independent environments at once. Parallel sessions are
+# normal here, and a second `up` under the old fixed names silently recreated the
+# first session's containers out from under its running servers. Override with
+# LOCAL_INSTANCE in .db.env. load_config re-derives these; the assignments here
+# are the defaults for the few paths that run before it.
+LOCAL_INSTANCE=${LOCAL_INSTANCE:-wordonline-testenv}
+NET=$LOCAL_INSTANCE
+PG_CONTAINER=$LOCAL_INSTANCE-db
+REDIS_CONTAINER=$LOCAL_INSTANCE-redis
+DUMP_VOLUME=$LOCAL_INSTANCE-dumps
 
 # game and lobby take their database settings as Spring command-line arguments,
 # which outrank the module .env. account and admin are wired through .env
@@ -76,14 +83,43 @@ load_config() {
   # hands the client. The IPv4 literal, never `localhost` - see
   # retire_foreign_game_servers.
   : "${LOCAL_GAME_DOMAIN:=127.0.0.1}"
+  # The application ports, pinned here rather than read from each module's .env.
+  # The Unity client hardcodes its local entries - MatchingServerOption.Local is
+  # localhost:6209 and the game server entry is 7777 - so a port that follows a
+  # gitignored per-developer PORT= line puts the server somewhere the client
+  # cannot reach, and the client shows no error that names the port.
+  : "${LOCAL_LOBBY_PORT:=6209}"
+  : "${LOCAL_GAME_PORT:=7777}"
   : "${LOCAL_MANAGEMENT_PORT_BASE:=58080}"
   : "${LOCAL_POSTGRES_IMAGE:=}"
   : "${FLYWAY_IMAGE:=flyway/flyway:11}"
   : "${ACCOUNT_MIGRATION_DIR:=}"
+  : "${LOCAL_INSTANCE:=wordonline-testenv}"
+  # Where the game chain lives. Defaults to the database submodule, but a Git
+  # worktree holding an unmerged migration can be pointed at instead, which
+  # avoids checking that branch out in a shared submodule.
+  : "${GAME_MIGRATION_DIR:=$ROOT/database/migration}"
 
-  [ -n "$SOURCE_DATABASE_URL" ] || die "SOURCE_DATABASE_URL is empty in .db.env"
-  [ -n "$SOURCE_DATABASE_USER" ] || die "SOURCE_DATABASE_USER is empty in .db.env"
-  [ -n "$SOURCE_DATABASE_PASSWORD" ] || die "SOURCE_DATABASE_PASSWORD is empty in .db.env"
+  NET=$LOCAL_INSTANCE
+  PG_CONTAINER=$LOCAL_INSTANCE-db
+  REDIS_CONTAINER=$LOCAL_INSTANCE-redis
+  DUMP_VOLUME=$LOCAL_INSTANCE-dumps
+
+  [ -d "$GAME_MIGRATION_DIR" ] || die "game migrations not found at $GAME_MIGRATION_DIR. Initialize submodules first, or set GAME_MIGRATION_DIR in .db.env."
+  local migration_count
+  migration_count=$(find "$GAME_MIGRATION_DIR" -name 'V*.sql' | wc -l | tr -d ' ')
+  [ "$migration_count" -gt 0 ] || die "no migrations found in $GAME_MIGRATION_DIR"
+  log "game migrations: $migration_count in $GAME_MIGRATION_DIR"
+
+  # A source-less .db.env is valid: an --empty environment never reads one, and
+  # down, status and psql never did either. Only the clone path requires it, and
+  # require_source is what enforces that, so configuring no source does not stop
+  # you tearing an environment down.
+  if [ -z "$SOURCE_DATABASE_URL" ]; then
+    SRC_HOST= SRC_PORT= SRC_DB=
+    SRC_ACCOUNT_HOST= SRC_ACCOUNT_PORT= SRC_ACCOUNT_DB=
+    return
+  fi
 
   parse_url "$SOURCE_DATABASE_URL"
   SRC_HOST=$PU_HOST SRC_PORT=$PU_PORT SRC_DB=$PU_DB
@@ -123,12 +159,10 @@ parse_url() {
 preflight() {
   command -v docker >/dev/null 2>&1 || die "docker not found. This skill runs every database tool in a container."
   docker info >/dev/null 2>&1 || die "docker daemon not reachable. Start Docker and retry."
-  [ -d "$ROOT/database/migration" ] || die "database/migration missing. Initialize submodules first: git submodule update --init --recursive"
-
-  local count
-  count=$(find "$ROOT/database/migration" -name 'V*.sql' | wc -l | tr -d ' ')
-  [ "$count" -gt 0 ] || die "no migrations found in database/migration"
-  log "preflight ok: docker present, $count migrations in database/migration"
+  # The migration directory is configurable and resolved in load_config, which
+  # runs after this, so counting it here would report the submodule even when
+  # GAME_MIGRATION_DIR points elsewhere. load_config checks and reports it.
+  log "preflight ok: docker present"
 }
 
 # --- docker helpers ----------------------------------------------------------
@@ -178,8 +212,26 @@ resolve_pg_image() {
 # --- confirmation ------------------------------------------------------------
 
 ASSUME_YES=0
+# --empty: build the database from the migration chain instead of cloning a
+# shared one. V001 is a self-contained baseline, so an empty build now reaches
+# the same schema a clone does, without touching a shared database at all.
+BUILD_EMPTY=0
+
+require_source() {
+  [ -n "$SOURCE_DATABASE_URL" ] || die "SOURCE_DATABASE_URL is empty in .db.env. Set it, or use 'up --empty' to build from the migration chain."
+  [ -n "$SOURCE_DATABASE_USER" ] || die "SOURCE_DATABASE_USER is empty in .db.env"
+  [ -n "$SOURCE_DATABASE_PASSWORD" ] || die "SOURCE_DATABASE_PASSWORD is empty in .db.env"
+}
 
 show_target() {
+  if [ "$BUILD_EMPTY" = 1 ]; then
+    cat >&2 <<EOF
+
+  source         : none, built from $GAME_MIGRATION_DIR
+  local database : localhost:$LOCAL_DB_PORT/$LOCAL_DB_NAME (container $PG_CONTAINER)
+EOF
+    return
+  fi
   cat >&2 <<EOF
 
   source label   : $SOURCE_LABEL
@@ -330,7 +382,12 @@ migrate_database() {
   local has_history
   has_history=$(local_psql "$db" -tAc \
     "SELECT to_regclass('public.flyway_schema_history') IS NOT NULL" | tr -d ' \r')
-  if [ "$has_history" != t ]; then
+  # An empty build has no history by definition: Flyway creates it on the first
+  # migrate. The guard below exists for clones, where a missing history means the
+  # source was never Flyway-managed and resuming a chain against it would lie.
+  if [ "$has_history" != t ] && [ "$BUILD_EMPTY" = 1 ]; then
+    log "$db has no flyway_schema_history yet; building it from $label"
+  elif [ "$has_history" != t ]; then
     die "the $db clone has no flyway_schema_history table.
 Its source database is not Flyway-managed, so a migration chain cannot be
 resumed against it. Do not baseline it to force the migrations through: that
@@ -403,7 +460,7 @@ retire_foreign_game_servers() {
 }
 
 migrate_all() {
-  migrate_database "$LOCAL_DB_NAME" "$ROOT/database/migration" "database/migration"
+  migrate_database "$LOCAL_DB_NAME" "$GAME_MIGRATION_DIR" "${GAME_MIGRATION_DIR#"$ROOT/"}"
 
   # The account server owns a separate database, and as of today the account
   # repository has no migration chain at all: no Flyway dependency, no history
@@ -485,6 +542,12 @@ module_env_pairs() {
 module_boot_args() {
   case $1 in
     game)
+      # Both, always. `server.port` is where this process listens; `server.external-port`
+      # is what it writes into `servers`, which is the port the lobby hands the client as
+      # webSocketUrl. Pinning only the first leaves the client dialling a port nothing is
+      # bound to, and the only symptom is a connection that never completes.
+      printf -- '--server.port=%s ' "$LOCAL_GAME_PORT"
+      printf -- '--server.external-port=%s ' "$LOCAL_GAME_PORT"
       printf -- '--management.server.port=%s ' "$(module_management_port game)"
       printf -- '--spring.datasource.url=%s ' "$(local_jdbc_url "$LOCAL_DB_NAME")"
       printf -- '--spring.datasource.username=%s ' "$LOCAL_DB_USER"
@@ -496,6 +559,7 @@ module_boot_args() {
       printf -- '--server.domain=%s' "$LOCAL_GAME_DOMAIN"
       ;;
     lobby)
+      printf -- '--server.port=%s ' "$LOCAL_LOBBY_PORT"
       printf -- '--management.server.port=%s ' "$(module_management_port lobby)"
       printf -- '--spring.r2dbc.url=%s ' "$(local_r2dbc_url "$LOCAL_DB_NAME")"
       printf -- '--spring.r2dbc.username=%s ' "$LOCAL_DB_USER"
@@ -605,8 +669,10 @@ serve() {
     holder=$(port_holder "$app_port")
     [ -z "$holder" ] || die "$module cannot start: port $app_port is already in use by $holder.
 This skill did not start it — it is most likely the same module running from
-another checkout, or another session. Stop that process, or change PORT in
-$module/.env."
+another checkout, or another session. Stop that process. Moving the port instead
+means the Unity client's hardcoded local entry no longer reaches this server; if
+you must, set LOCAL_LOBBY_PORT or LOCAL_GAME_PORT in .db.env, not PORT in
+$module/.env, which this skill no longer reads for game or lobby."
   fi
 
   local args
@@ -681,6 +747,7 @@ cmd_up() {
   while [ $# -gt 0 ]; do
     case $1 in
       --yes) ASSUME_YES=1 ;;
+      --empty) BUILD_EMPTY=1 ;;
       --with) shift; with=${1:-} ;;
       --with=*) with=${1#--with=} ;;
       *) die "unknown option for up: $1" ;;
@@ -708,19 +775,29 @@ cmd_up() {
     esac
   done
 
-  resolve_pg_image
-  confirm
-  start_containers
+  if [ "$BUILD_EMPTY" = 1 ]; then
+    # No source to match a major version against, so take the pinned image or
+    # the default. start_containers creates LOCAL_DB_NAME empty; Flyway fills it.
+    PG_IMAGE=${LOCAL_POSTGRES_IMAGE:-postgres:17-alpine}
+    log "postgres image: $PG_IMAGE (no source to match)"
+    confirm
+    start_containers
+  else
+    require_source
+    resolve_pg_image
+    confirm
+    start_containers
 
-  dump_and_restore "game database" \
-    "$SRC_HOST" "$SRC_PORT" "$SRC_DB" "$SOURCE_DATABASE_USER" "$SOURCE_DATABASE_PASSWORD" \
-    "$LOCAL_DB_NAME" game.dump
+    dump_and_restore "game database" \
+      "$SRC_HOST" "$SRC_PORT" "$SRC_DB" "$SOURCE_DATABASE_USER" "$SOURCE_DATABASE_PASSWORD" \
+      "$LOCAL_DB_NAME" game.dump
 
-  if [ -n "$SRC_ACCOUNT_DB" ]; then
-    dump_and_restore "account database" \
-      "$SRC_ACCOUNT_HOST" "$SRC_ACCOUNT_PORT" "$SRC_ACCOUNT_DB" \
-      "$SOURCE_ACCOUNT_DATABASE_USER" "$SOURCE_ACCOUNT_DATABASE_PASSWORD" \
-      "$LOCAL_ACCOUNT_DB_NAME" account.dump
+    if [ -n "$SRC_ACCOUNT_DB" ]; then
+      dump_and_restore "account database" \
+        "$SRC_ACCOUNT_HOST" "$SRC_ACCOUNT_PORT" "$SRC_ACCOUNT_DB" \
+        "$SOURCE_ACCOUNT_DATABASE_USER" "$SOURCE_ACCOUNT_DATABASE_PASSWORD" \
+        "$LOCAL_ACCOUNT_DB_NAME" account.dump
+    fi
   fi
 
   migrate_all
@@ -768,7 +845,15 @@ port_holder() {
   printf '%s' "$out"
 }
 
+# game and lobby are pinned by module_boot_args, so their .env PORT= line never
+# decides where they listen and must not be consulted here either - the collision
+# check and the port map would otherwise report a port nothing is bound to.
+# account and admin take no --server.port, so they still come from .env.
 module_app_port() {
+  case $1 in
+    game)  printf '%s' "$LOCAL_GAME_PORT"; return ;;
+    lobby) printf '%s' "$LOCAL_LOBBY_PORT"; return ;;
+  esac
   local file="$ROOT/$1/.env" port=""
   [ -f "$file" ] && port=$(grep -m1 '^PORT=' "$file" | cut -d= -f2- | tr -d '\r')
   printf '%s' "${port:-unset}"
@@ -851,10 +936,12 @@ usage() {
   cat >&2 <<EOF
 testenv.sh - local test environment cloned from the shared game database
 
-  up [--yes] [--with game,lobby]
-      Clone the source database into a local Docker Postgres, apply
-      database/migration with Flyway, and optionally start servers.
+  up [--yes] [--empty] [--with game,lobby]
+      Clone the source database into a local Docker Postgres, apply the game
+      migration chain with Flyway, and optionally start servers.
       Without --yes it prints the source target and asks for confirmation.
+      --empty skips the clone and builds the database from the migration chain
+      alone. It needs no source credentials and never reads a shared database.
 
   status              Show containers, connection strings, running servers.
   ports               Show the per-module app and actuator port assignment,

@@ -1,3 +1,5 @@
+> Windows 로컬 복원본: 구성 요소는 독립 Git 서브모듈입니다. 보존된 이력과 로컬 Git 저장소 안내는 [MONOREPO-WINDOWS.md](MONOREPO-WINDOWS.md)를 확인하세요.
+
 # WordOnline
 
 WordOnline은 Unity 클라이언트와 독립적으로 배포되는 여러 백엔드 서비스로 구성된 온라인 멀티플레이어 게임 플랫폼입니다. 이 저장소는 각 구성 요소를 Git 서브모듈로 관리하며, 시스템 전반의 개발 진입점 역할을 합니다.

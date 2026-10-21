@@ -1,6 +1,6 @@
 ---
 name: deploy
-description: Create or reuse GitHub pull requests from dev to deploy across the ArcaneCasters monorepo root and its Git submodules, bump each versioned component once per promotion, then merge, tag, and release. Use when the user invokes $deploy or asks to promote, merge, or deploy all eligible repository dev branches into deploy.
+description: Create or reuse GitHub pull requests from dev to deploy across the ArcaneCasters monorepo root and its Git submodules, bump each versioned component once per promotion, then merge, tag, and release, and finish by suggesting an X post and an itch.io devlog and opening a draft website news entry for the player-facing changes. Use when the user invokes $deploy or asks to promote, merge, or deploy all eligible repository dev branches into deploy.
 ---
 
 # Deploy Dev Branches
@@ -98,6 +98,12 @@ release. Every other repository is promoted without any of the three.
      ```
 
    - If count is `0`, mark `skipped: up to date`. Do not create a PR.
+   - Record the pre-merge `deploy` SHA. Step 12 needs it: after the merge,
+     `origin/deploy..origin/dev` is empty and no longer shows what shipped.
+
+     ```bash
+     git -C <path> rev-parse origin/deploy
+     ```
 
 4. Build the release plan for the versioned components:
 
@@ -262,6 +268,21 @@ release. Every other repository is promoted without any of the three.
     | owner/repo | 2 | 0.1.0 to 0.1.1 | URL | blocked: checks failed |
 
     End with totals for `merged`, `released`, `skipped`, `blocked`, and `failed`.
+
+12. After the report, suggest posts for the player-facing changes in the chat.
+    Pass each merged repository's range, from the pre-merge `deploy` SHA
+    recorded in step 3 to `origin/deploy`, to these two skills:
+
+    - [`x-post`](../x-post/SKILL.md): an English X post with one image.
+    - [`itch-devlog`](../itch-devlog/SKILL.md): an English itch.io devlog with
+      the images to attach.
+
+    Never post or publish either one; the user does that by hand.
+
+    Then pass the same ranges to [`website-news`](../website-news/SKILL.md),
+    which adds a Korean and English entry with images to the website's update
+    news page and opens a draft pull request in `website`. Leave that pull
+    request in draft; the user reviews the copy before it ships.
 
 ## Failure Handling
 

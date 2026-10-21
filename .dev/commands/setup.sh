@@ -88,7 +88,7 @@ setup_env_source() {
     SOURCE_FILE="$DEV_ROOT/admin/.env"
     url_key=DEV_DATABASE_URL user_key=DEV_DATABASE_USER pw_key=DEV_DATABASE_PW
   else
-    die "game/.env 도 admin/.env 도 없습니다. submodule 이 초기화되지 않았습니다. 실행: git submodule update --init --recursive"
+    die "game/.env 도 admin/.env 도 없습니다. 로컬 환경 파일을 준비하십시오. MONOREPO-WINDOWS.md 를 확인하십시오."
   fi
 
   local label="${SOURCE_FILE#"$DEV_ROOT"/}"
@@ -190,7 +190,7 @@ check_migrations() {
   local dir="$DEV_ROOT/database/migration"
   if [ ! -d "$dir" ]; then
     printf 'FAIL  database/migration 이 없습니다\n'
-    printf '      -> git submodule update --init --recursive\n'
+    printf '      -> database/migration 파일이 포함된 로컬 checkout 을 확인하십시오\n'
     return 1
   fi
 
@@ -198,7 +198,7 @@ check_migrations() {
   count=$(find "$dir" -name 'V*.sql' | wc -l | tr -d ' ')
   if [ "$count" -eq 0 ]; then
     printf 'FAIL  database/migration 은 있지만 migration 파일(V*.sql)이 없습니다\n'
-    printf '      -> git submodule update --init --recursive\n'
+    printf '      -> database/migration 파일이 포함된 로컬 checkout 을 확인하십시오\n'
     return 1
   fi
 

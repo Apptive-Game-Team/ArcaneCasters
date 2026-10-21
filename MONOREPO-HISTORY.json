@@ -1,0 +1,4536 @@
+[
+  {
+    "origin": "wsl",
+    "component": "",
+    "head": "8f5da0e30ee634888f53b33ba518d517ad6313bf",
+    "refs": [
+      {
+        "original": "refs/heads/chore/rust-submodule",
+        "archived": "refs/archive/wsl-root/heads/chore/rust-submodule",
+        "oid": "2f9583a6d0825a7ca369331c9656cee48a647fa7"
+      },
+      {
+        "original": "refs/heads/dev",
+        "archived": "refs/archive/wsl-root/heads/dev",
+        "oid": "8f5da0e30ee634888f53b33ba518d517ad6313bf"
+      },
+      {
+        "original": "refs/heads/docs/post-skills",
+        "archived": "refs/archive/wsl-root/heads/docs/post-skills",
+        "oid": "417f42fd1fddfce36ddf6d54f73f266e8ec8fc1e"
+      },
+      {
+        "original": "refs/heads/documentation/19",
+        "archived": "refs/archive/wsl-root/heads/documentation/19",
+        "oid": "37015bbf69a2e7c728f7f74b8713e3e4effceb9a"
+      },
+      {
+        "original": "refs/heads/fix/loopback-ipv4",
+        "archived": "refs/archive/wsl-root/heads/fix/loopback-ipv4",
+        "oid": "07790a55754da9f1bae5d3f8b13ba95219c8d3d5"
+      },
+      {
+        "original": "refs/remotes/origin/chore/rust-submodule",
+        "archived": "refs/archive/wsl-root/remotes/origin/chore/rust-submodule",
+        "oid": "2f9583a6d0825a7ca369331c9656cee48a647fa7"
+      },
+      {
+        "original": "refs/remotes/origin/codex/fire-shot-preview",
+        "archived": "refs/archive/wsl-root/remotes/origin/codex/fire-shot-preview",
+        "oid": "467e47ca14d5c68fe7141676978ca28433113608"
+      },
+      {
+        "original": "refs/remotes/origin/codex/infantry-mortar",
+        "archived": "refs/archive/wsl-root/remotes/origin/codex/infantry-mortar",
+        "oid": "1c735685dafe9bcfe199d4c6f51bdbe1d08f1e9a"
+      },
+      {
+        "original": "refs/remotes/origin/dev",
+        "archived": "refs/archive/wsl-root/remotes/origin/dev",
+        "oid": "2ab6ee77e5a3624e92a91d1a8b89c31bb8154dcd"
+      },
+      {
+        "original": "refs/remotes/origin/fix/loopback-ipv4",
+        "archived": "refs/archive/wsl-root/remotes/origin/fix/loopback-ipv4",
+        "oid": "07790a55754da9f1bae5d3f8b13ba95219c8d3d5"
+      },
+      {
+        "original": "HEAD",
+        "archived": "refs/archive/wsl-root/snapshot",
+        "oid": "8f5da0e30ee634888f53b33ba518d517ad6313bf"
+      },
+      {
+        "original": "worktrees/rust-submodule/HEAD",
+        "archived": "refs/archive/wsl-root/worktrees/rust-submodule/HEAD",
+        "oid": "2f9583a6d0825a7ca369331c9656cee48a647fa7"
+      }
+    ]
+  },
+  {
+    "origin": "wsl",
+    "component": "account",
+    "head": "f520eb7dec053899dc46e7a7c019ec556338a2d7",
+    "refs": [
+      {
+        "original": "refs/heads/bug/100",
+        "archived": "refs/archive/wsl-account/heads/bug/100",
+        "oid": "2989f689c8d854f82dad663078669f910994259a"
+      },
+      {
+        "original": "refs/heads/dev",
+        "archived": "refs/archive/wsl-account/heads/dev",
+        "oid": "332c58f07f0e4f102889f9c575955818c6dfcd1b"
+      },
+      {
+        "original": "refs/heads/feature/69",
+        "archived": "refs/archive/wsl-account/heads/feature/69",
+        "oid": "f520eb7dec053899dc46e7a7c019ec556338a2d7"
+      },
+      {
+        "original": "refs/heads/feature/87",
+        "archived": "refs/archive/wsl-account/heads/feature/87",
+        "oid": "bd319183e049e289a2b0267e7f90dd5317b78ebb"
+      },
+      {
+        "original": "refs/heads/feature/91",
+        "archived": "refs/archive/wsl-account/heads/feature/91",
+        "oid": "3e12c4f1cb05520329e40a28c5674691ec935257"
+      },
+      {
+        "original": "refs/heads/feature/98",
+        "archived": "refs/archive/wsl-account/heads/feature/98",
+        "oid": "4d59307212e5301c811fa80aa6aefc975e3846d7"
+      },
+      {
+        "original": "refs/heads/fix/94",
+        "archived": "refs/archive/wsl-account/heads/fix/94",
+        "oid": "0890195d7eacb164c3cf2d594a7eb4b69b234267"
+      },
+      {
+        "original": "refs/heads/fix/loopback-ipv4",
+        "archived": "refs/archive/wsl-account/heads/fix/loopback-ipv4",
+        "oid": "d464dab732f615fe0c549abc8d417147c8201421"
+      },
+      {
+        "original": "refs/remotes/origin/HEAD",
+        "archived": "refs/archive/wsl-account/remotes/origin/HEAD",
+        "oid": "3163e6d3319ba478b0a87d0d43ea183094fa9eaf"
+      },
+      {
+        "original": "refs/remotes/origin/bug/100",
+        "archived": "refs/archive/wsl-account/remotes/origin/bug/100",
+        "oid": "2989f689c8d854f82dad663078669f910994259a"
+      },
+      {
+        "original": "refs/remotes/origin/chore/merge-deploy-into-dev",
+        "archived": "refs/archive/wsl-account/remotes/origin/chore/merge-deploy-into-dev",
+        "oid": "dec5ddc14722230a490225c83b45c5ce0c47c60c"
+      },
+      {
+        "original": "refs/remotes/origin/claude/virtual-thread-enable-bk68vf",
+        "archived": "refs/archive/wsl-account/remotes/origin/claude/virtual-thread-enable-bk68vf",
+        "oid": "3d1848c40abbe02d164c107e573453857b59bb10"
+      },
+      {
+        "original": "refs/remotes/origin/code-health/remove-unused-authorization-service-13696193406157931768",
+        "archived": "refs/archive/wsl-account/remotes/origin/code-health/remove-unused-authorization-service-13696193406157931768",
+        "oid": "26b3a3594d83c53e7ee3b80749c9b53051245d75"
+      },
+      {
+        "original": "refs/remotes/origin/code-health/remove-unused-import-gamedbconfig-3927882048019406548",
+        "archived": "refs/archive/wsl-account/remotes/origin/code-health/remove-unused-import-gamedbconfig-3927882048019406548",
+        "oid": "3d81f995d984586326e75c3eac5a4414ac9fbb4e"
+      },
+      {
+        "original": "refs/remotes/origin/code-health/remove-unused-imports-token-controller-13449744284231293187",
+        "archived": "refs/archive/wsl-account/remotes/origin/code-health/remove-unused-imports-token-controller-13449744284231293187",
+        "oid": "c39fddfece72a96b0d44c16c3f0aaaf3a944faba"
+      },
+      {
+        "original": "refs/remotes/origin/copilot/implement-jwks-endpoint",
+        "archived": "refs/archive/wsl-account/remotes/origin/copilot/implement-jwks-endpoint",
+        "oid": "21f8832c52e923733760e747204d63a30a52ed4e"
+      },
+      {
+        "original": "refs/remotes/origin/deploy",
+        "archived": "refs/archive/wsl-account/remotes/origin/deploy",
+        "oid": "00b4a2aec2f3f39c719854cb27f789b0a1bc989f"
+      },
+      {
+        "original": "refs/remotes/origin/dev",
+        "archived": "refs/archive/wsl-account/remotes/origin/dev",
+        "oid": "92ca88f70d51a2443fb662d50517e454fa90a975"
+      },
+      {
+        "original": "refs/remotes/origin/feature/36",
+        "archived": "refs/archive/wsl-account/remotes/origin/feature/36",
+        "oid": "e75559ee0b495a3bfc41e7f80410459929863f22"
+      },
+      {
+        "original": "refs/remotes/origin/feature/42",
+        "archived": "refs/archive/wsl-account/remotes/origin/feature/42",
+        "oid": "c8b57867c3e9e613f557e80dc8becff8db6c051a"
+      },
+      {
+        "original": "refs/remotes/origin/feature/53",
+        "archived": "refs/archive/wsl-account/remotes/origin/feature/53",
+        "oid": "61e1f5e5961f7992ff567655aaed1fdb6a273a8e"
+      },
+      {
+        "original": "refs/remotes/origin/feature/87",
+        "archived": "refs/archive/wsl-account/remotes/origin/feature/87",
+        "oid": "bd319183e049e289a2b0267e7f90dd5317b78ebb"
+      },
+      {
+        "original": "refs/remotes/origin/feature/91",
+        "archived": "refs/archive/wsl-account/remotes/origin/feature/91",
+        "oid": "3e12c4f1cb05520329e40a28c5674691ec935257"
+      },
+      {
+        "original": "refs/remotes/origin/feature/98",
+        "archived": "refs/archive/wsl-account/remotes/origin/feature/98",
+        "oid": "4d59307212e5301c811fa80aa6aefc975e3846d7"
+      },
+      {
+        "original": "refs/remotes/origin/fix/19",
+        "archived": "refs/archive/wsl-account/remotes/origin/fix/19",
+        "oid": "70c25c6c2e4f1d972cd9aa3776068722998be161"
+      },
+      {
+        "original": "refs/remotes/origin/fix/25",
+        "archived": "refs/archive/wsl-account/remotes/origin/fix/25",
+        "oid": "5b464d0fb800ec412911a6e4f31bccead7fb5dc7"
+      },
+      {
+        "original": "refs/remotes/origin/fix/55",
+        "archived": "refs/archive/wsl-account/remotes/origin/fix/55",
+        "oid": "8cccc31e9af08cd00f7ab7cfcab60bdb76419b78"
+      },
+      {
+        "original": "refs/remotes/origin/fix/94",
+        "archived": "refs/archive/wsl-account/remotes/origin/fix/94",
+        "oid": "0890195d7eacb164c3cf2d594a7eb4b69b234267"
+      },
+      {
+        "original": "refs/remotes/origin/fix/csv-reader-stacktrace-exposure-8245614154369419931",
+        "archived": "refs/archive/wsl-account/remotes/origin/fix/csv-reader-stacktrace-exposure-8245614154369419931",
+        "oid": "3fac0a8d7e5fb26ccbf55e77c1ee9d881d3b8e49"
+      },
+      {
+        "original": "refs/remotes/origin/fix/insecure-random-nickname-generator-479319684751332016",
+        "archived": "refs/archive/wsl-account/remotes/origin/fix/insecure-random-nickname-generator-479319684751332016",
+        "oid": "c958926d86a2ab8feaf64b2da18ea7c5f3c76baf"
+      },
+      {
+        "original": "refs/remotes/origin/fix/loopback-ipv4",
+        "archived": "refs/archive/wsl-account/remotes/origin/fix/loopback-ipv4",
+        "oid": "d464dab732f615fe0c549abc8d417147c8201421"
+      },
+      {
+        "original": "refs/remotes/origin/fix/missing-error-handling-admin-endpoints-18107017279349864448",
+        "archived": "refs/archive/wsl-account/remotes/origin/fix/missing-error-handling-admin-endpoints-18107017279349864448",
+        "oid": "4b7ee3ed7f18fd7376d45790dac8f0f33f3f6985"
+      },
+      {
+        "original": "refs/remotes/origin/jules-12140585167916041124-49758385",
+        "archived": "refs/archive/wsl-account/remotes/origin/jules-12140585167916041124-49758385",
+        "oid": "eb4603c125974708d299de63bdb6c6f02003781e"
+      },
+      {
+        "original": "refs/remotes/origin/jules-8159038600057749244-bdceb4a8",
+        "archived": "refs/archive/wsl-account/remotes/origin/jules-8159038600057749244-bdceb4a8",
+        "oid": "8c597ea2ecfc20c931087d970eda13133bd7bde5"
+      },
+      {
+        "original": "refs/remotes/origin/main",
+        "archived": "refs/archive/wsl-account/remotes/origin/main",
+        "oid": "3163e6d3319ba478b0a87d0d43ea183094fa9eaf"
+      },
+      {
+        "original": "refs/remotes/origin/perf/fix-authority-n-plus-1-13547612549585458638",
+        "archived": "refs/archive/wsl-account/remotes/origin/perf/fix-authority-n-plus-1-13547612549585458638",
+        "oid": "4470661674660a26d511bc172aa4ef0a34817412"
+      },
+      {
+        "original": "refs/remotes/origin/perf/fix-member-authority-n-plus-1-8717958167891347014",
+        "archived": "refs/archive/wsl-account/remotes/origin/perf/fix-member-authority-n-plus-1-8717958167891347014",
+        "oid": "f5c1fb23e0668d394dd09d0d8639c9367444203c"
+      },
+      {
+        "original": "refs/remotes/origin/refactor/remove-unused-imports-token-controller-2896959824384384076",
+        "archived": "refs/archive/wsl-account/remotes/origin/refactor/remove-unused-imports-token-controller-2896959824384384076",
+        "oid": "6fa8cbf3fa3cf1ebc34d63aa900a8d618cbc2e8f"
+      },
+      {
+        "original": "refs/remotes/origin/refactor/remove-unused-imports-tokenservicetest-9388120235217741439",
+        "archived": "refs/archive/wsl-account/remotes/origin/refactor/remove-unused-imports-tokenservicetest-9388120235217741439",
+        "oid": "25a81909fbf6ca7b983e8c680a189102e0d6e199"
+      },
+      {
+        "original": "refs/remotes/origin/security/docker-ci-token-fix-11650420540434310662",
+        "archived": "refs/archive/wsl-account/remotes/origin/security/docker-ci-token-fix-11650420540434310662",
+        "oid": "6a72d4335da1ec15a804cab5436ed8c81ad056bb"
+      },
+      {
+        "original": "refs/remotes/origin/testing/csv-list-reader-tests-16067292700348540375",
+        "archived": "refs/archive/wsl-account/remotes/origin/testing/csv-list-reader-tests-16067292700348540375",
+        "oid": "c02da1cd932f3a38a12a8277a38beea460b9a9f3"
+      },
+      {
+        "original": "refs/tags/v0.0.2",
+        "archived": "refs/archive/wsl-account/tags/v0.0.2",
+        "oid": "15f1fb3ad8a5d1b8f907f71f59d6f16f415a5a59"
+      },
+      {
+        "original": "refs/tags/v0.1.0",
+        "archived": "refs/archive/wsl-account/tags/v0.1.0",
+        "oid": "574a28c00a0fea07b27c796d779e80a11a756bf8"
+      },
+      {
+        "original": "refs/tags/v0.2.0",
+        "archived": "refs/archive/wsl-account/tags/v0.2.0",
+        "oid": "3406230f4617dcfbd91a0b6fbe318832fadb1db2"
+      },
+      {
+        "original": "refs/tags/v0.4.0",
+        "archived": "refs/archive/wsl-account/tags/v0.4.0",
+        "oid": "64e1c94fa7e37a355a40c2ac0707bd6d69fb9744"
+      },
+      {
+        "original": "refs/tags/v0.5.0",
+        "archived": "refs/archive/wsl-account/tags/v0.5.0",
+        "oid": "6629c0ef9b790c75530536639745ef0d18c140cc"
+      },
+      {
+        "original": "refs/tags/v0.7.0",
+        "archived": "refs/archive/wsl-account/tags/v0.7.0",
+        "oid": "a691a4e786d7e7f41cebbf319b740c45304749f1"
+      },
+      {
+        "original": "HEAD",
+        "archived": "refs/archive/wsl-account/snapshot",
+        "oid": "f520eb7dec053899dc46e7a7c019ec556338a2d7"
+      }
+    ]
+  },
+  {
+    "origin": "wsl",
+    "component": "admin",
+    "head": "2b558c10c3db94431373447e6d53d0351b81c96f",
+    "refs": [
+      {
+        "original": "refs/heads/feature/34",
+        "archived": "refs/archive/wsl-admin/heads/feature/34",
+        "oid": "25c37d196d60aee487a3d91c0aa3bb87aa0dde3b"
+      },
+      {
+        "original": "refs/heads/feature/36",
+        "archived": "refs/archive/wsl-admin/heads/feature/36",
+        "oid": "6f8e93f40cae3888ff0fb00d3810aa7e3c6dc455"
+      },
+      {
+        "original": "refs/heads/feature/39",
+        "archived": "refs/archive/wsl-admin/heads/feature/39",
+        "oid": "173ff6ab0ed4c19af339a944829f5ce99c8fee8b"
+      },
+      {
+        "original": "refs/heads/fix/loopback-ipv4",
+        "archived": "refs/archive/wsl-admin/heads/fix/loopback-ipv4",
+        "oid": "a3c8efe4c3448a35a639632c14e071dd00f9ccf0"
+      },
+      {
+        "original": "refs/remotes/origin/deploy",
+        "archived": "refs/archive/wsl-admin/remotes/origin/deploy",
+        "oid": "5205d60ad58179b01f9f9fc2d8e82724a46c01ef"
+      },
+      {
+        "original": "refs/remotes/origin/dev",
+        "archived": "refs/archive/wsl-admin/remotes/origin/dev",
+        "oid": "57796efabfb1bcdaa1b5e36c6042e04c21a2789a"
+      },
+      {
+        "original": "refs/remotes/origin/feature/36",
+        "archived": "refs/archive/wsl-admin/remotes/origin/feature/36",
+        "oid": "6f8e93f40cae3888ff0fb00d3810aa7e3c6dc455"
+      },
+      {
+        "original": "refs/remotes/origin/fix/loopback-ipv4",
+        "archived": "refs/archive/wsl-admin/remotes/origin/fix/loopback-ipv4",
+        "oid": "a3c8efe4c3448a35a639632c14e071dd00f9ccf0"
+      },
+      {
+        "original": "refs/tags/v0.10.0",
+        "archived": "refs/archive/wsl-admin/tags/v0.10.0",
+        "oid": "5205d60ad58179b01f9f9fc2d8e82724a46c01ef"
+      },
+      {
+        "original": "refs/tags/v0.6.0",
+        "archived": "refs/archive/wsl-admin/tags/v0.6.0",
+        "oid": "6b59f4f22073e305d2097cf641e46b3ce5a63cd2"
+      },
+      {
+        "original": "refs/tags/v0.7.0",
+        "archived": "refs/archive/wsl-admin/tags/v0.7.0",
+        "oid": "babb8b6d8e0c17e37b44d3351ec84473d53f5af9"
+      },
+      {
+        "original": "refs/tags/v0.7.1",
+        "archived": "refs/archive/wsl-admin/tags/v0.7.1",
+        "oid": "b59f8acc97f1879921c9ef2f34ad03dfd93ab8d5"
+      },
+      {
+        "original": "refs/tags/v0.8.0",
+        "archived": "refs/archive/wsl-admin/tags/v0.8.0",
+        "oid": "977f2e1e071b62d0beab436090cd4b8ca2f3c4fe"
+      },
+      {
+        "original": "refs/tags/v0.9.0",
+        "archived": "refs/archive/wsl-admin/tags/v0.9.0",
+        "oid": "afe1edb26c3b68941289ef222a69c30e1f99f594"
+      },
+      {
+        "original": "refs/tags/v0.9.1",
+        "archived": "refs/archive/wsl-admin/tags/v0.9.1",
+        "oid": "9ec20841eb62f600378521976e8a235294a09bb1"
+      },
+      {
+        "original": "HEAD",
+        "archived": "refs/archive/wsl-admin/snapshot",
+        "oid": "2b558c10c3db94431373447e6d53d0351b81c96f"
+      }
+    ]
+  },
+  {
+    "origin": "wsl",
+    "component": "client",
+    "head": "6914ee33733de71ad66686316a79173a60496b22",
+    "refs": [
+      {
+        "original": "refs/heads/bug/178",
+        "archived": "refs/archive/wsl-client/heads/bug/178",
+        "oid": "a08735e1e09d35a18a17afb1c244fc97e9624548"
+      },
+      {
+        "original": "refs/heads/feature/215",
+        "archived": "refs/archive/wsl-client/heads/feature/215",
+        "oid": "458cfef8d1f3ea643c557448f4bd85c99a3fecc9"
+      },
+      {
+        "original": "refs/heads/feature/268",
+        "archived": "refs/archive/wsl-client/heads/feature/268",
+        "oid": "e2cbef6c27038bcd9dd51d4ea6f2ecc7415ffb3d"
+      },
+      {
+        "original": "refs/heads/feature/271",
+        "archived": "refs/archive/wsl-client/heads/feature/271",
+        "oid": "dc2e1a7ee2364213123e3d5b8ed844a415e90f78"
+      },
+      {
+        "original": "refs/heads/feature/275",
+        "archived": "refs/archive/wsl-client/heads/feature/275",
+        "oid": "681138c8f18e3c36f92e9cdfa6fef90111f8509b"
+      },
+      {
+        "original": "refs/heads/feature/302",
+        "archived": "refs/archive/wsl-client/heads/feature/302",
+        "oid": "f253ae26757ab2ea1a3e0857d83add50252ec12c"
+      },
+      {
+        "original": "refs/heads/feature/303",
+        "archived": "refs/archive/wsl-client/heads/feature/303",
+        "oid": "e34df61192437bcff8602d5ecf6e91fd23d32482"
+      },
+      {
+        "original": "refs/heads/feature/304",
+        "archived": "refs/archive/wsl-client/heads/feature/304",
+        "oid": "812d91101febe60b10a9d5b6ac4d2804880692b9"
+      },
+      {
+        "original": "refs/heads/feature/309",
+        "archived": "refs/archive/wsl-client/heads/feature/309",
+        "oid": "408fd4b4cc3c0413db958c2973798d8f347cf5c9"
+      },
+      {
+        "original": "refs/heads/feature/314",
+        "archived": "refs/archive/wsl-client/heads/feature/314",
+        "oid": "1b3bc37e5eaad4e2c5b1ff54be84fdde3fa3e5d8"
+      },
+      {
+        "original": "refs/heads/feature/317",
+        "archived": "refs/archive/wsl-client/heads/feature/317",
+        "oid": "f3d9ed9cd865cf7a096c80ba0f0c9301bfeab89d"
+      },
+      {
+        "original": "refs/heads/feature/320",
+        "archived": "refs/archive/wsl-client/heads/feature/320",
+        "oid": "f5a92ff728823c217bb89da7539ed5f77e3b6121"
+      },
+      {
+        "original": "refs/heads/feature/329",
+        "archived": "refs/archive/wsl-client/heads/feature/329",
+        "oid": "14e1d55d0aceb394e196a23e9a38e23aad40569c"
+      },
+      {
+        "original": "refs/heads/feature/332",
+        "archived": "refs/archive/wsl-client/heads/feature/332",
+        "oid": "ff03543c65dc4f41f9ab8830d073809ed7d691ab"
+      },
+      {
+        "original": "refs/heads/feature/336",
+        "archived": "refs/archive/wsl-client/heads/feature/336",
+        "oid": "661001a44b8d22cbda34e519fa281a612e8da20a"
+      },
+      {
+        "original": "refs/heads/feature/338",
+        "archived": "refs/archive/wsl-client/heads/feature/338",
+        "oid": "7fb6790370c5442eabb48b04ff3f6fd7ae817581"
+      },
+      {
+        "original": "refs/heads/feature/340",
+        "archived": "refs/archive/wsl-client/heads/feature/340",
+        "oid": "133c6fd1f5e365e770cb3bc94740fa4bc108d23f"
+      },
+      {
+        "original": "refs/heads/feature/345",
+        "archived": "refs/archive/wsl-client/heads/feature/345",
+        "oid": "4d71d01a60feba21ef0bef795e1727cd609f8031"
+      },
+      {
+        "original": "refs/heads/feature/356",
+        "archived": "refs/archive/wsl-client/heads/feature/356",
+        "oid": "dadf30056be95263c143fbbfdab58ce6a859f314"
+      },
+      {
+        "original": "refs/heads/feature/gate-corrupted-spirits",
+        "archived": "refs/archive/wsl-client/heads/feature/gate-corrupted-spirits",
+        "oid": "4fc966f8b3664cbb9263fffb4a75b6a28f563748"
+      },
+      {
+        "original": "refs/heads/feature/gate-story",
+        "archived": "refs/archive/wsl-client/heads/feature/gate-story",
+        "oid": "90d4a4af83e1bfcf035fb39fb2dc6858d4bfbbc7"
+      },
+      {
+        "original": "refs/heads/fix/172",
+        "archived": "refs/archive/wsl-client/heads/fix/172",
+        "oid": "e912dcbca5d02b20a95eb3ab56bb93eff4237e03"
+      },
+      {
+        "original": "refs/heads/fix/269",
+        "archived": "refs/archive/wsl-client/heads/fix/269",
+        "oid": "d7ea88d94186f7e4ba16d8accefb738ea50f9216"
+      },
+      {
+        "original": "refs/heads/fix/270",
+        "archived": "refs/archive/wsl-client/heads/fix/270",
+        "oid": "a8e50521b236cfc847f833485e84aaaed45c47e3"
+      },
+      {
+        "original": "refs/heads/fix/272",
+        "archived": "refs/archive/wsl-client/heads/fix/272",
+        "oid": "d4a15d3f064b329827e987e655941962f9a7b04e"
+      },
+      {
+        "original": "refs/heads/fix/312",
+        "archived": "refs/archive/wsl-client/heads/fix/312",
+        "oid": "a5c0fdde49caecbcf6d64a952bd1f4b49751051c"
+      },
+      {
+        "original": "refs/heads/fix/321",
+        "archived": "refs/archive/wsl-client/heads/fix/321",
+        "oid": "58eb529761eb475148234149dff30670f54ead46"
+      },
+      {
+        "original": "refs/heads/fix/324",
+        "archived": "refs/archive/wsl-client/heads/fix/324",
+        "oid": "bfdf36ce1678b3512416e9d4b60ec3e548ffb539"
+      },
+      {
+        "original": "refs/heads/fix/339",
+        "archived": "refs/archive/wsl-client/heads/fix/339",
+        "oid": "04322988fb9b87fb6100e9c1216ccfc02cb958c6"
+      },
+      {
+        "original": "refs/heads/fix/350",
+        "archived": "refs/archive/wsl-client/heads/fix/350",
+        "oid": "3229c1e900c37328e085dd21fa6b513ff2ced72d"
+      },
+      {
+        "original": "refs/heads/fix/352",
+        "archived": "refs/archive/wsl-client/heads/fix/352",
+        "oid": "8c676bdb035a22744c18427ba2e7690c9fc3ecf7"
+      },
+      {
+        "original": "refs/heads/fix/358",
+        "archived": "refs/archive/wsl-client/heads/fix/358",
+        "oid": "f5ca5b09989706c61fa2ff6c7d399ba587edf09d"
+      },
+      {
+        "original": "refs/heads/fix/359",
+        "archived": "refs/archive/wsl-client/heads/fix/359",
+        "oid": "72ca07a79eec5cb4d2650d9f8ab0adc41300085f"
+      },
+      {
+        "original": "refs/heads/fix/bomb-sprite-size",
+        "archived": "refs/archive/wsl-client/heads/fix/bomb-sprite-size",
+        "oid": "266473cd72c5e5c5faad7157e2010bdd07d84bcf"
+      },
+      {
+        "original": "refs/heads/fix/hit-bounce-restart",
+        "archived": "refs/archive/wsl-client/heads/fix/hit-bounce-restart",
+        "oid": "ebba080785b5222747fbbc2866d89f7c76ed3b6e"
+      },
+      {
+        "original": "refs/heads/fix/loopback-ipv4",
+        "archived": "refs/archive/wsl-client/heads/fix/loopback-ipv4",
+        "oid": "33f98e884139cc48540933870b59d16fe9c4cd8f"
+      },
+      {
+        "original": "refs/heads/fix/remove-auth-response-logs",
+        "archived": "refs/archive/wsl-client/heads/fix/remove-auth-response-logs",
+        "oid": "a5937882c5d2d4f6966dc5898a5682e17d3bcaf8"
+      },
+      {
+        "original": "refs/heads/fix/service-worker-cache",
+        "archived": "refs/archive/wsl-client/heads/fix/service-worker-cache",
+        "oid": "0dd3e8c7b052eec76b115bae01f3067c32f4d23d"
+      },
+      {
+        "original": "refs/remotes/origin/bug/74",
+        "archived": "refs/archive/wsl-client/remotes/origin/bug/74",
+        "oid": "a01112975d1d05616fbedcdd72224bdb8c2e602e"
+      },
+      {
+        "original": "refs/remotes/origin/chore/54",
+        "archived": "refs/archive/wsl-client/remotes/origin/chore/54",
+        "oid": "440df7799811ed111a72213c260c761c275e80b5"
+      },
+      {
+        "original": "refs/remotes/origin/chore/69",
+        "archived": "refs/archive/wsl-client/remotes/origin/chore/69",
+        "oid": "f00e011e7e4cdf99b98d06c774978973f9ea6e91"
+      },
+      {
+        "original": "refs/remotes/origin/chore/76",
+        "archived": "refs/archive/wsl-client/remotes/origin/chore/76",
+        "oid": "bd202b7171d023e1714c76278c690094a9f67ef0"
+      },
+      {
+        "original": "refs/remotes/origin/deploy",
+        "archived": "refs/archive/wsl-client/remotes/origin/deploy",
+        "oid": "e96e83b31a9a512943cf05cb53b109284902fc25"
+      },
+      {
+        "original": "refs/remotes/origin/dev",
+        "archived": "refs/archive/wsl-client/remotes/origin/dev",
+        "oid": "2ac7b0e207842eae143186272b9e4e3adc537adb"
+      },
+      {
+        "original": "refs/remotes/origin/documentation/219",
+        "archived": "refs/archive/wsl-client/remotes/origin/documentation/219",
+        "oid": "73812bb13a49581152ec8f2290ae626d1ca028f3"
+      },
+      {
+        "original": "refs/remotes/origin/documentation/65",
+        "archived": "refs/archive/wsl-client/remotes/origin/documentation/65",
+        "oid": "e013f58d181afde39a6c6cb17c5301381f76917e"
+      },
+      {
+        "original": "refs/remotes/origin/feat/ping-based-server-selection",
+        "archived": "refs/archive/wsl-client/remotes/origin/feat/ping-based-server-selection",
+        "oid": "3e5816c2ae4823de8cd6da8e07222ab3a864005e"
+      },
+      {
+        "original": "refs/remotes/origin/feature/105",
+        "archived": "refs/archive/wsl-client/remotes/origin/feature/105",
+        "oid": "5c4c9098a3b59631509ad3d398800a273a5a81df"
+      },
+      {
+        "original": "refs/remotes/origin/feature/106",
+        "archived": "refs/archive/wsl-client/remotes/origin/feature/106",
+        "oid": "39c663bf43705cf0f4ae9bdacf7c066096483f74"
+      },
+      {
+        "original": "refs/remotes/origin/feature/114",
+        "archived": "refs/archive/wsl-client/remotes/origin/feature/114",
+        "oid": "bc894425c773693932cc2dfa55573de5a4367f70"
+      },
+      {
+        "original": "refs/remotes/origin/feature/116",
+        "archived": "refs/archive/wsl-client/remotes/origin/feature/116",
+        "oid": "550f4ebf612aefa6eb5672fd51ad270d08abbdee"
+      },
+      {
+        "original": "refs/remotes/origin/feature/118",
+        "archived": "refs/archive/wsl-client/remotes/origin/feature/118",
+        "oid": "a9429b506525bc7e83918380c50788b12bfa01e6"
+      },
+      {
+        "original": "refs/remotes/origin/feature/125",
+        "archived": "refs/archive/wsl-client/remotes/origin/feature/125",
+        "oid": "b06124d19664d442a6effec00dea05342dcda880"
+      },
+      {
+        "original": "refs/remotes/origin/feature/129",
+        "archived": "refs/archive/wsl-client/remotes/origin/feature/129",
+        "oid": "6b547cd72d8d9f934a4cad25825b9efcd9d530b5"
+      },
+      {
+        "original": "refs/remotes/origin/feature/131",
+        "archived": "refs/archive/wsl-client/remotes/origin/feature/131",
+        "oid": "5113d9a529fccaf6a5a2e00e95bc9373d406393c"
+      },
+      {
+        "original": "refs/remotes/origin/feature/132",
+        "archived": "refs/archive/wsl-client/remotes/origin/feature/132",
+        "oid": "0fd65229ffcac753d7182a482af5acb8cbebc47d"
+      },
+      {
+        "original": "refs/remotes/origin/feature/133",
+        "archived": "refs/archive/wsl-client/remotes/origin/feature/133",
+        "oid": "547b3145a7663daf3ebe8451fdf53fb1a9e980e6"
+      },
+      {
+        "original": "refs/remotes/origin/feature/134",
+        "archived": "refs/archive/wsl-client/remotes/origin/feature/134",
+        "oid": "12c0c547e3bee2732559461d3c4eddd9dc9cc9fb"
+      },
+      {
+        "original": "refs/remotes/origin/feature/135",
+        "archived": "refs/archive/wsl-client/remotes/origin/feature/135",
+        "oid": "867645d1bb9e99a9dfaf712e1c0507ffe8f86cb0"
+      },
+      {
+        "original": "refs/remotes/origin/feature/147",
+        "archived": "refs/archive/wsl-client/remotes/origin/feature/147",
+        "oid": "a4a72940912326d667133b0f0f68fe03c37bb942"
+      },
+      {
+        "original": "refs/remotes/origin/feature/148",
+        "archived": "refs/archive/wsl-client/remotes/origin/feature/148",
+        "oid": "c58b4d72539b85712fc1259fda6908a381d546b1"
+      },
+      {
+        "original": "refs/remotes/origin/feature/149",
+        "archived": "refs/archive/wsl-client/remotes/origin/feature/149",
+        "oid": "5f61a036731d6d795c6d6e31c261c9c67db9b41e"
+      },
+      {
+        "original": "refs/remotes/origin/feature/150",
+        "archived": "refs/archive/wsl-client/remotes/origin/feature/150",
+        "oid": "d1e347864bb33fe9d1b18748afb1baa09ddb5dfb"
+      },
+      {
+        "original": "refs/remotes/origin/feature/155",
+        "archived": "refs/archive/wsl-client/remotes/origin/feature/155",
+        "oid": "4ddcb4b77b337c14132b52462f99f20f4ed2b154"
+      },
+      {
+        "original": "refs/remotes/origin/feature/157",
+        "archived": "refs/archive/wsl-client/remotes/origin/feature/157",
+        "oid": "9b3bf2aa84b427e05b8312a0b230c9914faf0ac7"
+      },
+      {
+        "original": "refs/remotes/origin/feature/175",
+        "archived": "refs/archive/wsl-client/remotes/origin/feature/175",
+        "oid": "bc95d98362e88c81fb96c80092beb1627fd27d56"
+      },
+      {
+        "original": "refs/remotes/origin/feature/177",
+        "archived": "refs/archive/wsl-client/remotes/origin/feature/177",
+        "oid": "62df3d58219d82ba2ba737f354ca42cf7949a2dd"
+      },
+      {
+        "original": "refs/remotes/origin/feature/180",
+        "archived": "refs/archive/wsl-client/remotes/origin/feature/180",
+        "oid": "e85615742624016fb6191725bfbf560ad6f5ad29"
+      },
+      {
+        "original": "refs/remotes/origin/feature/204",
+        "archived": "refs/archive/wsl-client/remotes/origin/feature/204",
+        "oid": "919b88c1bac7f26ea378159cefe9bcf5a6302da3"
+      },
+      {
+        "original": "refs/remotes/origin/feature/205",
+        "archived": "refs/archive/wsl-client/remotes/origin/feature/205",
+        "oid": "d3e0967fe721f2d52a234b1a7fafe08fa750bb7a"
+      },
+      {
+        "original": "refs/remotes/origin/feature/207",
+        "archived": "refs/archive/wsl-client/remotes/origin/feature/207",
+        "oid": "5976d212cc7ab6a47f69d102c93e73d85b0cc260"
+      },
+      {
+        "original": "refs/remotes/origin/feature/213",
+        "archived": "refs/archive/wsl-client/remotes/origin/feature/213",
+        "oid": "a4522b5a18c92ecc95af53185021663757a8ba83"
+      },
+      {
+        "original": "refs/remotes/origin/feature/215",
+        "archived": "refs/archive/wsl-client/remotes/origin/feature/215",
+        "oid": "458cfef8d1f3ea643c557448f4bd85c99a3fecc9"
+      },
+      {
+        "original": "refs/remotes/origin/feature/217",
+        "archived": "refs/archive/wsl-client/remotes/origin/feature/217",
+        "oid": "555a4a43578b45a53121e352148a7f6aaad03ea9"
+      },
+      {
+        "original": "refs/remotes/origin/feature/221",
+        "archived": "refs/archive/wsl-client/remotes/origin/feature/221",
+        "oid": "0d310453115d92f43edfbbf00f41410098530451"
+      },
+      {
+        "original": "refs/remotes/origin/feature/222",
+        "archived": "refs/archive/wsl-client/remotes/origin/feature/222",
+        "oid": "70a2c9b6ed8f2ece541f93c0ffa02c6be036c79f"
+      },
+      {
+        "original": "refs/remotes/origin/feature/226",
+        "archived": "refs/archive/wsl-client/remotes/origin/feature/226",
+        "oid": "57b0bb70c78bf3b93606e0c4b1ca3a37258ad9d8"
+      },
+      {
+        "original": "refs/remotes/origin/feature/227",
+        "archived": "refs/archive/wsl-client/remotes/origin/feature/227",
+        "oid": "caa82c7e576be4b511f8496705c14ef2be6fd1ef"
+      },
+      {
+        "original": "refs/remotes/origin/feature/232",
+        "archived": "refs/archive/wsl-client/remotes/origin/feature/232",
+        "oid": "80020e6272cd8dc4447ac47c4e0d25efae0fa803"
+      },
+      {
+        "original": "refs/remotes/origin/feature/235",
+        "archived": "refs/archive/wsl-client/remotes/origin/feature/235",
+        "oid": "d655a50a22c8f38a537c6839d2763023279fd965"
+      },
+      {
+        "original": "refs/remotes/origin/feature/242",
+        "archived": "refs/archive/wsl-client/remotes/origin/feature/242",
+        "oid": "2cd446d7a8f338bbc653f2bdb2406799185179fc"
+      },
+      {
+        "original": "refs/remotes/origin/feature/254",
+        "archived": "refs/archive/wsl-client/remotes/origin/feature/254",
+        "oid": "0c731638a3281639e680e3c02d0ec1a747d5c624"
+      },
+      {
+        "original": "refs/remotes/origin/feature/259",
+        "archived": "refs/archive/wsl-client/remotes/origin/feature/259",
+        "oid": "b25ddddb182b7e9c98342733cc867c0e501da56e"
+      },
+      {
+        "original": "refs/remotes/origin/feature/261",
+        "archived": "refs/archive/wsl-client/remotes/origin/feature/261",
+        "oid": "e070c1b5b23c998bf358bc442a3d7adb9fba9f83"
+      },
+      {
+        "original": "refs/remotes/origin/feature/263",
+        "archived": "refs/archive/wsl-client/remotes/origin/feature/263",
+        "oid": "3f66984240594dac2f58ecc31f8bad08722c8ef5"
+      },
+      {
+        "original": "refs/remotes/origin/feature/275",
+        "archived": "refs/archive/wsl-client/remotes/origin/feature/275",
+        "oid": "681138c8f18e3c36f92e9cdfa6fef90111f8509b"
+      },
+      {
+        "original": "refs/remotes/origin/feature/303",
+        "archived": "refs/archive/wsl-client/remotes/origin/feature/303",
+        "oid": "f0592c15683d74ae4756744507531d98c85e243c"
+      },
+      {
+        "original": "refs/remotes/origin/feature/309",
+        "archived": "refs/archive/wsl-client/remotes/origin/feature/309",
+        "oid": "9cb942f5d800d1576c2ef0c0aa22622fda1259ab"
+      },
+      {
+        "original": "refs/remotes/origin/feature/314",
+        "archived": "refs/archive/wsl-client/remotes/origin/feature/314",
+        "oid": "1b3bc37e5eaad4e2c5b1ff54be84fdde3fa3e5d8"
+      },
+      {
+        "original": "refs/remotes/origin/feature/317",
+        "archived": "refs/archive/wsl-client/remotes/origin/feature/317",
+        "oid": "f3d9ed9cd865cf7a096c80ba0f0c9301bfeab89d"
+      },
+      {
+        "original": "refs/remotes/origin/feature/320",
+        "archived": "refs/archive/wsl-client/remotes/origin/feature/320",
+        "oid": "f5a92ff728823c217bb89da7539ed5f77e3b6121"
+      },
+      {
+        "original": "refs/remotes/origin/feature/336",
+        "archived": "refs/archive/wsl-client/remotes/origin/feature/336",
+        "oid": "fd0cfd46c1094075820851e4740900b50b364e97"
+      },
+      {
+        "original": "refs/remotes/origin/feature/340",
+        "archived": "refs/archive/wsl-client/remotes/origin/feature/340",
+        "oid": "133c6fd1f5e365e770cb3bc94740fa4bc108d23f"
+      },
+      {
+        "original": "refs/remotes/origin/feature/348",
+        "archived": "refs/archive/wsl-client/remotes/origin/feature/348",
+        "oid": "a6cf36e29f6bfe02ecf7825c5d1558b414e845c8"
+      },
+      {
+        "original": "refs/remotes/origin/feature/356",
+        "archived": "refs/archive/wsl-client/remotes/origin/feature/356",
+        "oid": "dadf30056be95263c143fbbfdab58ce6a859f314"
+      },
+      {
+        "original": "refs/remotes/origin/feature/62",
+        "archived": "refs/archive/wsl-client/remotes/origin/feature/62",
+        "oid": "52bd1ce7fdd7290ec9d7e9d9a5ebed078f787515"
+      },
+      {
+        "original": "refs/remotes/origin/feature/63",
+        "archived": "refs/archive/wsl-client/remotes/origin/feature/63",
+        "oid": "d1d28b4329ca1872aeb54ec0147b300421069c49"
+      },
+      {
+        "original": "refs/remotes/origin/feature/72",
+        "archived": "refs/archive/wsl-client/remotes/origin/feature/72",
+        "oid": "b263706b0b0ca6c8acd79d4b664719320c61da5e"
+      },
+      {
+        "original": "refs/remotes/origin/feature/721",
+        "archived": "refs/archive/wsl-client/remotes/origin/feature/721",
+        "oid": "82c5d99dbbba8fe16c6062a9247ea55f400311f3"
+      },
+      {
+        "original": "refs/remotes/origin/feature/bot-player-appearance-code",
+        "archived": "refs/archive/wsl-client/remotes/origin/feature/bot-player-appearance-code",
+        "oid": "ed4bbd96c40112943b0bb4b65d56836bd73859f0"
+      },
+      {
+        "original": "refs/remotes/origin/feature/gate-corrupted-spirits",
+        "archived": "refs/archive/wsl-client/remotes/origin/feature/gate-corrupted-spirits",
+        "oid": "4fc966f8b3664cbb9263fffb4a75b6a28f563748"
+      },
+      {
+        "original": "refs/remotes/origin/feature/gate-story",
+        "archived": "refs/archive/wsl-client/remotes/origin/feature/gate-story",
+        "oid": "90d4a4af83e1bfcf035fb39fb2dc6858d4bfbbc7"
+      },
+      {
+        "original": "refs/remotes/origin/feature/lobby-own-appearance",
+        "archived": "refs/archive/wsl-client/remotes/origin/feature/lobby-own-appearance",
+        "oid": "ca39bded97858da2de27b4d786c826687bcc70b1"
+      },
+      {
+        "original": "refs/remotes/origin/feature/lobby-profile-entry",
+        "archived": "refs/archive/wsl-client/remotes/origin/feature/lobby-profile-entry",
+        "oid": "655b1c4b6385ba6f8fc1584be59103b47e3bb34b"
+      },
+      {
+        "original": "refs/remotes/origin/fix-reward-ui-panel-typo-2258960026303517004",
+        "archived": "refs/archive/wsl-client/remotes/origin/fix-reward-ui-panel-typo-2258960026303517004",
+        "oid": "a7e8506c928fc554c09f979e0462501f75675cf6"
+      },
+      {
+        "original": "refs/remotes/origin/fix/169",
+        "archived": "refs/archive/wsl-client/remotes/origin/fix/169",
+        "oid": "d93e297d4c39535bb75006ee4b665ceafffa9cf4"
+      },
+      {
+        "original": "refs/remotes/origin/fix/269",
+        "archived": "refs/archive/wsl-client/remotes/origin/fix/269",
+        "oid": "24f0e3be50ee7c72dbdffdf3fd3ffd858c4e2adc"
+      },
+      {
+        "original": "refs/remotes/origin/fix/358",
+        "archived": "refs/archive/wsl-client/remotes/origin/fix/358",
+        "oid": "f5ca5b09989706c61fa2ff6c7d399ba587edf09d"
+      },
+      {
+        "original": "refs/remotes/origin/fix/359",
+        "archived": "refs/archive/wsl-client/remotes/origin/fix/359",
+        "oid": "72ca07a79eec5cb4d2650d9f8ab0adc41300085f"
+      },
+      {
+        "original": "refs/remotes/origin/fix/95",
+        "archived": "refs/archive/wsl-client/remotes/origin/fix/95",
+        "oid": "fb1649f7f4387f06ca3d3ff089bbdde94078d203"
+      },
+      {
+        "original": "refs/remotes/origin/fix/android-landscape-lock",
+        "archived": "refs/archive/wsl-client/remotes/origin/fix/android-landscape-lock",
+        "oid": "2fa9b4e5d57eed71e7bc876ac11706edc0d6b3f8"
+      },
+      {
+        "original": "refs/remotes/origin/fix/insecure-user-id-generation-174675238670327306",
+        "archived": "refs/archive/wsl-client/remotes/origin/fix/insecure-user-id-generation-174675238670327306",
+        "oid": "06d1c46d19ff5367f03760340d7b3ffbbd906d9d"
+      },
+      {
+        "original": "refs/remotes/origin/fix/magic-unused-rule-deprecated-api-14614419789564642302",
+        "archived": "refs/archive/wsl-client/remotes/origin/fix/magic-unused-rule-deprecated-api-14614419789564642302",
+        "oid": "b1d361114d441407f324e973aa9978d4591f8857"
+      },
+      {
+        "original": "refs/remotes/origin/fix/profile-total-wins-label-dev",
+        "archived": "refs/archive/wsl-client/remotes/origin/fix/profile-total-wins-label-dev",
+        "oid": "11bbf2c0c9b7e05f306af6b728f46a9772f4ebd4"
+      },
+      {
+        "original": "refs/remotes/origin/fix/register-cleartext-logging-2624361621398644635",
+        "archived": "refs/archive/wsl-client/remotes/origin/fix/register-cleartext-logging-2624361621398644635",
+        "oid": "ac016e105579c69c6d4b9c5658e07a5b09a1394b"
+      },
+      {
+        "original": "refs/remotes/origin/fix/revert-stale-199",
+        "archived": "refs/archive/wsl-client/remotes/origin/fix/revert-stale-199",
+        "oid": "cbab816a1853005b419d75af438a59c70adf859a"
+      },
+      {
+        "original": "refs/remotes/origin/fix/tutorial-ui-cache-player-transforms-250130736068340830",
+        "archived": "refs/archive/wsl-client/remotes/origin/fix/tutorial-ui-cache-player-transforms-250130736068340830",
+        "oid": "3cb0fb0fd2fac8523db92a7f51a9c75870779d05"
+      },
+      {
+        "original": "refs/remotes/origin/jules-7712786015510349156-57a28a79",
+        "archived": "refs/archive/wsl-client/remotes/origin/jules-7712786015510349156-57a28a79",
+        "oid": "dede2e1ee4118756b44603826c53d8e435b929a2"
+      },
+      {
+        "original": "refs/remotes/origin/perf/cache-tutorial-field-selector-skill-indicator-16924674195772001575",
+        "archived": "refs/archive/wsl-client/remotes/origin/perf/cache-tutorial-field-selector-skill-indicator-16924674195772001575",
+        "oid": "045f80e6b72dfb6d4d601aa6cecd7651044aa9ea"
+      },
+      {
+        "original": "refs/remotes/origin/performance/cache-served-object-gauge-bar-13988166144917103382",
+        "archived": "refs/archive/wsl-client/remotes/origin/performance/cache-served-object-gauge-bar-13988166144917103382",
+        "oid": "4c87c3432eb1aa64e666d546be7471e8dae0ff57"
+      },
+      {
+        "original": "refs/remotes/origin/test/jwks-service-fetch-error-tests-12723669511814046694",
+        "archived": "refs/archive/wsl-client/remotes/origin/test/jwks-service-fetch-error-tests-12723669511814046694",
+        "oid": "f3e6a73a5563589a5e44db84b5cf817a257c7d62"
+      },
+      {
+        "original": "refs/remotes/origin/test/jwks-service-fetch-failure-test-595119845042330685",
+        "archived": "refs/archive/wsl-client/remotes/origin/test/jwks-service-fetch-failure-test-595119845042330685",
+        "oid": "6df0d839795900d4387885d3a39d7d5066d2de94"
+      },
+      {
+        "original": "refs/remotes/origin/test/jwt-helper-is-admin-tests-15236026538052375000",
+        "archived": "refs/archive/wsl-client/remotes/origin/test/jwt-helper-is-admin-tests-15236026538052375000",
+        "oid": "6df681f5327e3a2383c5b04b722805fb0faecda3"
+      },
+      {
+        "original": "refs/remotes/origin/test/jwt-helper-is-guest-10077592920849792898",
+        "archived": "refs/archive/wsl-client/remotes/origin/test/jwt-helper-is-guest-10077592920849792898",
+        "oid": "0e0403f484e1c06756862615a9bdf4c4dac123de"
+      },
+      {
+        "original": "refs/remotes/origin/test/jwt-helper-verify-signature-5090780945880592775",
+        "archived": "refs/archive/wsl-client/remotes/origin/test/jwt-helper-verify-signature-5090780945880592775",
+        "oid": "79285612460511636f7a2ade549000430e990566"
+      },
+      {
+        "original": "refs/remotes/origin/test/jwthelper-decode-header-tests-2466629807991979257",
+        "archived": "refs/archive/wsl-client/remotes/origin/test/jwthelper-decode-header-tests-2466629807991979257",
+        "oid": "27597b9d38e5bbc03f5e769011231463fcdc01ca"
+      },
+      {
+        "original": "refs/remotes/origin/test/match-event-stream-drain-callbacks-18230872182343690049",
+        "archived": "refs/archive/wsl-client/remotes/origin/test/match-event-stream-drain-callbacks-18230872182343690049",
+        "oid": "7d0371f4072caed16548857e74364cdfd3da33c3"
+      },
+      {
+        "original": "refs/remotes/origin/test/match-queue-api-service-12043042670222090324",
+        "archived": "refs/archive/wsl-client/remotes/origin/test/match-queue-api-service-12043042670222090324",
+        "oid": "05f909e426812137c8d36c7687c3d79cf9deef30"
+      },
+      {
+        "original": "refs/remotes/origin/test/match-queue-api-service-error-path-3937365076083195386",
+        "archived": "refs/archive/wsl-client/remotes/origin/test/match-queue-api-service-error-path-3937365076083195386",
+        "oid": "d2aa8a5737de67c40c0075e371317b41d35a33e1"
+      },
+      {
+        "original": "refs/remotes/origin/test/matchmaking-coordinator-enqueue-2237070114217580697",
+        "archived": "refs/archive/wsl-client/remotes/origin/test/matchmaking-coordinator-enqueue-2237070114217580697",
+        "oid": "5582958d05cffcab3672651b3d99097761a61d08"
+      },
+      {
+        "original": "refs/remotes/origin/test/matchmaking-coordinator-recover-snapshot-12123110466279712740",
+        "archived": "refs/archive/wsl-client/remotes/origin/test/matchmaking-coordinator-recover-snapshot-12123110466279712740",
+        "oid": "676eeee0b44964854a3073eaad71da6933481bba"
+      },
+      {
+        "original": "refs/tags/v0.0.1-test",
+        "archived": "refs/archive/wsl-client/tags/v0.0.1-test",
+        "oid": "50b67d238bad96e365116097c1e83101ac5aa2dd"
+      },
+      {
+        "original": "refs/tags/v0.0.2",
+        "archived": "refs/archive/wsl-client/tags/v0.0.2",
+        "oid": "0a12a8b6d2dff7e478ff1fac3b8e4b8b247af934"
+      },
+      {
+        "original": "refs/tags/v0.4.0",
+        "archived": "refs/archive/wsl-client/tags/v0.4.0",
+        "oid": "e0c04108480250bc4fbf7e37e305dac70b19cce6"
+      },
+      {
+        "original": "refs/tags/v1.0.0",
+        "archived": "refs/archive/wsl-client/tags/v1.0.0",
+        "oid": "73c7e67c977f3178912d826643e0f44642ddb9fc"
+      },
+      {
+        "original": "refs/tags/v1.1.0",
+        "archived": "refs/archive/wsl-client/tags/v1.1.0",
+        "oid": "6d497c9c40a0cd100c55f482c98be1d197368ca8"
+      },
+      {
+        "original": "refs/tags/v1.1.1",
+        "archived": "refs/archive/wsl-client/tags/v1.1.1",
+        "oid": "bd6423af9ea1cce63ac7f4ddf97a1bf8da6e8d31"
+      },
+      {
+        "original": "refs/tags/v1.2.0",
+        "archived": "refs/archive/wsl-client/tags/v1.2.0",
+        "oid": "b7bf7deffcc25dc9571a24f8d2186682ba1f6c3e"
+      },
+      {
+        "original": "refs/tags/v1.3.0",
+        "archived": "refs/archive/wsl-client/tags/v1.3.0",
+        "oid": "40d0f532bc30c98aafa77463784d2bb82fdb700c"
+      },
+      {
+        "original": "refs/tags/v1.4.0",
+        "archived": "refs/archive/wsl-client/tags/v1.4.0",
+        "oid": "93c3e1685ebf75ff8e3f09e200821a11d5308b90"
+      },
+      {
+        "original": "refs/tags/v1.5.0",
+        "archived": "refs/archive/wsl-client/tags/v1.5.0",
+        "oid": "e96e83b31a9a512943cf05cb53b109284902fc25"
+      },
+      {
+        "original": "HEAD",
+        "archived": "refs/archive/wsl-client/snapshot",
+        "oid": "6914ee33733de71ad66686316a79173a60496b22"
+      },
+      {
+        "original": "worktrees/fix-350/HEAD",
+        "archived": "refs/archive/wsl-client/worktrees/fix-350/HEAD",
+        "oid": "3229c1e900c37328e085dd21fa6b513ff2ced72d"
+      },
+      {
+        "original": "worktrees/client-352/HEAD",
+        "archived": "refs/archive/wsl-client/worktrees/client-352/HEAD",
+        "oid": "8c676bdb035a22744c18427ba2e7690c9fc3ecf7"
+      },
+      {
+        "original": "worktrees/client-359/HEAD",
+        "archived": "refs/archive/wsl-client/worktrees/client-359/HEAD",
+        "oid": "72ca07a79eec5cb4d2650d9f8ab0adc41300085f"
+      },
+      {
+        "original": "worktrees/fix-358/HEAD",
+        "archived": "refs/archive/wsl-client/worktrees/fix-358/HEAD",
+        "oid": "f5ca5b09989706c61fa2ff6c7d399ba587edf09d"
+      },
+      {
+        "original": "worktrees/feature-356/HEAD",
+        "archived": "refs/archive/wsl-client/worktrees/feature-356/HEAD",
+        "oid": "dadf30056be95263c143fbbfdab58ce6a859f314"
+      },
+      {
+        "original": "worktrees/client-314/HEAD",
+        "archived": "refs/archive/wsl-client/worktrees/client-314/HEAD",
+        "oid": "1b3bc37e5eaad4e2c5b1ff54be84fdde3fa3e5d8"
+      }
+    ]
+  },
+  {
+    "origin": "wsl",
+    "component": "database",
+    "head": "847d788a0071ecae90a6b560f07103c3c1e942db",
+    "refs": [
+      {
+        "original": "refs/heads/feature/100",
+        "archived": "refs/archive/wsl-database/heads/feature/100",
+        "oid": "984c23f45fc70d3b795eeba2dd791cd3c98a811a"
+      },
+      {
+        "original": "refs/heads/feature/103",
+        "archived": "refs/archive/wsl-database/heads/feature/103",
+        "oid": "cb8b0c4f877b33b76ecd7e857e88cbc4a23214ff"
+      },
+      {
+        "original": "refs/heads/feature/108",
+        "archived": "refs/archive/wsl-database/heads/feature/108",
+        "oid": "3eaf8ccd67e834f4c66a1e5a6e39369b9ee2f2e0"
+      },
+      {
+        "original": "refs/heads/feature/111",
+        "archived": "refs/archive/wsl-database/heads/feature/111",
+        "oid": "31e37024f67c2b8d0282d4966e8e68a3896aa944"
+      },
+      {
+        "original": "refs/heads/feature/113",
+        "archived": "refs/archive/wsl-database/heads/feature/113",
+        "oid": "0d2767a1557e0a2888c2a9f90623adb80533fa92"
+      },
+      {
+        "original": "refs/heads/feature/117",
+        "archived": "refs/archive/wsl-database/heads/feature/117",
+        "oid": "960020e7667bd7bb1b611094beb9c46775a81334"
+      },
+      {
+        "original": "refs/heads/feature/119",
+        "archived": "refs/archive/wsl-database/heads/feature/119",
+        "oid": "262f2b87e4a8116a712fb7428492c9a8995e40bb"
+      },
+      {
+        "original": "refs/heads/feature/53",
+        "archived": "refs/archive/wsl-database/heads/feature/53",
+        "oid": "fd4e50f2d405278d626fdfbad0498b50b4663b5a"
+      },
+      {
+        "original": "refs/heads/feature/82",
+        "archived": "refs/archive/wsl-database/heads/feature/82",
+        "oid": "847d788a0071ecae90a6b560f07103c3c1e942db"
+      },
+      {
+        "original": "refs/heads/feature/89",
+        "archived": "refs/archive/wsl-database/heads/feature/89",
+        "oid": "8f29a92c651946bba7dc8e7fa02fa97122e431ac"
+      },
+      {
+        "original": "refs/heads/feature/91",
+        "archived": "refs/archive/wsl-database/heads/feature/91",
+        "oid": "30da91b3bc873935a9e942931a8251ef57af6038"
+      },
+      {
+        "original": "refs/heads/feature/95",
+        "archived": "refs/archive/wsl-database/heads/feature/95",
+        "oid": "964c24ed5434c9b1c572d8668996c0aba9d0bd9f"
+      },
+      {
+        "original": "refs/heads/feature/97",
+        "archived": "refs/archive/wsl-database/heads/feature/97",
+        "oid": "4c34039ddfb1218aeec7922437d29f39a678299e"
+      },
+      {
+        "original": "refs/heads/feature/98",
+        "archived": "refs/archive/wsl-database/heads/feature/98",
+        "oid": "cac5f96019fe0cfd5cdb0a6856668800c9386635"
+      },
+      {
+        "original": "refs/heads/feature/gate-rework",
+        "archived": "refs/archive/wsl-database/heads/feature/gate-rework",
+        "oid": "4596aa1b0ab8b92ae1d36afcbc2eaf6a58258051"
+      },
+      {
+        "original": "refs/heads/fix/deploy-migration-secret",
+        "archived": "refs/archive/wsl-database/heads/fix/deploy-migration-secret",
+        "oid": "6da93abb743bd7a2bf63177218e5f9c0c7038da3"
+      },
+      {
+        "original": "refs/heads/fix/v045-none-prefab-element",
+        "archived": "refs/archive/wsl-database/heads/fix/v045-none-prefab-element",
+        "oid": "343e744f8569f7007d346ab4ef83c5c812785470"
+      },
+      {
+        "original": "refs/remotes/origin/bug/12",
+        "archived": "refs/archive/wsl-database/remotes/origin/bug/12",
+        "oid": "94a1acd60b940520d719ed4a92e12e27d59df5b4"
+      },
+      {
+        "original": "refs/remotes/origin/chore/21",
+        "archived": "refs/archive/wsl-database/remotes/origin/chore/21",
+        "oid": "618d43a0a7d270d409c47878233af3ee21f75286"
+      },
+      {
+        "original": "refs/remotes/origin/claude/peaceful-euler-z0zwis",
+        "archived": "refs/archive/wsl-database/remotes/origin/claude/peaceful-euler-z0zwis",
+        "oid": "7f9ec5696f3684ed52098c2cc608c3691601d912"
+      },
+      {
+        "original": "refs/remotes/origin/deploy",
+        "archived": "refs/archive/wsl-database/remotes/origin/deploy",
+        "oid": "99aba5d0da3f18f89a6bb3b0466e9a82e287be9b"
+      },
+      {
+        "original": "refs/remotes/origin/dev",
+        "archived": "refs/archive/wsl-database/remotes/origin/dev",
+        "oid": "a1e3549b68bc86bcbdeafc4784f36c805c070d7f"
+      },
+      {
+        "original": "refs/remotes/origin/feature/100",
+        "archived": "refs/archive/wsl-database/remotes/origin/feature/100",
+        "oid": "984c23f45fc70d3b795eeba2dd791cd3c98a811a"
+      },
+      {
+        "original": "refs/remotes/origin/feature/103",
+        "archived": "refs/archive/wsl-database/remotes/origin/feature/103",
+        "oid": "cb5e7fdffcbfe59486b0b0e3ae5aea6eebcbd59c"
+      },
+      {
+        "original": "refs/remotes/origin/feature/111",
+        "archived": "refs/archive/wsl-database/remotes/origin/feature/111",
+        "oid": "31e37024f67c2b8d0282d4966e8e68a3896aa944"
+      },
+      {
+        "original": "refs/remotes/origin/feature/115",
+        "archived": "refs/archive/wsl-database/remotes/origin/feature/115",
+        "oid": "e67df9b196427974de72df9372197e1c99377b8e"
+      },
+      {
+        "original": "refs/remotes/origin/feature/119",
+        "archived": "refs/archive/wsl-database/remotes/origin/feature/119",
+        "oid": "7da98824ab2cb512c51f56a0f30f7dc36e1a6857"
+      },
+      {
+        "original": "refs/remotes/origin/feature/29",
+        "archived": "refs/archive/wsl-database/remotes/origin/feature/29",
+        "oid": "0e34a2b3609819f46ef97e47d8abc54a6cada7bb"
+      },
+      {
+        "original": "refs/remotes/origin/feature/35",
+        "archived": "refs/archive/wsl-database/remotes/origin/feature/35",
+        "oid": "cca88b9d66343db105ccad67313db382d6ecb2c8"
+      },
+      {
+        "original": "refs/remotes/origin/feature/37",
+        "archived": "refs/archive/wsl-database/remotes/origin/feature/37",
+        "oid": "7ee090477258efeafe4f08d9f7ae11b77fd7cc22"
+      },
+      {
+        "original": "refs/remotes/origin/feature/41",
+        "archived": "refs/archive/wsl-database/remotes/origin/feature/41",
+        "oid": "4d7db045222b27347c60cde76386a54c967d3852"
+      },
+      {
+        "original": "refs/remotes/origin/feature/43",
+        "archived": "refs/archive/wsl-database/remotes/origin/feature/43",
+        "oid": "fb476c4438af2e2d513abf43040df18fb76a4661"
+      },
+      {
+        "original": "refs/remotes/origin/feature/46",
+        "archived": "refs/archive/wsl-database/remotes/origin/feature/46",
+        "oid": "5ec7850bc30fb6c871376117b169d914884c4233"
+      },
+      {
+        "original": "refs/remotes/origin/feature/58",
+        "archived": "refs/archive/wsl-database/remotes/origin/feature/58",
+        "oid": "3dea5e15087992ae757c3419db4d074f03e1eec6"
+      },
+      {
+        "original": "refs/remotes/origin/feature/61",
+        "archived": "refs/archive/wsl-database/remotes/origin/feature/61",
+        "oid": "44020630d11f4c246a46e3adbe443a05df15cec6"
+      },
+      {
+        "original": "refs/remotes/origin/feature/63",
+        "archived": "refs/archive/wsl-database/remotes/origin/feature/63",
+        "oid": "ca7a6315dc3281182e3de19bd751c3eea98ab828"
+      },
+      {
+        "original": "refs/remotes/origin/feature/65",
+        "archived": "refs/archive/wsl-database/remotes/origin/feature/65",
+        "oid": "8e98d7b62b03db5c588eb97645e0c4fedc7ad9ac"
+      },
+      {
+        "original": "refs/remotes/origin/feature/72",
+        "archived": "refs/archive/wsl-database/remotes/origin/feature/72",
+        "oid": "6b3b75ed5e6f5c5e02b19d18dfab85a52ce5aaaf"
+      },
+      {
+        "original": "refs/remotes/origin/feature/75",
+        "archived": "refs/archive/wsl-database/remotes/origin/feature/75",
+        "oid": "833e263d5986135f5e53f3c0d7b0ee04db03b4b1"
+      },
+      {
+        "original": "refs/remotes/origin/feature/82",
+        "archived": "refs/archive/wsl-database/remotes/origin/feature/82",
+        "oid": "3735e9910e0402a515011ffeaeb073c4212820d5"
+      },
+      {
+        "original": "refs/remotes/origin/feature/84",
+        "archived": "refs/archive/wsl-database/remotes/origin/feature/84",
+        "oid": "f1808d472bd2cfab3d67bce1f31ed9a697138df4"
+      },
+      {
+        "original": "refs/remotes/origin/feature/89",
+        "archived": "refs/archive/wsl-database/remotes/origin/feature/89",
+        "oid": "8f29a92c651946bba7dc8e7fa02fa97122e431ac"
+      },
+      {
+        "original": "refs/remotes/origin/feature/91",
+        "archived": "refs/archive/wsl-database/remotes/origin/feature/91",
+        "oid": "30da91b3bc873935a9e942931a8251ef57af6038"
+      },
+      {
+        "original": "refs/remotes/origin/feature/95",
+        "archived": "refs/archive/wsl-database/remotes/origin/feature/95",
+        "oid": "964c24ed5434c9b1c572d8668996c0aba9d0bd9f"
+      },
+      {
+        "original": "refs/remotes/origin/feature/97",
+        "archived": "refs/archive/wsl-database/remotes/origin/feature/97",
+        "oid": "4c34039ddfb1218aeec7922437d29f39a678299e"
+      },
+      {
+        "original": "refs/remotes/origin/feature/98",
+        "archived": "refs/archive/wsl-database/remotes/origin/feature/98",
+        "oid": "cac5f96019fe0cfd5cdb0a6856668800c9386635"
+      },
+      {
+        "original": "refs/remotes/origin/feature/gate-rework",
+        "archived": "refs/archive/wsl-database/remotes/origin/feature/gate-rework",
+        "oid": "4596aa1b0ab8b92ae1d36afcbc2eaf6a58258051"
+      },
+      {
+        "original": "refs/remotes/origin/fix/124",
+        "archived": "refs/archive/wsl-database/remotes/origin/fix/124",
+        "oid": "6000d9980452ed89a8fb586602dcc0371efeedb0"
+      },
+      {
+        "original": "refs/remotes/origin/fix/31",
+        "archived": "refs/archive/wsl-database/remotes/origin/fix/31",
+        "oid": "dd1b4b0bae37022aff79f0cbc2de5a122e9b4157"
+      },
+      {
+        "original": "refs/remotes/origin/fix/39",
+        "archived": "refs/archive/wsl-database/remotes/origin/fix/39",
+        "oid": "2b5ccb84d07b34adee8509351a6f01a087c2b4d8"
+      },
+      {
+        "original": "refs/remotes/origin/fix/68",
+        "archived": "refs/archive/wsl-database/remotes/origin/fix/68",
+        "oid": "c87d7124bb56d7525f7320ebea95b60c820bfc03"
+      },
+      {
+        "original": "refs/remotes/origin/fix/70",
+        "archived": "refs/archive/wsl-database/remotes/origin/fix/70",
+        "oid": "f58f7ef22044c2b8cd80b090c06fbee07838e74f"
+      },
+      {
+        "original": "HEAD",
+        "archived": "refs/archive/wsl-database/snapshot",
+        "oid": "847d788a0071ecae90a6b560f07103c3c1e942db"
+      }
+    ]
+  },
+  {
+    "origin": "wsl",
+    "component": "game",
+    "head": "80eef7659367ccf2960fabdda89c4bddf094e134",
+    "refs": [
+      {
+        "original": "refs/heads/backup/game-golem-test",
+        "archived": "refs/archive/wsl-game/heads/backup/game-golem-test",
+        "oid": "6491e242c3da0d16f585cc658a54b51caccb7321"
+      },
+      {
+        "original": "refs/heads/chore/109",
+        "archived": "refs/archive/wsl-game/heads/chore/109",
+        "oid": "940d0e01ca23d93e605792c688ede2826c836aec"
+      },
+      {
+        "original": "refs/heads/feature/106",
+        "archived": "refs/archive/wsl-game/heads/feature/106",
+        "oid": "7b638901728c5ee06a5ff72c0b5f71d4a8f07b1c"
+      },
+      {
+        "original": "refs/heads/feature/113",
+        "archived": "refs/archive/wsl-game/heads/feature/113",
+        "oid": "b0b76e9deba214a0549e7211cb44385713296dbd"
+      },
+      {
+        "original": "refs/heads/feature/115",
+        "archived": "refs/archive/wsl-game/heads/feature/115",
+        "oid": "ce91df5c59171a5ee10302c71b738a1a70c2d5dd"
+      },
+      {
+        "original": "refs/heads/feature/118",
+        "archived": "refs/archive/wsl-game/heads/feature/118",
+        "oid": "f785c113a68e8f1e2e9e2f7b4a509f6d6df09ab6"
+      },
+      {
+        "original": "refs/heads/feature/121",
+        "archived": "refs/archive/wsl-game/heads/feature/121",
+        "oid": "bfb047bb9dcb7577d67875747ab01296c2e25487"
+      },
+      {
+        "original": "refs/heads/feature/122",
+        "archived": "refs/archive/wsl-game/heads/feature/122",
+        "oid": "02b3593d4600aae4410806a762ec2074e88e11e1"
+      },
+      {
+        "original": "refs/heads/feature/126",
+        "archived": "refs/archive/wsl-game/heads/feature/126",
+        "oid": "9590f163079299baed65b2267913ec848175de55"
+      },
+      {
+        "original": "refs/heads/feature/128",
+        "archived": "refs/archive/wsl-game/heads/feature/128",
+        "oid": "181ae128fb058d8b23eafa5f12e7364f20bbe443"
+      },
+      {
+        "original": "refs/heads/feature/130",
+        "archived": "refs/archive/wsl-game/heads/feature/130",
+        "oid": "32ca5de207b69492ec5288abd2462604038c644b"
+      },
+      {
+        "original": "refs/heads/feature/135",
+        "archived": "refs/archive/wsl-game/heads/feature/135",
+        "oid": "8a5867d2fbd0e7eb7b3e5fff5a798df851bcea75"
+      },
+      {
+        "original": "refs/heads/feature/139",
+        "archived": "refs/archive/wsl-game/heads/feature/139",
+        "oid": "d25e47d9b83b6d120f1813521410f239443a4d3a"
+      },
+      {
+        "original": "refs/heads/feature/141",
+        "archived": "refs/archive/wsl-game/heads/feature/141",
+        "oid": "7eda02a5938f4039ceaf3fbf162d30a112c264ba"
+      },
+      {
+        "original": "refs/heads/feature/142",
+        "archived": "refs/archive/wsl-game/heads/feature/142",
+        "oid": "53a496b4e3885e3793626351e02f4f522a23dfd9"
+      },
+      {
+        "original": "refs/heads/feature/145",
+        "archived": "refs/archive/wsl-game/heads/feature/145",
+        "oid": "ea6e77b96dcfebd5f554d4f10dd61d9217421a5a"
+      },
+      {
+        "original": "refs/heads/feature/149",
+        "archived": "refs/archive/wsl-game/heads/feature/149",
+        "oid": "e57c3ebe368d6d626d98ea6ba02199f398df8513"
+      },
+      {
+        "original": "refs/heads/feature/151",
+        "archived": "refs/archive/wsl-game/heads/feature/151",
+        "oid": "e44bd6a6ee861a6c7203594cad420a357d857472"
+      },
+      {
+        "original": "refs/heads/feature/154",
+        "archived": "refs/archive/wsl-game/heads/feature/154",
+        "oid": "f3edbce04bbcca73f41cce7a3953f0e09063eb19"
+      },
+      {
+        "original": "refs/heads/feature/162",
+        "archived": "refs/archive/wsl-game/heads/feature/162",
+        "oid": "ae2d268b9646e72f76fdfec54b144531e0c2c9db"
+      },
+      {
+        "original": "refs/heads/feature/164",
+        "archived": "refs/archive/wsl-game/heads/feature/164",
+        "oid": "ed098ade1311f513ea4dcba1a8e438c04d6a3495"
+      },
+      {
+        "original": "refs/heads/feature/165",
+        "archived": "refs/archive/wsl-game/heads/feature/165",
+        "oid": "328636a65452dbd855697f86e16481044c9b61b0"
+      },
+      {
+        "original": "refs/heads/feature/166",
+        "archived": "refs/archive/wsl-game/heads/feature/166",
+        "oid": "5bdb0a9ff6dc730b54b5baf44482c25727fb9649"
+      },
+      {
+        "original": "refs/heads/feature/170",
+        "archived": "refs/archive/wsl-game/heads/feature/170",
+        "oid": "5bc71edf48bdc88a4a452d1c109046116ca74320"
+      },
+      {
+        "original": "refs/heads/feature/gate-rework",
+        "archived": "refs/archive/wsl-game/heads/feature/gate-rework",
+        "oid": "789f0ce8350b3e89ddd72b4249b8ea482fb4b24b"
+      },
+      {
+        "original": "refs/heads/fix/107",
+        "archived": "refs/archive/wsl-game/heads/fix/107",
+        "oid": "db3ea9b83b5694dff15b18ff7b207a82d231920b"
+      },
+      {
+        "original": "refs/heads/fix/120",
+        "archived": "refs/archive/wsl-game/heads/fix/120",
+        "oid": "652b633c241d1b374094c544b705b6d338ae45b2"
+      },
+      {
+        "original": "refs/heads/fix/129",
+        "archived": "refs/archive/wsl-game/heads/fix/129",
+        "oid": "d71795fecd662b33b2ab8a5e08c4b57def26512b"
+      },
+      {
+        "original": "refs/heads/fix/159",
+        "archived": "refs/archive/wsl-game/heads/fix/159",
+        "oid": "7cf748faf0a05df9b0de0940e00b43b8863bcdb2"
+      },
+      {
+        "original": "refs/heads/fix/20",
+        "archived": "refs/archive/wsl-game/heads/fix/20",
+        "oid": "44f7bccfbd3c4b3ee75cd5c0b0ecc0f4db5ce1ef"
+      },
+      {
+        "original": "refs/heads/fix/61",
+        "archived": "refs/archive/wsl-game/heads/fix/61",
+        "oid": "7103edf686a18847fef4a6e3101fdc3b6ac736d2"
+      },
+      {
+        "original": "refs/heads/fix/loopback-ipv4",
+        "archived": "refs/archive/wsl-game/heads/fix/loopback-ipv4",
+        "oid": "07cfb3da107a9153347c123ac7ce5c5b644040d3"
+      },
+      {
+        "original": "refs/remotes/origin/chore/109",
+        "archived": "refs/archive/wsl-game/remotes/origin/chore/109",
+        "oid": "940d0e01ca23d93e605792c688ede2826c836aec"
+      },
+      {
+        "original": "refs/remotes/origin/deploy",
+        "archived": "refs/archive/wsl-game/remotes/origin/deploy",
+        "oid": "8b4e65ba23eee8c5de7cd56b3b1a63644be9d3a9"
+      },
+      {
+        "original": "refs/remotes/origin/dev",
+        "archived": "refs/archive/wsl-game/remotes/origin/dev",
+        "oid": "4e9aa0b0e5f7d653971aec3fbc5f0e7de9580775"
+      },
+      {
+        "original": "refs/remotes/origin/feature/106",
+        "archived": "refs/archive/wsl-game/remotes/origin/feature/106",
+        "oid": "7b638901728c5ee06a5ff72c0b5f71d4a8f07b1c"
+      },
+      {
+        "original": "refs/remotes/origin/feature/115",
+        "archived": "refs/archive/wsl-game/remotes/origin/feature/115",
+        "oid": "ce91df5c59171a5ee10302c71b738a1a70c2d5dd"
+      },
+      {
+        "original": "refs/remotes/origin/feature/126",
+        "archived": "refs/archive/wsl-game/remotes/origin/feature/126",
+        "oid": "9590f163079299baed65b2267913ec848175de55"
+      },
+      {
+        "original": "refs/remotes/origin/feature/137",
+        "archived": "refs/archive/wsl-game/remotes/origin/feature/137",
+        "oid": "7a7eb5b2b107628860d97906f7a48d08448cdbad"
+      },
+      {
+        "original": "refs/remotes/origin/feature/139",
+        "archived": "refs/archive/wsl-game/remotes/origin/feature/139",
+        "oid": "ff2f2f46c82ebc592d3e89ddff71e19d49fb26e3"
+      },
+      {
+        "original": "refs/remotes/origin/feature/141",
+        "archived": "refs/archive/wsl-game/remotes/origin/feature/141",
+        "oid": "7eda02a5938f4039ceaf3fbf162d30a112c264ba"
+      },
+      {
+        "original": "refs/remotes/origin/feature/142",
+        "archived": "refs/archive/wsl-game/remotes/origin/feature/142",
+        "oid": "53a496b4e3885e3793626351e02f4f522a23dfd9"
+      },
+      {
+        "original": "refs/remotes/origin/feature/162",
+        "archived": "refs/archive/wsl-game/remotes/origin/feature/162",
+        "oid": "ae2d268b9646e72f76fdfec54b144531e0c2c9db"
+      },
+      {
+        "original": "refs/remotes/origin/feature/164",
+        "archived": "refs/archive/wsl-game/remotes/origin/feature/164",
+        "oid": "ed098ade1311f513ea4dcba1a8e438c04d6a3495"
+      },
+      {
+        "original": "refs/remotes/origin/feature/165",
+        "archived": "refs/archive/wsl-game/remotes/origin/feature/165",
+        "oid": "328636a65452dbd855697f86e16481044c9b61b0"
+      },
+      {
+        "original": "refs/remotes/origin/feature/166",
+        "archived": "refs/archive/wsl-game/remotes/origin/feature/166",
+        "oid": "5bdb0a9ff6dc730b54b5baf44482c25727fb9649"
+      },
+      {
+        "original": "refs/remotes/origin/feature/170",
+        "archived": "refs/archive/wsl-game/remotes/origin/feature/170",
+        "oid": "5bc71edf48bdc88a4a452d1c109046116ca74320"
+      },
+      {
+        "original": "refs/remotes/origin/feature/44",
+        "archived": "refs/archive/wsl-game/remotes/origin/feature/44",
+        "oid": "d5b62a46f43224ee81950331740f1a3fed652abc"
+      },
+      {
+        "original": "refs/remotes/origin/feature/50",
+        "archived": "refs/archive/wsl-game/remotes/origin/feature/50",
+        "oid": "d77848550fa0ef130acede4460a88130d6805f47"
+      },
+      {
+        "original": "refs/remotes/origin/feature/575",
+        "archived": "refs/archive/wsl-game/remotes/origin/feature/575",
+        "oid": "c150e93df80f439723f75ab5f40080ffc45edf20"
+      },
+      {
+        "original": "refs/remotes/origin/feature/63",
+        "archived": "refs/archive/wsl-game/remotes/origin/feature/63",
+        "oid": "d3f8fcb9febf42d691df5a13bbba330f4cbd9cc0"
+      },
+      {
+        "original": "refs/remotes/origin/feature/64",
+        "archived": "refs/archive/wsl-game/remotes/origin/feature/64",
+        "oid": "a67e603d063d78e575f0ab979c39ccfb3c5cc988"
+      },
+      {
+        "original": "refs/remotes/origin/feature/68",
+        "archived": "refs/archive/wsl-game/remotes/origin/feature/68",
+        "oid": "cd499cfedbb818f30b15b8724df0a603012aa31a"
+      },
+      {
+        "original": "refs/remotes/origin/feature/70",
+        "archived": "refs/archive/wsl-game/remotes/origin/feature/70",
+        "oid": "38af5b0b90b33bae077f8c3ea4d8d78d236c7e32"
+      },
+      {
+        "original": "refs/remotes/origin/feature/72",
+        "archived": "refs/archive/wsl-game/remotes/origin/feature/72",
+        "oid": "d8274f9892e0291343c9e305c6a3b01e6ecaac56"
+      },
+      {
+        "original": "refs/remotes/origin/feature/75",
+        "archived": "refs/archive/wsl-game/remotes/origin/feature/75",
+        "oid": "5b1aefe5c9037d782b5db71de263916dbcf5028c"
+      },
+      {
+        "original": "refs/remotes/origin/feature/77",
+        "archived": "refs/archive/wsl-game/remotes/origin/feature/77",
+        "oid": "df3b9df82079631f9c0301519aeb5c1b8362cd55"
+      },
+      {
+        "original": "refs/remotes/origin/feature/90",
+        "archived": "refs/archive/wsl-game/remotes/origin/feature/90",
+        "oid": "cbdc975c8cf343e6b61d16cfca180f92173ef145"
+      },
+      {
+        "original": "refs/remotes/origin/feature/95",
+        "archived": "refs/archive/wsl-game/remotes/origin/feature/95",
+        "oid": "3e433de1301590bf6f9765fa5c016c36009ac9c9"
+      },
+      {
+        "original": "refs/remotes/origin/feature/97",
+        "archived": "refs/archive/wsl-game/remotes/origin/feature/97",
+        "oid": "ecc47a618d6335d3c60f78082930d31efc265a80"
+      },
+      {
+        "original": "refs/remotes/origin/feature/gate-rework",
+        "archived": "refs/archive/wsl-game/remotes/origin/feature/gate-rework",
+        "oid": "789f0ce8350b3e89ddd72b4249b8ea482fb4b24b"
+      },
+      {
+        "original": "refs/remotes/origin/fix/159",
+        "archived": "refs/archive/wsl-game/remotes/origin/fix/159",
+        "oid": "7cf748faf0a05df9b0de0940e00b43b8863bcdb2"
+      },
+      {
+        "original": "refs/remotes/origin/fix/33",
+        "archived": "refs/archive/wsl-game/remotes/origin/fix/33",
+        "oid": "bafe4beb37963f74898ad547d89f6e1270a89e60"
+      },
+      {
+        "original": "refs/remotes/origin/fix/41",
+        "archived": "refs/archive/wsl-game/remotes/origin/fix/41",
+        "oid": "788985e87dc231966ede74992be6ddc4107e6e1f"
+      },
+      {
+        "original": "refs/remotes/origin/fix/48",
+        "archived": "refs/archive/wsl-game/remotes/origin/fix/48",
+        "oid": "42e658d05865458a2985fc538fc2539c27d112d3"
+      },
+      {
+        "original": "refs/remotes/origin/fix/53",
+        "archived": "refs/archive/wsl-game/remotes/origin/fix/53",
+        "oid": "3b4e63591cee57b654c8288374fed9d6bc787e78"
+      },
+      {
+        "original": "refs/remotes/origin/fix/66",
+        "archived": "refs/archive/wsl-game/remotes/origin/fix/66",
+        "oid": "29c8f82467d2c7129157b3a51ea80b2d6c0ef51c"
+      },
+      {
+        "original": "refs/remotes/origin/fix/85",
+        "archived": "refs/archive/wsl-game/remotes/origin/fix/85",
+        "oid": "84218ba61f40a07bebb4f4f97c526831694fc052"
+      },
+      {
+        "original": "refs/remotes/origin/fix/loopback-ipv4",
+        "archived": "refs/archive/wsl-game/remotes/origin/fix/loopback-ipv4",
+        "oid": "07cfb3da107a9153347c123ac7ce5c5b644040d3"
+      },
+      {
+        "original": "refs/remotes/origin/pr-110",
+        "archived": "refs/archive/wsl-game/remotes/origin/pr-110",
+        "oid": "940d0e01ca23d93e605792c688ede2826c836aec"
+      },
+      {
+        "original": "refs/remotes/origin/pr-116",
+        "archived": "refs/archive/wsl-game/remotes/origin/pr-116",
+        "oid": "ce91df5c59171a5ee10302c71b738a1a70c2d5dd"
+      },
+      {
+        "original": "refs/remotes/origin/pr-163",
+        "archived": "refs/archive/wsl-game/remotes/origin/pr-163",
+        "oid": "ae2d268b9646e72f76fdfec54b144531e0c2c9db"
+      },
+      {
+        "original": "refs/remotes/origin/pr-167",
+        "archived": "refs/archive/wsl-game/remotes/origin/pr-167",
+        "oid": "ed098ade1311f513ea4dcba1a8e438c04d6a3495"
+      },
+      {
+        "original": "refs/remotes/origin/pr-168",
+        "archived": "refs/archive/wsl-game/remotes/origin/pr-168",
+        "oid": "328636a65452dbd855697f86e16481044c9b61b0"
+      },
+      {
+        "original": "refs/remotes/origin/pr-169",
+        "archived": "refs/archive/wsl-game/remotes/origin/pr-169",
+        "oid": "5bdb0a9ff6dc730b54b5baf44482c25727fb9649"
+      },
+      {
+        "original": "refs/remotes/origin/pr-171",
+        "archived": "refs/archive/wsl-game/remotes/origin/pr-171",
+        "oid": "5bc71edf48bdc88a4a452d1c109046116ca74320"
+      },
+      {
+        "original": "refs/remotes/origin/refactor/46",
+        "archived": "refs/archive/wsl-game/remotes/origin/refactor/46",
+        "oid": "3bf021beb6f56ff2c393a214e5fa9e5037130fd6"
+      },
+      {
+        "original": "refs/stash",
+        "archived": "refs/archive/wsl-game/stash",
+        "oid": "e164a98f8756617767805fcaa090c760f68b50ba"
+      },
+      {
+        "original": "refs/tags/v0.9.0",
+        "archived": "refs/archive/wsl-game/tags/v0.9.0",
+        "oid": "50b79f302aad8383cb54283ee95d8e857e3d4b94"
+      },
+      {
+        "original": "refs/tags/v1.0.0",
+        "archived": "refs/archive/wsl-game/tags/v1.0.0",
+        "oid": "ca32e78f8db36af2e1c4d90f521234bbee901cc2"
+      },
+      {
+        "original": "refs/tags/v1.0.1",
+        "archived": "refs/archive/wsl-game/tags/v1.0.1",
+        "oid": "e1bbcb1844bcefb021db7467a8588b755d553f59"
+      },
+      {
+        "original": "refs/tags/v1.1.0",
+        "archived": "refs/archive/wsl-game/tags/v1.1.0",
+        "oid": "97cf8ca0606c0edf2d2c1ef70889c37e1743b816"
+      },
+      {
+        "original": "refs/tags/v1.2.0",
+        "archived": "refs/archive/wsl-game/tags/v1.2.0",
+        "oid": "71ac8e2c3505420011256e758591a0bb9c4450c7"
+      },
+      {
+        "original": "refs/tags/v1.3.0",
+        "archived": "refs/archive/wsl-game/tags/v1.3.0",
+        "oid": "2c191012bcf02a99c8ba2f1ae85f5acece546077"
+      },
+      {
+        "original": "refs/tags/v1.4.0",
+        "archived": "refs/archive/wsl-game/tags/v1.4.0",
+        "oid": "8b4e65ba23eee8c5de7cd56b3b1a63644be9d3a9"
+      },
+      {
+        "original": "HEAD",
+        "archived": "refs/archive/wsl-game/snapshot",
+        "oid": "80eef7659367ccf2960fabdda89c4bddf094e134"
+      },
+      {
+        "original": "worktrees/feature-166/HEAD",
+        "archived": "refs/archive/wsl-game/worktrees/feature-166/HEAD",
+        "oid": "5bdb0a9ff6dc730b54b5baf44482c25727fb9649"
+      },
+      {
+        "original": "worktrees/feature-162/HEAD",
+        "archived": "refs/archive/wsl-game/worktrees/feature-162/HEAD",
+        "oid": "ae2d268b9646e72f76fdfec54b144531e0c2c9db"
+      },
+      {
+        "original": "worktrees/feature-164/HEAD",
+        "archived": "refs/archive/wsl-game/worktrees/feature-164/HEAD",
+        "oid": "ed098ade1311f513ea4dcba1a8e438c04d6a3495"
+      },
+      {
+        "original": "worktrees/java-reference/HEAD",
+        "archived": "refs/archive/wsl-game/worktrees/java-reference/HEAD",
+        "oid": "2c191012bcf02a99c8ba2f1ae85f5acece546077"
+      },
+      {
+        "original": "worktrees/game-115/HEAD",
+        "archived": "refs/archive/wsl-game/worktrees/game-115/HEAD",
+        "oid": "ce91df5c59171a5ee10302c71b738a1a70c2d5dd"
+      },
+      {
+        "original": "worktrees/fix-159/HEAD",
+        "archived": "refs/archive/wsl-game/worktrees/fix-159/HEAD",
+        "oid": "7cf748faf0a05df9b0de0940e00b43b8863bcdb2"
+      },
+      {
+        "original": "worktrees/feature-165/HEAD",
+        "archived": "refs/archive/wsl-game/worktrees/feature-165/HEAD",
+        "oid": "328636a65452dbd855697f86e16481044c9b61b0"
+      },
+      {
+        "original": "worktrees/game-bot-fallback-mmr/HEAD",
+        "archived": "refs/archive/wsl-game/worktrees/game-bot-fallback-mmr/HEAD",
+        "oid": "5bc71edf48bdc88a4a452d1c109046116ca74320"
+      }
+    ]
+  },
+  {
+    "origin": "wsl",
+    "component": "infra",
+    "head": "f7d11b5b8d278491a8f84db96bd280f4029ab01c",
+    "refs": [
+      {
+        "original": "refs/heads/feature/6",
+        "archived": "refs/archive/wsl-infra/heads/feature/6",
+        "oid": "18d774ea2a792136ab21af20533f4e93f4800b06"
+      },
+      {
+        "original": "refs/remotes/origin/dev",
+        "archived": "refs/archive/wsl-infra/remotes/origin/dev",
+        "oid": "d8c2011fe4c5a3218819f4ad9ed5f9dd50ee01f8"
+      },
+      {
+        "original": "refs/remotes/origin/feature/6",
+        "archived": "refs/archive/wsl-infra/remotes/origin/feature/6",
+        "oid": "18d774ea2a792136ab21af20533f4e93f4800b06"
+      },
+      {
+        "original": "refs/remotes/origin/infra-small-host-watchtower",
+        "archived": "refs/archive/wsl-infra/remotes/origin/infra-small-host-watchtower",
+        "oid": "7223a58744c4ab2c498c3a089e27e2a4d598a13c"
+      },
+      {
+        "original": "HEAD",
+        "archived": "refs/archive/wsl-infra/snapshot",
+        "oid": "f7d11b5b8d278491a8f84db96bd280f4029ab01c"
+      },
+      {
+        "original": "worktrees/feature-6/HEAD",
+        "archived": "refs/archive/wsl-infra/worktrees/feature-6/HEAD",
+        "oid": "18d774ea2a792136ab21af20533f4e93f4800b06"
+      }
+    ]
+  },
+  {
+    "origin": "wsl",
+    "component": "lobby",
+    "head": "f10c515a9c639d9ec339f02cae7f86318d7091b4",
+    "refs": [
+      {
+        "original": "refs/heads/feature/57",
+        "archived": "refs/archive/wsl-lobby/heads/feature/57",
+        "oid": "f10c515a9c639d9ec339f02cae7f86318d7091b4"
+      },
+      {
+        "original": "refs/heads/feature/67",
+        "archived": "refs/archive/wsl-lobby/heads/feature/67",
+        "oid": "b20f18b07188203e286d5e77c22ed4051f75978c"
+      },
+      {
+        "original": "refs/heads/feature/69",
+        "archived": "refs/archive/wsl-lobby/heads/feature/69",
+        "oid": "7de34d302411e1b0bef9b789c8565162252f569f"
+      },
+      {
+        "original": "refs/heads/feature/71",
+        "archived": "refs/archive/wsl-lobby/heads/feature/71",
+        "oid": "090e8beb52f4b08bb2a52c2b8d062d9dd4256f95"
+      },
+      {
+        "original": "refs/heads/feature/76",
+        "archived": "refs/archive/wsl-lobby/heads/feature/76",
+        "oid": "e321fc7cc3e64fa683bccf8bdbf15e75e47090bc"
+      },
+      {
+        "original": "refs/heads/feature/78",
+        "archived": "refs/archive/wsl-lobby/heads/feature/78",
+        "oid": "6eca50efbf270abc142cda6db0b88a6ce08b57e7"
+      },
+      {
+        "original": "refs/heads/feature/85",
+        "archived": "refs/archive/wsl-lobby/heads/feature/85",
+        "oid": "3fcd189267445eadb5eab0452ce9248d34b19266"
+      },
+      {
+        "original": "refs/heads/feature/bot-player-appearance",
+        "archived": "refs/archive/wsl-lobby/heads/feature/bot-player-appearance",
+        "oid": "dead7a25f91981ca15bebf5d36fe24e2c015ecf1"
+      },
+      {
+        "original": "refs/heads/fix/65",
+        "archived": "refs/archive/wsl-lobby/heads/fix/65",
+        "oid": "8b96805ec1949474285073131dd20f50372b9072"
+      },
+      {
+        "original": "refs/heads/fix/74",
+        "archived": "refs/archive/wsl-lobby/heads/fix/74",
+        "oid": "373faa6ea58ba74a1e3e098ed81adeb46732c4fc"
+      },
+      {
+        "original": "refs/heads/fix/83",
+        "archived": "refs/archive/wsl-lobby/heads/fix/83",
+        "oid": "17124589989e627cb31513efb4437aa6ee632379"
+      },
+      {
+        "original": "refs/heads/fix/loopback-ipv4",
+        "archived": "refs/archive/wsl-lobby/heads/fix/loopback-ipv4",
+        "oid": "71c84cd1279c2d7c15bb72017e36044444930c11"
+      },
+      {
+        "original": "refs/remotes/origin/claude/virtual-thread-enable-bk68vf",
+        "archived": "refs/archive/wsl-lobby/remotes/origin/claude/virtual-thread-enable-bk68vf",
+        "oid": "2d7743e8a535f9b0e59853f9046c4d58b62c4504"
+      },
+      {
+        "original": "refs/remotes/origin/deploy",
+        "archived": "refs/archive/wsl-lobby/remotes/origin/deploy",
+        "oid": "943e2a287fc42635c4c9e22d3c023bfd50ad0b19"
+      },
+      {
+        "original": "refs/remotes/origin/dev",
+        "archived": "refs/archive/wsl-lobby/remotes/origin/dev",
+        "oid": "31acd146e178f9f34554f0d0eff78fcd4da149b7"
+      },
+      {
+        "original": "refs/remotes/origin/feat/ping-based-server-selection",
+        "archived": "refs/archive/wsl-lobby/remotes/origin/feat/ping-based-server-selection",
+        "oid": "bad937dbe14065994e6709e5e56a2ac86b97317e"
+      },
+      {
+        "original": "refs/remotes/origin/feature/142",
+        "archived": "refs/archive/wsl-lobby/remotes/origin/feature/142",
+        "oid": "8f228b8991809e3765464cf2a65f266e697a5b49"
+      },
+      {
+        "original": "refs/remotes/origin/feature/46",
+        "archived": "refs/archive/wsl-lobby/remotes/origin/feature/46",
+        "oid": "d74fdc94a6f1625fc08418c0b3149a9fa6e2d355"
+      },
+      {
+        "original": "refs/remotes/origin/feature/48",
+        "archived": "refs/archive/wsl-lobby/remotes/origin/feature/48",
+        "oid": "fcc0f08e230f663ba77af3cfffb1b12f8fcbbc9d"
+      },
+      {
+        "original": "refs/remotes/origin/feature/51",
+        "archived": "refs/archive/wsl-lobby/remotes/origin/feature/51",
+        "oid": "847bcf4278cecbbdf7410a07090d8968fdb0e427"
+      },
+      {
+        "original": "refs/remotes/origin/feature/55",
+        "archived": "refs/archive/wsl-lobby/remotes/origin/feature/55",
+        "oid": "b25be65bcb2aec68043f5434f31489fdaff5d1ce"
+      },
+      {
+        "original": "refs/remotes/origin/feature/57",
+        "archived": "refs/archive/wsl-lobby/remotes/origin/feature/57",
+        "oid": "f10c515a9c639d9ec339f02cae7f86318d7091b4"
+      },
+      {
+        "original": "refs/remotes/origin/feature/59",
+        "archived": "refs/archive/wsl-lobby/remotes/origin/feature/59",
+        "oid": "d4a73151c229fe56d38679cb71cdaf05f980eda5"
+      },
+      {
+        "original": "refs/remotes/origin/feature/71",
+        "archived": "refs/archive/wsl-lobby/remotes/origin/feature/71",
+        "oid": "090e8beb52f4b08bb2a52c2b8d062d9dd4256f95"
+      },
+      {
+        "original": "refs/remotes/origin/feature/76",
+        "archived": "refs/archive/wsl-lobby/remotes/origin/feature/76",
+        "oid": "e321fc7cc3e64fa683bccf8bdbf15e75e47090bc"
+      },
+      {
+        "original": "refs/remotes/origin/feature/85",
+        "archived": "refs/archive/wsl-lobby/remotes/origin/feature/85",
+        "oid": "3fcd189267445eadb5eab0452ce9248d34b19266"
+      },
+      {
+        "original": "refs/remotes/origin/feature/bot-player-appearance",
+        "archived": "refs/archive/wsl-lobby/remotes/origin/feature/bot-player-appearance",
+        "oid": "dead7a25f91981ca15bebf5d36fe24e2c015ecf1"
+      },
+      {
+        "original": "refs/remotes/origin/fix/27",
+        "archived": "refs/archive/wsl-lobby/remotes/origin/fix/27",
+        "oid": "1fc1c06e89de0ca63b819987c372d1084f49be74"
+      },
+      {
+        "original": "refs/remotes/origin/fix/38",
+        "archived": "refs/archive/wsl-lobby/remotes/origin/fix/38",
+        "oid": "9b0afe0c04d8ae51c25c0781d8916c36926abfbb"
+      },
+      {
+        "original": "refs/remotes/origin/fix/83",
+        "archived": "refs/archive/wsl-lobby/remotes/origin/fix/83",
+        "oid": "17124589989e627cb31513efb4437aa6ee632379"
+      },
+      {
+        "original": "refs/remotes/origin/fix/loopback-ipv4",
+        "archived": "refs/archive/wsl-lobby/remotes/origin/fix/loopback-ipv4",
+        "oid": "71c84cd1279c2d7c15bb72017e36044444930c11"
+      },
+      {
+        "original": "refs/remotes/origin/fix/users-mine-mmr",
+        "archived": "refs/archive/wsl-lobby/remotes/origin/fix/users-mine-mmr",
+        "oid": "8e1332f4e7f7c3a0bb42e6e526c9ad701283a777"
+      },
+      {
+        "original": "refs/stash",
+        "archived": "refs/archive/wsl-lobby/stash",
+        "oid": "9cd75b7d7575a82b80ba52c6b54e798897170350"
+      },
+      {
+        "original": "refs/tags/v0.2.0",
+        "archived": "refs/archive/wsl-lobby/tags/v0.2.0",
+        "oid": "ee4ff571e615b6ead0c5e275069668c58f19e57a"
+      },
+      {
+        "original": "refs/tags/v0.3.0",
+        "archived": "refs/archive/wsl-lobby/tags/v0.3.0",
+        "oid": "e625539b686e667e3aed1aeccdb782a7c6e0562a"
+      },
+      {
+        "original": "refs/tags/v0.3.1",
+        "archived": "refs/archive/wsl-lobby/tags/v0.3.1",
+        "oid": "11ed54530006459f1697150c1321c195d9ea02ec"
+      },
+      {
+        "original": "refs/tags/v1.0.0",
+        "archived": "refs/archive/wsl-lobby/tags/v1.0.0",
+        "oid": "f0cdcfd115b50c1cc35e7919bcae7f14bfe1f374"
+      },
+      {
+        "original": "refs/tags/v1.1.0",
+        "archived": "refs/archive/wsl-lobby/tags/v1.1.0",
+        "oid": "01f1319f7833e1ec4bbbff8d11868aa6945dffec"
+      },
+      {
+        "original": "refs/tags/v1.2.0",
+        "archived": "refs/archive/wsl-lobby/tags/v1.2.0",
+        "oid": "739f96568e8cf556eb8708d3e417082268df0989"
+      },
+      {
+        "original": "refs/tags/v1.3.0",
+        "archived": "refs/archive/wsl-lobby/tags/v1.3.0",
+        "oid": "b8cc18d641c5fb77d743ac2c2ed070e0cff165d7"
+      },
+      {
+        "original": "refs/tags/v1.4.0",
+        "archived": "refs/archive/wsl-lobby/tags/v1.4.0",
+        "oid": "943e2a287fc42635c4c9e22d3c023bfd50ad0b19"
+      },
+      {
+        "original": "HEAD",
+        "archived": "refs/archive/wsl-lobby/snapshot",
+        "oid": "f10c515a9c639d9ec339f02cae7f86318d7091b4"
+      },
+      {
+        "original": "worktrees/lobby-71/HEAD",
+        "archived": "refs/archive/wsl-lobby/worktrees/lobby-71/HEAD",
+        "oid": "090e8beb52f4b08bb2a52c2b8d062d9dd4256f95"
+      },
+      {
+        "original": "worktrees/lobby-bot-fallback/HEAD",
+        "archived": "refs/archive/wsl-lobby/worktrees/lobby-bot-fallback/HEAD",
+        "oid": "3fcd189267445eadb5eab0452ce9248d34b19266"
+      },
+      {
+        "original": "worktrees/fix-83/HEAD",
+        "archived": "refs/archive/wsl-lobby/worktrees/fix-83/HEAD",
+        "oid": "17124589989e627cb31513efb4437aa6ee632379"
+      }
+    ]
+  },
+  {
+    "origin": "wsl",
+    "component": "website",
+    "head": "7265a2f98f3f4fcfe4085a035427847108c3883e",
+    "refs": [
+      {
+        "original": "refs/heads/chore/remove-page-notes",
+        "archived": "refs/archive/wsl-website/heads/chore/remove-page-notes",
+        "oid": "de1144ed78fc02f10e3eea1e1a068b39857e39a6"
+      },
+      {
+        "original": "refs/heads/feature/78",
+        "archived": "refs/archive/wsl-website/heads/feature/78",
+        "oid": "07a816f708f602e70de9b79e73e0836043a431e8"
+      },
+      {
+        "original": "refs/heads/feature/79",
+        "archived": "refs/archive/wsl-website/heads/feature/79",
+        "oid": "44bcdd5f052d44a6108ef9897c4d76809be75cc1"
+      },
+      {
+        "original": "refs/heads/feature/80",
+        "archived": "refs/archive/wsl-website/heads/feature/80",
+        "oid": "31cfe36ce3dba753d566b59e032f56fd5b00cd23"
+      },
+      {
+        "original": "refs/heads/feature/89",
+        "archived": "refs/archive/wsl-website/heads/feature/89",
+        "oid": "54dd30a2f73a2f40102e00b1065393ad63bc70eb"
+      },
+      {
+        "original": "refs/heads/feature/91",
+        "archived": "refs/archive/wsl-website/heads/feature/91",
+        "oid": "db1c1a83d7b2bf88c00860f2a552737dc82d6260"
+      },
+      {
+        "original": "refs/heads/feature/93",
+        "archived": "refs/archive/wsl-website/heads/feature/93",
+        "oid": "dc64e09cd9588b2a6082bb131f9e54c9ed2025ff"
+      },
+      {
+        "original": "refs/heads/feature/95",
+        "archived": "refs/archive/wsl-website/heads/feature/95",
+        "oid": "fe7ae1ce8892a5c508c3149676d4248969f1c4f3"
+      },
+      {
+        "original": "refs/heads/feature/x-link",
+        "archived": "refs/archive/wsl-website/heads/feature/x-link",
+        "oid": "97d80fde5ce56ef8e2d261d997ab2c9d6d8069a6"
+      },
+      {
+        "original": "refs/remotes/origin/HEAD",
+        "archived": "refs/archive/wsl-website/remotes/origin/HEAD",
+        "oid": "f38f452d9871b26bf93e4b0b9c91577aabb7062c"
+      },
+      {
+        "original": "refs/remotes/origin/dev",
+        "archived": "refs/archive/wsl-website/remotes/origin/dev",
+        "oid": "f38f452d9871b26bf93e4b0b9c91577aabb7062c"
+      },
+      {
+        "original": "refs/remotes/origin/feature/21",
+        "archived": "refs/archive/wsl-website/remotes/origin/feature/21",
+        "oid": "d8155d4aaa59bb480608be30f9fb8434fcb683b2"
+      },
+      {
+        "original": "refs/remotes/origin/feature/28",
+        "archived": "refs/archive/wsl-website/remotes/origin/feature/28",
+        "oid": "abe785a5ca95823b9441f697bb1cb961fc5f2bfd"
+      },
+      {
+        "original": "refs/remotes/origin/feature/3",
+        "archived": "refs/archive/wsl-website/remotes/origin/feature/3",
+        "oid": "4ecf62212ce2b3240bc2e2b5241db259a6cd5c72"
+      },
+      {
+        "original": "refs/remotes/origin/feature/33",
+        "archived": "refs/archive/wsl-website/remotes/origin/feature/33",
+        "oid": "3d8def771cb2bfe50a78c0f1b3cdfd244962318c"
+      },
+      {
+        "original": "refs/remotes/origin/feature/34",
+        "archived": "refs/archive/wsl-website/remotes/origin/feature/34",
+        "oid": "7964b52121852624a5cc959369c34983275966cb"
+      },
+      {
+        "original": "refs/remotes/origin/feature/49",
+        "archived": "refs/archive/wsl-website/remotes/origin/feature/49",
+        "oid": "2d853510660cbaa8606b3f6c49f4efbad45ade8d"
+      },
+      {
+        "original": "refs/remotes/origin/feature/51",
+        "archived": "refs/archive/wsl-website/remotes/origin/feature/51",
+        "oid": "d5b68118f7b3a52d769723f1a62f29c9ad3078b6"
+      },
+      {
+        "original": "refs/remotes/origin/feature/61",
+        "archived": "refs/archive/wsl-website/remotes/origin/feature/61",
+        "oid": "ce90fa71740eed9383c385df87e418a820d52edc"
+      },
+      {
+        "original": "refs/remotes/origin/feature/66",
+        "archived": "refs/archive/wsl-website/remotes/origin/feature/66",
+        "oid": "e185a81aa283012d32a853ee1e17163becf08b6c"
+      },
+      {
+        "original": "refs/remotes/origin/feature/7",
+        "archived": "refs/archive/wsl-website/remotes/origin/feature/7",
+        "oid": "cb7b1bbe3cf7a602517175a2f203328ae4e23018"
+      },
+      {
+        "original": "refs/remotes/origin/feature/78",
+        "archived": "refs/archive/wsl-website/remotes/origin/feature/78",
+        "oid": "07a816f708f602e70de9b79e73e0836043a431e8"
+      },
+      {
+        "original": "refs/remotes/origin/feature/79",
+        "archived": "refs/archive/wsl-website/remotes/origin/feature/79",
+        "oid": "44bcdd5f052d44a6108ef9897c4d76809be75cc1"
+      },
+      {
+        "original": "refs/remotes/origin/feature/80",
+        "archived": "refs/archive/wsl-website/remotes/origin/feature/80",
+        "oid": "31cfe36ce3dba753d566b59e032f56fd5b00cd23"
+      },
+      {
+        "original": "refs/remotes/origin/feature/93",
+        "archived": "refs/archive/wsl-website/remotes/origin/feature/93",
+        "oid": "dc64e09cd9588b2a6082bb131f9e54c9ed2025ff"
+      },
+      {
+        "original": "refs/remotes/origin/feature/95",
+        "archived": "refs/archive/wsl-website/remotes/origin/feature/95",
+        "oid": "fe7ae1ce8892a5c508c3149676d4248969f1c4f3"
+      },
+      {
+        "original": "refs/remotes/origin/main",
+        "archived": "refs/archive/wsl-website/remotes/origin/main",
+        "oid": "2b2e8aa56a7064e27d4038c23493346a6c65753e"
+      },
+      {
+        "original": "HEAD",
+        "archived": "refs/archive/wsl-website/snapshot",
+        "oid": "7265a2f98f3f4fcfe4085a035427847108c3883e"
+      },
+      {
+        "original": "worktrees/website-news-v1.5.0/HEAD",
+        "archived": "refs/archive/wsl-website/worktrees/website-news-v1.5.0/HEAD",
+        "oid": "fe7ae1ce8892a5c508c3149676d4248969f1c4f3"
+      }
+    ]
+  },
+  {
+    "origin": "wsl",
+    "component": "game-rust",
+    "head": "cea4754e3965a37cb040d8041ef2b9007971bbae",
+    "refs": [
+      {
+        "original": "refs/heads/ab/base",
+        "archived": "refs/archive/wsl-game-rust/heads/ab/base",
+        "oid": "c969623f7d16fa98d8ace4d4fadcad6a67b69ae1"
+      },
+      {
+        "original": "refs/heads/ab/c",
+        "archived": "refs/archive/wsl-game-rust/heads/ab/c",
+        "oid": "ed3d60d7f46508f2c188ff278d66ce9fe033c5e7"
+      },
+      {
+        "original": "refs/heads/ab/cache",
+        "archived": "refs/archive/wsl-game-rust/heads/ab/cache",
+        "oid": "60f7736ef6a9d60678dd18d468c3311e49c7062b"
+      },
+      {
+        "original": "refs/heads/dev",
+        "archived": "refs/archive/wsl-game-rust/heads/dev",
+        "oid": "cea4754e3965a37cb040d8041ef2b9007971bbae"
+      },
+      {
+        "original": "refs/heads/feature/1",
+        "archived": "refs/archive/wsl-game-rust/heads/feature/1",
+        "oid": "c2afa63f1506d0b484438a37edac665c87a20e9b"
+      },
+      {
+        "original": "refs/heads/feature/1-loop-metrics",
+        "archived": "refs/archive/wsl-game-rust/heads/feature/1-loop-metrics",
+        "oid": "63564d981b9d0b2c14663e0b9f3ba1f7512ddf1c"
+      },
+      {
+        "original": "refs/heads/feature/10",
+        "archived": "refs/archive/wsl-game-rust/heads/feature/10",
+        "oid": "2655ace4c413a9ff91a533aae2ec7cae13c42049"
+      },
+      {
+        "original": "refs/heads/feature/java-110",
+        "archived": "refs/archive/wsl-game-rust/heads/feature/java-110",
+        "oid": "5e9552bc18e99a8afd5c9162f3ef3496aa055aa5"
+      },
+      {
+        "original": "refs/heads/feature/java-116",
+        "archived": "refs/archive/wsl-game-rust/heads/feature/java-116",
+        "oid": "183259ec4d2355408e0480f46ad0245025468d5c"
+      },
+      {
+        "original": "refs/heads/feature/java-163",
+        "archived": "refs/archive/wsl-game-rust/heads/feature/java-163",
+        "oid": "54ba67f14605902f7b147e0f0fc343c747098108"
+      },
+      {
+        "original": "refs/heads/feature/java-167",
+        "archived": "refs/archive/wsl-game-rust/heads/feature/java-167",
+        "oid": "bcc40e53a5861b5a018acac2b26b1911ccc39be6"
+      },
+      {
+        "original": "refs/heads/feature/java-168",
+        "archived": "refs/archive/wsl-game-rust/heads/feature/java-168",
+        "oid": "1ac56f96257b6ae8950a0d5ec21772235fa30390"
+      },
+      {
+        "original": "refs/heads/feature/java-169",
+        "archived": "refs/archive/wsl-game-rust/heads/feature/java-169",
+        "oid": "8f3383e79c6c3f0dcdcd7ae7fb52a150de4cd2ed"
+      },
+      {
+        "original": "refs/heads/feature/java-171",
+        "archived": "refs/archive/wsl-game-rust/heads/feature/java-171",
+        "oid": "c4b5f82cb61ad0ede58aed6901468a3f0df66752"
+      },
+      {
+        "original": "refs/remotes/origin/HEAD",
+        "archived": "refs/archive/wsl-game-rust/remotes/origin/HEAD",
+        "oid": "cea4754e3965a37cb040d8041ef2b9007971bbae"
+      },
+      {
+        "original": "refs/remotes/origin/dev",
+        "archived": "refs/archive/wsl-game-rust/remotes/origin/dev",
+        "oid": "cea4754e3965a37cb040d8041ef2b9007971bbae"
+      },
+      {
+        "original": "refs/remotes/origin/feature/1",
+        "archived": "refs/archive/wsl-game-rust/remotes/origin/feature/1",
+        "oid": "c2afa63f1506d0b484438a37edac665c87a20e9b"
+      },
+      {
+        "original": "refs/remotes/origin/feature/1-agent-docs",
+        "archived": "refs/archive/wsl-game-rust/remotes/origin/feature/1-agent-docs",
+        "oid": "3f9cb49f9325ea4bc6471b0f99a6aaf6f6350f59"
+      },
+      {
+        "original": "refs/remotes/origin/feature/1-bot",
+        "archived": "refs/archive/wsl-game-rust/remotes/origin/feature/1-bot",
+        "oid": "65cdb2560d264698d436259eafb509655c6ee200"
+      },
+      {
+        "original": "refs/remotes/origin/feature/1-components-base",
+        "archived": "refs/archive/wsl-game-rust/remotes/origin/feature/1-components-base",
+        "oid": "72e09299a1b423ddc7b9b366927a65440e4aa36c"
+      },
+      {
+        "original": "refs/remotes/origin/feature/1-data",
+        "archived": "refs/archive/wsl-game-rust/remotes/origin/feature/1-data",
+        "oid": "3005ddb8df1d381fd4932e3b08ec8cd09234634e"
+      },
+      {
+        "original": "refs/remotes/origin/feature/1-dev-bot",
+        "archived": "refs/archive/wsl-game-rust/remotes/origin/feature/1-dev-bot",
+        "oid": "5b166bca7a14febd840a754dc4ed2a373e32eae3"
+      },
+      {
+        "original": "refs/remotes/origin/feature/1-dev-gameplay",
+        "archived": "refs/archive/wsl-game-rust/remotes/origin/feature/1-dev-gameplay",
+        "oid": "88c388ecfffb88a2bf263a5cc03ff2a8235edf70"
+      },
+      {
+        "original": "refs/remotes/origin/feature/1-dev-pve",
+        "archived": "refs/archive/wsl-game-rust/remotes/origin/feature/1-dev-pve",
+        "oid": "d8f950edd942805b536fdfc6ac10ad5a734c4c85"
+      },
+      {
+        "original": "refs/remotes/origin/feature/1-loop",
+        "archived": "refs/archive/wsl-game-rust/remotes/origin/feature/1-loop",
+        "oid": "840702b480718c80614788648221b39b0e50e733"
+      },
+      {
+        "original": "refs/remotes/origin/feature/1-loop-metrics",
+        "archived": "refs/archive/wsl-game-rust/remotes/origin/feature/1-loop-metrics",
+        "oid": "63564d981b9d0b2c14663e0b9f3ba1f7512ddf1c"
+      },
+      {
+        "original": "refs/remotes/origin/feature/1-magic-components",
+        "archived": "refs/archive/wsl-game-rust/remotes/origin/feature/1-magic-components",
+        "oid": "81532a118c16952ca9732454da80e1308d1dee03"
+      },
+      {
+        "original": "refs/remotes/origin/feature/1-mob",
+        "archived": "refs/archive/wsl-game-rust/remotes/origin/feature/1-mob",
+        "oid": "22ecfcfd4a38aa94c1ba247afef556c6bfc9eed2"
+      },
+      {
+        "original": "refs/remotes/origin/feature/1-prefab-1",
+        "archived": "refs/archive/wsl-game-rust/remotes/origin/feature/1-prefab-1",
+        "oid": "8d98da19caf6e1cc7e43585ea257dd5d3cafa6f1"
+      },
+      {
+        "original": "refs/remotes/origin/feature/1-prefab-2",
+        "archived": "refs/archive/wsl-game-rust/remotes/origin/feature/1-prefab-2",
+        "oid": "9ebfab429c7bd0201a63d73171eae8625f4247f8"
+      },
+      {
+        "original": "refs/remotes/origin/feature/1-prefab-3",
+        "archived": "refs/archive/wsl-game-rust/remotes/origin/feature/1-prefab-3",
+        "oid": "699b7f3ccf0b728c1fe552eb0c576a58b1dc4a55"
+      },
+      {
+        "original": "refs/remotes/origin/feature/1-prefab-4",
+        "archived": "refs/archive/wsl-game-rust/remotes/origin/feature/1-prefab-4",
+        "oid": "97fe490a05fe06f029724767e64914c19b64fada"
+      },
+      {
+        "original": "refs/remotes/origin/feature/1-prefab-5",
+        "archived": "refs/archive/wsl-game-rust/remotes/origin/feature/1-prefab-5",
+        "oid": "370f7cfb1d21ded98106bb94196c763556b26cf5"
+      },
+      {
+        "original": "refs/remotes/origin/feature/1-protocol",
+        "archived": "refs/archive/wsl-game-rust/remotes/origin/feature/1-protocol",
+        "oid": "3b9f26de4e3b6172439ded455d4b2c24fc97cb20"
+      },
+      {
+        "original": "refs/remotes/origin/feature/1-pve",
+        "archived": "refs/archive/wsl-game-rust/remotes/origin/feature/1-pve",
+        "oid": "19f57051c7f60c793d738eab527fc513ce4dc232"
+      },
+      {
+        "original": "refs/remotes/origin/feature/1-server-base",
+        "archived": "refs/archive/wsl-game-rust/remotes/origin/feature/1-server-base",
+        "oid": "ef58554be937bc9618a40d89f146ad370c7406ab"
+      },
+      {
+        "original": "refs/remotes/origin/feature/1-session",
+        "archived": "refs/archive/wsl-game-rust/remotes/origin/feature/1-session",
+        "oid": "85062d4ffe50b8bceef4b894abf441c368bc3205"
+      },
+      {
+        "original": "refs/remotes/origin/feature/1-sim-cleanup",
+        "archived": "refs/archive/wsl-game-rust/remotes/origin/feature/1-sim-cleanup",
+        "oid": "9ab8ad7b294aefd6aa9d9610ad2baed29b67f591"
+      },
+      {
+        "original": "refs/remotes/origin/feature/1-sim-core",
+        "archived": "refs/archive/wsl-game-rust/remotes/origin/feature/1-sim-core",
+        "oid": "e6f44eb593b653f165011a0b974abb2e084e780c"
+      },
+      {
+        "original": "refs/remotes/origin/feature/1-tools-endpoints",
+        "archived": "refs/archive/wsl-game-rust/remotes/origin/feature/1-tools-endpoints",
+        "oid": "565a195bfddee26d414e38ba5cb003a08321894b"
+      },
+      {
+        "original": "refs/remotes/origin/feature/1-wiring",
+        "archived": "refs/archive/wsl-game-rust/remotes/origin/feature/1-wiring",
+        "oid": "a76695bd0b7eb25ecd4a1e1faab3cbe2f13e8a0d"
+      },
+      {
+        "original": "refs/remotes/origin/feature/10",
+        "archived": "refs/archive/wsl-game-rust/remotes/origin/feature/10",
+        "oid": "2655ace4c413a9ff91a533aae2ec7cae13c42049"
+      },
+      {
+        "original": "refs/remotes/origin/feature/java-110",
+        "archived": "refs/archive/wsl-game-rust/remotes/origin/feature/java-110",
+        "oid": "5e9552bc18e99a8afd5c9162f3ef3496aa055aa5"
+      },
+      {
+        "original": "refs/remotes/origin/feature/java-116",
+        "archived": "refs/archive/wsl-game-rust/remotes/origin/feature/java-116",
+        "oid": "183259ec4d2355408e0480f46ad0245025468d5c"
+      },
+      {
+        "original": "refs/remotes/origin/feature/java-163",
+        "archived": "refs/archive/wsl-game-rust/remotes/origin/feature/java-163",
+        "oid": "54ba67f14605902f7b147e0f0fc343c747098108"
+      },
+      {
+        "original": "refs/remotes/origin/feature/java-167",
+        "archived": "refs/archive/wsl-game-rust/remotes/origin/feature/java-167",
+        "oid": "bcc40e53a5861b5a018acac2b26b1911ccc39be6"
+      },
+      {
+        "original": "refs/remotes/origin/feature/java-168",
+        "archived": "refs/archive/wsl-game-rust/remotes/origin/feature/java-168",
+        "oid": "1ac56f96257b6ae8950a0d5ec21772235fa30390"
+      },
+      {
+        "original": "refs/remotes/origin/feature/java-169",
+        "archived": "refs/archive/wsl-game-rust/remotes/origin/feature/java-169",
+        "oid": "8f3383e79c6c3f0dcdcd7ae7fb52a150de4cd2ed"
+      },
+      {
+        "original": "refs/remotes/origin/feature/java-171",
+        "archived": "refs/archive/wsl-game-rust/remotes/origin/feature/java-171",
+        "oid": "c4b5f82cb61ad0ede58aed6901468a3f0df66752"
+      },
+      {
+        "original": "HEAD",
+        "archived": "refs/archive/wsl-game-rust/snapshot",
+        "oid": "cea4754e3965a37cb040d8041ef2b9007971bbae"
+      },
+      {
+        "original": "worktrees/ab-base/HEAD",
+        "archived": "refs/archive/wsl-game-rust/worktrees/ab-base/HEAD",
+        "oid": "c969623f7d16fa98d8ace4d4fadcad6a67b69ae1"
+      },
+      {
+        "original": "worktrees/java-169/HEAD",
+        "archived": "refs/archive/wsl-game-rust/worktrees/java-169/HEAD",
+        "oid": "8f3383e79c6c3f0dcdcd7ae7fb52a150de4cd2ed"
+      },
+      {
+        "original": "worktrees/java-163/HEAD",
+        "archived": "refs/archive/wsl-game-rust/worktrees/java-163/HEAD",
+        "oid": "54ba67f14605902f7b147e0f0fc343c747098108"
+      },
+      {
+        "original": "worktrees/java-167/HEAD",
+        "archived": "refs/archive/wsl-game-rust/worktrees/java-167/HEAD",
+        "oid": "bcc40e53a5861b5a018acac2b26b1911ccc39be6"
+      },
+      {
+        "original": "worktrees/ab-c/HEAD",
+        "archived": "refs/archive/wsl-game-rust/worktrees/ab-c/HEAD",
+        "oid": "ed3d60d7f46508f2c188ff278d66ce9fe033c5e7"
+      },
+      {
+        "original": "worktrees/loop-metrics/HEAD",
+        "archived": "refs/archive/wsl-game-rust/worktrees/loop-metrics/HEAD",
+        "oid": "63564d981b9d0b2c14663e0b9f3ba1f7512ddf1c"
+      },
+      {
+        "original": "worktrees/java-168/HEAD",
+        "archived": "refs/archive/wsl-game-rust/worktrees/java-168/HEAD",
+        "oid": "1ac56f96257b6ae8950a0d5ec21772235fa30390"
+      },
+      {
+        "original": "worktrees/10/HEAD",
+        "archived": "refs/archive/wsl-game-rust/worktrees/10/HEAD",
+        "oid": "2655ace4c413a9ff91a533aae2ec7cae13c42049"
+      },
+      {
+        "original": "worktrees/ab-cache/HEAD",
+        "archived": "refs/archive/wsl-game-rust/worktrees/ab-cache/HEAD",
+        "oid": "60f7736ef6a9d60678dd18d468c3311e49c7062b"
+      },
+      {
+        "original": "worktrees/java-116/HEAD",
+        "archived": "refs/archive/wsl-game-rust/worktrees/java-116/HEAD",
+        "oid": "183259ec4d2355408e0480f46ad0245025468d5c"
+      },
+      {
+        "original": "worktrees/java-171/HEAD",
+        "archived": "refs/archive/wsl-game-rust/worktrees/java-171/HEAD",
+        "oid": "c4b5f82cb61ad0ede58aed6901468a3f0df66752"
+      }
+    ]
+  },
+  {
+    "origin": "windows",
+    "component": "client",
+    "head": "6d5389b605a3aad1e4b09684fda485ebfc33f775",
+    "refs": [
+      {
+        "original": "refs/heads/bug/182",
+        "archived": "refs/archive/windows-client/heads/bug/182",
+        "oid": "63dd195cba41a52a5e857f216d873ef261deb8b8"
+      },
+      {
+        "original": "refs/heads/bug/249",
+        "archived": "refs/archive/windows-client/heads/bug/249",
+        "oid": "a0fa175f79395ea64d0086076d86f86acae5e4c1"
+      },
+      {
+        "original": "refs/heads/bug/673",
+        "archived": "refs/archive/windows-client/heads/bug/673",
+        "oid": "efa6407b981d21d401a193b00ca7aaa82d1b0a54"
+      },
+      {
+        "original": "refs/heads/bug/74",
+        "archived": "refs/archive/windows-client/heads/bug/74",
+        "oid": "30a50add0fdcb52c1ef93167fbaeb8c22fb03204"
+      },
+      {
+        "original": "refs/heads/claude/optimistic-carson-gikzgn",
+        "archived": "refs/archive/windows-client/heads/claude/optimistic-carson-gikzgn",
+        "oid": "d3f45f87b040d0a91207c8d81f143016bf38c6b8"
+      },
+      {
+        "original": "refs/heads/claude/peaceful-euler-z0zwis",
+        "archived": "refs/archive/windows-client/heads/claude/peaceful-euler-z0zwis",
+        "oid": "98c0cadd3a7f66312bb6e506ef05d34202eaf1e1"
+      },
+      {
+        "original": "refs/heads/dev",
+        "archived": "refs/archive/windows-client/heads/dev",
+        "oid": "6d5389b605a3aad1e4b09684fda485ebfc33f775"
+      },
+      {
+        "original": "refs/heads/feature/106",
+        "archived": "refs/archive/windows-client/heads/feature/106",
+        "oid": "39c663bf43705cf0f4ae9bdacf7c066096483f74"
+      },
+      {
+        "original": "refs/heads/feature/110",
+        "archived": "refs/archive/windows-client/heads/feature/110",
+        "oid": "89ffb9bb20af81e3ba28c638efc3868c75ed21eb"
+      },
+      {
+        "original": "refs/heads/feature/114",
+        "archived": "refs/archive/windows-client/heads/feature/114",
+        "oid": "e04611b547901e5e52abe840bb25f5679bd3b9fc"
+      },
+      {
+        "original": "refs/heads/feature/125",
+        "archived": "refs/archive/windows-client/heads/feature/125",
+        "oid": "b06124d19664d442a6effec00dea05342dcda880"
+      },
+      {
+        "original": "refs/heads/feature/129",
+        "archived": "refs/archive/windows-client/heads/feature/129",
+        "oid": "6b547cd72d8d9f934a4cad25825b9efcd9d530b5"
+      },
+      {
+        "original": "refs/heads/feature/135",
+        "archived": "refs/archive/windows-client/heads/feature/135",
+        "oid": "11b2cebaf7afa2416a57919693883c363b198c2c"
+      },
+      {
+        "original": "refs/heads/feature/157",
+        "archived": "refs/archive/windows-client/heads/feature/157",
+        "oid": "7ea98818540314db77af90902ed16a0275a8bb30"
+      },
+      {
+        "original": "refs/heads/feature/175",
+        "archived": "refs/archive/windows-client/heads/feature/175",
+        "oid": "4833ebedc74e40b6255709c5bfba9dab120dd126"
+      },
+      {
+        "original": "refs/heads/feature/204",
+        "archived": "refs/archive/windows-client/heads/feature/204",
+        "oid": "919b88c1bac7f26ea378159cefe9bcf5a6302da3"
+      },
+      {
+        "original": "refs/heads/feature/207",
+        "archived": "refs/archive/windows-client/heads/feature/207",
+        "oid": "cd5f6f96c518605fddc29bd31b0b74285aa22986"
+      },
+      {
+        "original": "refs/heads/feature/215",
+        "archived": "refs/archive/windows-client/heads/feature/215",
+        "oid": "da36fb7e921d3538b791ec24933cf3b5aa6517df"
+      },
+      {
+        "original": "refs/heads/feature/227",
+        "archived": "refs/archive/windows-client/heads/feature/227",
+        "oid": "caa82c7e576be4b511f8496705c14ef2be6fd1ef"
+      },
+      {
+        "original": "refs/heads/feature/232",
+        "archived": "refs/archive/windows-client/heads/feature/232",
+        "oid": "80020e6272cd8dc4447ac47c4e0d25efae0fa803"
+      },
+      {
+        "original": "refs/heads/feature/254",
+        "archived": "refs/archive/windows-client/heads/feature/254",
+        "oid": "0c731638a3281639e680e3c02d0ec1a747d5c624"
+      },
+      {
+        "original": "refs/heads/feature/259",
+        "archived": "refs/archive/windows-client/heads/feature/259",
+        "oid": "91775b5f445c543716427ff81318d4f02274fe2a"
+      },
+      {
+        "original": "refs/heads/feature/261",
+        "archived": "refs/archive/windows-client/heads/feature/261",
+        "oid": "e97d2f4e36a5b9811a60b2e3ee4faef47ef47686"
+      },
+      {
+        "original": "refs/heads/feature/268",
+        "archived": "refs/archive/windows-client/heads/feature/268",
+        "oid": "e2cbef6c27038bcd9dd51d4ea6f2ecc7415ffb3d"
+      },
+      {
+        "original": "refs/heads/feature/271",
+        "archived": "refs/archive/windows-client/heads/feature/271",
+        "oid": "dc2e1a7ee2364213123e3d5b8ed844a415e90f78"
+      },
+      {
+        "original": "refs/heads/feature/274",
+        "archived": "refs/archive/windows-client/heads/feature/274",
+        "oid": "16db36c31efee3dcac6b0c806b12a3b64867cb94"
+      },
+      {
+        "original": "refs/heads/feature/302",
+        "archived": "refs/archive/windows-client/heads/feature/302",
+        "oid": "f253ae26757ab2ea1a3e0857d83add50252ec12c"
+      },
+      {
+        "original": "refs/heads/feature/303",
+        "archived": "refs/archive/windows-client/heads/feature/303",
+        "oid": "f9d19e5910c7df2c9ca9290169a9bbb210973bc1"
+      },
+      {
+        "original": "refs/heads/feature/304",
+        "archived": "refs/archive/windows-client/heads/feature/304",
+        "oid": "812d91101febe60b10a9d5b6ac4d2804880692b9"
+      },
+      {
+        "original": "refs/heads/feature/309",
+        "archived": "refs/archive/windows-client/heads/feature/309",
+        "oid": "0a5f21c0bba68deb109f81f53f7991b171b44231"
+      },
+      {
+        "original": "refs/heads/feature/314",
+        "archived": "refs/archive/windows-client/heads/feature/314",
+        "oid": "941f9731419d1ef79fdb4e77a2f8d9fa16b40336"
+      },
+      {
+        "original": "refs/heads/feature/329",
+        "archived": "refs/archive/windows-client/heads/feature/329",
+        "oid": "14e1d55d0aceb394e196a23e9a38e23aad40569c"
+      },
+      {
+        "original": "refs/heads/feature/338",
+        "archived": "refs/archive/windows-client/heads/feature/338",
+        "oid": "7fb6790370c5442eabb48b04ff3f6fd7ae817581"
+      },
+      {
+        "original": "refs/heads/feature/340",
+        "archived": "refs/archive/windows-client/heads/feature/340",
+        "oid": "133c6fd1f5e365e770cb3bc94740fa4bc108d23f"
+      },
+      {
+        "original": "refs/heads/feature/377",
+        "archived": "refs/archive/windows-client/heads/feature/377",
+        "oid": "fcf05461435e3d20a2d60d0f08a2b1fafeafd532"
+      },
+      {
+        "original": "refs/heads/feature/457",
+        "archived": "refs/archive/windows-client/heads/feature/457",
+        "oid": "0ec9545cc8f5077954f25f0ee0e8299d0f877c48"
+      },
+      {
+        "original": "refs/heads/feature/467",
+        "archived": "refs/archive/windows-client/heads/feature/467",
+        "oid": "8d7b662dd162fc68a83960d46d0e4e25931aa399"
+      },
+      {
+        "original": "refs/heads/feature/494",
+        "archived": "refs/archive/windows-client/heads/feature/494",
+        "oid": "ab0a2a5f8e40ae85b282cbf2aaa4fa534763f422"
+      },
+      {
+        "original": "refs/heads/feature/498",
+        "archived": "refs/archive/windows-client/heads/feature/498",
+        "oid": "e4f8dfab0f1041214029bfdd916fb7d730762d6b"
+      },
+      {
+        "original": "refs/heads/feature/500",
+        "archived": "refs/archive/windows-client/heads/feature/500",
+        "oid": "9317c4683e681c3cdb65573a3037109de97a1082"
+      },
+      {
+        "original": "refs/heads/feature/511",
+        "archived": "refs/archive/windows-client/heads/feature/511",
+        "oid": "9764fb80997150a421432a777224fed74fd82be2"
+      },
+      {
+        "original": "refs/heads/feature/522",
+        "archived": "refs/archive/windows-client/heads/feature/522",
+        "oid": "d4897280b59e7690f0fb2b91e9c51060d42e0660"
+      },
+      {
+        "original": "refs/heads/feature/540",
+        "archived": "refs/archive/windows-client/heads/feature/540",
+        "oid": "6e2377df7353807095b27dc47b60dff8d75909e4"
+      },
+      {
+        "original": "refs/heads/feature/544",
+        "archived": "refs/archive/windows-client/heads/feature/544",
+        "oid": "e5a1e0766dca3a3bc196a981a37af6e55fea4ae2"
+      },
+      {
+        "original": "refs/heads/feature/545",
+        "archived": "refs/archive/windows-client/heads/feature/545",
+        "oid": "9887c5202a217d62745008d63fb4762ae917f78b"
+      },
+      {
+        "original": "refs/heads/feature/549",
+        "archived": "refs/archive/windows-client/heads/feature/549",
+        "oid": "0161ed19a20293efdc2f00f0e24581477749b696"
+      },
+      {
+        "original": "refs/heads/feature/579",
+        "archived": "refs/archive/windows-client/heads/feature/579",
+        "oid": "fe5ecf018b9c72f85f703597be03560b0ff76b13"
+      },
+      {
+        "original": "refs/heads/feature/631",
+        "archived": "refs/archive/windows-client/heads/feature/631",
+        "oid": "87b429e06bb5b236fb6a9a6257ac466bb56ae874"
+      },
+      {
+        "original": "refs/heads/feature/676",
+        "archived": "refs/archive/windows-client/heads/feature/676",
+        "oid": "54ecb62caf61a0a9e6374adcb58d11465fdc765b"
+      },
+      {
+        "original": "refs/heads/feature/705",
+        "archived": "refs/archive/windows-client/heads/feature/705",
+        "oid": "c30f4bb051aa7538bf373a1e454fc8e9184508e1"
+      },
+      {
+        "original": "refs/heads/feature/bot-player-appearance-art",
+        "archived": "refs/archive/windows-client/heads/feature/bot-player-appearance-art",
+        "oid": "88a1915e5b663833b382967418d22c908f92cccf"
+      },
+      {
+        "original": "refs/heads/feature/lobby-profile-entry",
+        "archived": "refs/archive/windows-client/heads/feature/lobby-profile-entry",
+        "oid": "c63d554be7e5a2b0c77285fada25ccafdcefed84"
+      },
+      {
+        "original": "refs/heads/fix/169",
+        "archived": "refs/archive/windows-client/heads/fix/169",
+        "oid": "7c87f98dddf509e8453701f88ce31c6cbdfdd473"
+      },
+      {
+        "original": "refs/heads/fix/269",
+        "archived": "refs/archive/windows-client/heads/fix/269",
+        "oid": "d7ea88d94186f7e4ba16d8accefb738ea50f9216"
+      },
+      {
+        "original": "refs/heads/fix/270",
+        "archived": "refs/archive/windows-client/heads/fix/270",
+        "oid": "a8e50521b236cfc847f833485e84aaaed45c47e3"
+      },
+      {
+        "original": "refs/heads/fix/272",
+        "archived": "refs/archive/windows-client/heads/fix/272",
+        "oid": "d4a15d3f064b329827e987e655941962f9a7b04e"
+      },
+      {
+        "original": "refs/heads/fix/339",
+        "archived": "refs/archive/windows-client/heads/fix/339",
+        "oid": "04322988fb9b87fb6100e9c1216ccfc02cb958c6"
+      },
+      {
+        "original": "refs/heads/fix/505",
+        "archived": "refs/archive/windows-client/heads/fix/505",
+        "oid": "8d7fde40cb3f92edbd216eb296d7b9a8b2171fbd"
+      },
+      {
+        "original": "refs/heads/fix/512",
+        "archived": "refs/archive/windows-client/heads/fix/512",
+        "oid": "8ba1c132b45b58bf876594ac915a85362cf009c3"
+      },
+      {
+        "original": "refs/heads/fix/514",
+        "archived": "refs/archive/windows-client/heads/fix/514",
+        "oid": "61e3f52b749986fd32aa1a195d13222fbe73edd8"
+      },
+      {
+        "original": "refs/heads/fix/52",
+        "archived": "refs/archive/windows-client/heads/fix/52",
+        "oid": "d27e9b8b0d0c6fff55bf7798c95ca2a291df0cab"
+      },
+      {
+        "original": "refs/heads/fix/556",
+        "archived": "refs/archive/windows-client/heads/fix/556",
+        "oid": "2b70723d9350fcb8a3036b885929a27b85037d5c"
+      },
+      {
+        "original": "refs/heads/fix/560",
+        "archived": "refs/archive/windows-client/heads/fix/560",
+        "oid": "e55b5af75c9ccdf88cbe3bab7366dfb388b4a17f"
+      },
+      {
+        "original": "refs/heads/fix/562",
+        "archived": "refs/archive/windows-client/heads/fix/562",
+        "oid": "55f3c0eab0021ac4f077a03e17c8dba42f241f31"
+      },
+      {
+        "original": "refs/heads/fix/564",
+        "archived": "refs/archive/windows-client/heads/fix/564",
+        "oid": "5525d0309553cf2b3eea4d1ac3ca341d1d70917c"
+      },
+      {
+        "original": "refs/heads/fix/566",
+        "archived": "refs/archive/windows-client/heads/fix/566",
+        "oid": "027190ce41d92fbcc44f2a168130fd58e2d2e844"
+      },
+      {
+        "original": "refs/heads/fix/568",
+        "archived": "refs/archive/windows-client/heads/fix/568",
+        "oid": "fc0cd9c6c8e98cebf1a787cd932318e1493161c2"
+      },
+      {
+        "original": "refs/heads/fix/571",
+        "archived": "refs/archive/windows-client/heads/fix/571",
+        "oid": "fc0cd9c6c8e98cebf1a787cd932318e1493161c2"
+      },
+      {
+        "original": "refs/heads/fix/591",
+        "archived": "refs/archive/windows-client/heads/fix/591",
+        "oid": "bc99e98a8c5aece9dc061693d15afe06713e2c89"
+      },
+      {
+        "original": "refs/heads/fix/723",
+        "archived": "refs/archive/windows-client/heads/fix/723",
+        "oid": "1217fae98cc2d3a110145e2ce95d6a607b751b19"
+      },
+      {
+        "original": "refs/heads/fix/94",
+        "archived": "refs/archive/windows-client/heads/fix/94",
+        "oid": "4da474b5a022776db1255698452499878aff6607"
+      },
+      {
+        "original": "refs/heads/fix/95",
+        "archived": "refs/archive/windows-client/heads/fix/95",
+        "oid": "bfaef4cc166a932f2dec115b7b6fe33259312013"
+      },
+      {
+        "original": "refs/heads/fix/98",
+        "archived": "refs/archive/windows-client/heads/fix/98",
+        "oid": "8f40e8197576ac55ad560aa13c3c39d3627ee1d4"
+      },
+      {
+        "original": "refs/heads/fix/background-covers-wide-screens",
+        "archived": "refs/archive/windows-client/heads/fix/background-covers-wide-screens",
+        "oid": "789345880aa9e7f8b9b76b277174263611ae43fe"
+      },
+      {
+        "original": "refs/heads/fix/profile-total-wins-label",
+        "archived": "refs/archive/windows-client/heads/fix/profile-total-wins-label",
+        "oid": "25a2b307412d7012117014b5313672e104f3a66e"
+      },
+      {
+        "original": "refs/heads/local/golem-bgm-test",
+        "archived": "refs/archive/windows-client/heads/local/golem-bgm-test",
+        "oid": "a422da171fd04f3cf4bc20b25609ceecf6f31b39"
+      },
+      {
+        "original": "refs/heads/magic-card",
+        "archived": "refs/archive/windows-client/heads/magic-card",
+        "oid": "0025079d64472812ab7257897f4e7ccd8a18cee2"
+      },
+      {
+        "original": "refs/heads/preview/ui-polish",
+        "archived": "refs/archive/windows-client/heads/preview/ui-polish",
+        "oid": "b13d3f5b0b77d564bcdb05b5cf1139cf3c96d358"
+      },
+      {
+        "original": "refs/heads/test/river-map-type",
+        "archived": "refs/archive/windows-client/heads/test/river-map-type",
+        "oid": "db407457cd76f57c9437b8b493330e4ac06f6bd1"
+      },
+      {
+        "original": "refs/remotes/origin/Fix/283",
+        "archived": "refs/archive/windows-client/remotes/origin/Fix/283",
+        "oid": "8909150da67004cfe5671268243a7bf368ded7df"
+      },
+      {
+        "original": "refs/remotes/origin/Fix/350",
+        "archived": "refs/archive/windows-client/remotes/origin/Fix/350",
+        "oid": "3229c1e900c37328e085dd21fa6b513ff2ced72d"
+      },
+      {
+        "original": "refs/remotes/origin/Fix/loopback-ipv4",
+        "archived": "refs/archive/windows-client/remotes/origin/Fix/loopback-ipv4",
+        "oid": "33f98e884139cc48540933870b59d16fe9c4cd8f"
+      },
+      {
+        "original": "refs/remotes/origin/HEAD",
+        "archived": "refs/archive/windows-client/remotes/origin/HEAD",
+        "oid": "e3ad66fcd99b06af3409f9f0efbf313867ca2d96"
+      },
+      {
+        "original": "refs/remotes/origin/bug/182",
+        "archived": "refs/archive/windows-client/remotes/origin/bug/182",
+        "oid": "63dd195cba41a52a5e857f216d873ef261deb8b8"
+      },
+      {
+        "original": "refs/remotes/origin/bug/249",
+        "archived": "refs/archive/windows-client/remotes/origin/bug/249",
+        "oid": "a0fa175f79395ea64d0086076d86f86acae5e4c1"
+      },
+      {
+        "original": "refs/remotes/origin/bug/74",
+        "archived": "refs/archive/windows-client/remotes/origin/bug/74",
+        "oid": "a01112975d1d05616fbedcdd72224bdb8c2e602e"
+      },
+      {
+        "original": "refs/remotes/origin/chore/534",
+        "archived": "refs/archive/windows-client/remotes/origin/chore/534",
+        "oid": "d95998846f080bd2afe6d2d439528881daf17e54"
+      },
+      {
+        "original": "refs/remotes/origin/chore/54",
+        "archived": "refs/archive/windows-client/remotes/origin/chore/54",
+        "oid": "440df7799811ed111a72213c260c761c275e80b5"
+      },
+      {
+        "original": "refs/remotes/origin/chore/60",
+        "archived": "refs/archive/windows-client/remotes/origin/chore/60",
+        "oid": "bd9b050e7d9fd33c9dac5da6b2ccf981b2f32905"
+      },
+      {
+        "original": "refs/remotes/origin/chore/69",
+        "archived": "refs/archive/windows-client/remotes/origin/chore/69",
+        "oid": "f00e011e7e4cdf99b98d06c774978973f9ea6e91"
+      },
+      {
+        "original": "refs/remotes/origin/chore/739",
+        "archived": "refs/archive/windows-client/remotes/origin/chore/739",
+        "oid": "75332916b50f33e3907d0bdec506dc8fb77354ee"
+      },
+      {
+        "original": "refs/remotes/origin/chore/76",
+        "archived": "refs/archive/windows-client/remotes/origin/chore/76",
+        "oid": "bd202b7171d023e1714c76278c690094a9f67ef0"
+      },
+      {
+        "original": "refs/remotes/origin/chore/check-itch-access",
+        "archived": "refs/archive/windows-client/remotes/origin/chore/check-itch-access",
+        "oid": "e43a1a166a30804e797a23c03a2061b3566380c2"
+      },
+      {
+        "original": "refs/remotes/origin/ci/android-play-release",
+        "archived": "refs/archive/windows-client/remotes/origin/ci/android-play-release",
+        "oid": "09dce86e32f6cac7ecb295d0436c0ffcf6483217"
+      },
+      {
+        "original": "refs/remotes/origin/claude/game-client-lag-issue-2iy1ny",
+        "archived": "refs/archive/windows-client/remotes/origin/claude/game-client-lag-issue-2iy1ny",
+        "oid": "3eb4bfdcce4940af203dca0a43befc58c08a5e2b"
+      },
+      {
+        "original": "refs/remotes/origin/claude/optimistic-carson-gikzgn",
+        "archived": "refs/archive/windows-client/remotes/origin/claude/optimistic-carson-gikzgn",
+        "oid": "d3f45f87b040d0a91207c8d81f143016bf38c6b8"
+      },
+      {
+        "original": "refs/remotes/origin/claude/peaceful-euler-z0zwis",
+        "archived": "refs/archive/windows-client/remotes/origin/claude/peaceful-euler-z0zwis",
+        "oid": "98c0cadd3a7f66312bb6e506ef05d34202eaf1e1"
+      },
+      {
+        "original": "refs/remotes/origin/claude/tender-curie-ggi3eo",
+        "archived": "refs/archive/windows-client/remotes/origin/claude/tender-curie-ggi3eo",
+        "oid": "0bf434cf89c4994a54c17aafe0fcc8652a46684a"
+      },
+      {
+        "original": "refs/remotes/origin/claude/thirsty-margulis",
+        "archived": "refs/archive/windows-client/remotes/origin/claude/thirsty-margulis",
+        "oid": "253e2bc0eb42cc24eab5c0a3f2023a8773cc5c0f"
+      },
+      {
+        "original": "refs/remotes/origin/codex/vine-world-magic",
+        "archived": "refs/archive/windows-client/remotes/origin/codex/vine-world-magic",
+        "oid": "adde8a47b03acbcc7e0acfeab35e248952fc385b"
+      },
+      {
+        "original": "refs/remotes/origin/copilot/fix-failing-github-actions-job-buildwebgl",
+        "archived": "refs/archive/windows-client/remotes/origin/copilot/fix-failing-github-actions-job-buildwebgl",
+        "oid": "76dfc629e5502cbfc7015cefaffe3bb36e177465"
+      },
+      {
+        "original": "refs/remotes/origin/copilot/implement-maintenance-feature",
+        "archived": "refs/archive/windows-client/remotes/origin/copilot/implement-maintenance-feature",
+        "oid": "07177b9832a0325ccde6cc05c92249dbf3ec41ef"
+      },
+      {
+        "original": "refs/remotes/origin/copilot/implement-versioning-for-magics-info-again",
+        "archived": "refs/archive/windows-client/remotes/origin/copilot/implement-versioning-for-magics-info-again",
+        "oid": "85a3ceef6edec2a9ac1ac902df50384aff86a7dc"
+      },
+      {
+        "original": "refs/remotes/origin/copilot/update-lobby-url-for-dev",
+        "archived": "refs/archive/windows-client/remotes/origin/copilot/update-lobby-url-for-dev",
+        "oid": "d800926407e73cf8c459f93003a2248af6b4684c"
+      },
+      {
+        "original": "refs/remotes/origin/deploy",
+        "archived": "refs/archive/windows-client/remotes/origin/deploy",
+        "oid": "93c3e1685ebf75ff8e3f09e200821a11d5308b90"
+      },
+      {
+        "original": "refs/remotes/origin/dev",
+        "archived": "refs/archive/windows-client/remotes/origin/dev",
+        "oid": "6d5389b605a3aad1e4b09684fda485ebfc33f775"
+      },
+      {
+        "original": "refs/remotes/origin/documentation/219",
+        "archived": "refs/archive/windows-client/remotes/origin/documentation/219",
+        "oid": "73812bb13a49581152ec8f2290ae626d1ca028f3"
+      },
+      {
+        "original": "refs/remotes/origin/documentation/530",
+        "archived": "refs/archive/windows-client/remotes/origin/documentation/530",
+        "oid": "211a1a550567d5ec21deeaf1fe20609e356f5d0c"
+      },
+      {
+        "original": "refs/remotes/origin/documentation/634",
+        "archived": "refs/archive/windows-client/remotes/origin/documentation/634",
+        "oid": "6ddcaf9933840e9f77fa63d230a1fb3fb4f73533"
+      },
+      {
+        "original": "refs/remotes/origin/documentation/646",
+        "archived": "refs/archive/windows-client/remotes/origin/documentation/646",
+        "oid": "04c614ba105e53d018335326910994bad34e79ce"
+      },
+      {
+        "original": "refs/remotes/origin/documentation/65",
+        "archived": "refs/archive/windows-client/remotes/origin/documentation/65",
+        "oid": "e013f58d181afde39a6c6cb17c5301381f76917e"
+      },
+      {
+        "original": "refs/remotes/origin/documentation/732",
+        "archived": "refs/archive/windows-client/remotes/origin/documentation/732",
+        "oid": "35ebf9d2ba77f4f36420ab490816d60adf8adf44"
+      },
+      {
+        "original": "refs/remotes/origin/feat/admin-debug-search-and-spawn-position",
+        "archived": "refs/archive/windows-client/remotes/origin/feat/admin-debug-search-and-spawn-position",
+        "oid": "a02e6646732fd4a34461a623b5e8559c5235bf16"
+      },
+      {
+        "original": "refs/remotes/origin/feat/data-versioning",
+        "archived": "refs/archive/windows-client/remotes/origin/feat/data-versioning",
+        "oid": "506303fcc6c062c5eb2cfec2d9c116fd3bd72654"
+      },
+      {
+        "original": "refs/remotes/origin/feat/lockstep-phase1",
+        "archived": "refs/archive/windows-client/remotes/origin/feat/lockstep-phase1",
+        "oid": "4cb03853e425f9ff2fb39acfd4cd6931eab603b8"
+      },
+      {
+        "original": "refs/remotes/origin/feat/lockstep-phase3",
+        "archived": "refs/archive/windows-client/remotes/origin/feat/lockstep-phase3",
+        "oid": "162e9c906a49259f48f9b4adb7ad254808243ee8"
+      },
+      {
+        "original": "refs/remotes/origin/feat/ping-based-server-selection",
+        "archived": "refs/archive/windows-client/remotes/origin/feat/ping-based-server-selection",
+        "oid": "3e5816c2ae4823de8cd6da8e07222ab3a864005e"
+      },
+      {
+        "original": "refs/remotes/origin/feat/release-build-workflow",
+        "archived": "refs/archive/windows-client/remotes/origin/feat/release-build-workflow",
+        "oid": "fbfa50bd6f6167bc8e077977d2cf24321feb446d"
+      },
+      {
+        "original": "refs/remotes/origin/feature.295",
+        "archived": "refs/archive/windows-client/remotes/origin/feature.295",
+        "oid": "3c91c782fe68185a41b8330afaf718aa97509d09"
+      },
+      {
+        "original": "refs/remotes/origin/feature/105",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/105",
+        "oid": "5c4c9098a3b59631509ad3d398800a273a5a81df"
+      },
+      {
+        "original": "refs/remotes/origin/feature/106",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/106",
+        "oid": "39c663bf43705cf0f4ae9bdacf7c066096483f74"
+      },
+      {
+        "original": "refs/remotes/origin/feature/110",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/110",
+        "oid": "89ffb9bb20af81e3ba28c638efc3868c75ed21eb"
+      },
+      {
+        "original": "refs/remotes/origin/feature/114",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/114",
+        "oid": "bc894425c773693932cc2dfa55573de5a4367f70"
+      },
+      {
+        "original": "refs/remotes/origin/feature/116",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/116",
+        "oid": "550f4ebf612aefa6eb5672fd51ad270d08abbdee"
+      },
+      {
+        "original": "refs/remotes/origin/feature/118",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/118",
+        "oid": "a9429b506525bc7e83918380c50788b12bfa01e6"
+      },
+      {
+        "original": "refs/remotes/origin/feature/125",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/125",
+        "oid": "b06124d19664d442a6effec00dea05342dcda880"
+      },
+      {
+        "original": "refs/remotes/origin/feature/127",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/127",
+        "oid": "25ec3c2070b32676bac44ee0539bf99f18714466"
+      },
+      {
+        "original": "refs/remotes/origin/feature/129",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/129",
+        "oid": "6b547cd72d8d9f934a4cad25825b9efcd9d530b5"
+      },
+      {
+        "original": "refs/remotes/origin/feature/131",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/131",
+        "oid": "5113d9a529fccaf6a5a2e00e95bc9373d406393c"
+      },
+      {
+        "original": "refs/remotes/origin/feature/132",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/132",
+        "oid": "0fd65229ffcac753d7182a482af5acb8cbebc47d"
+      },
+      {
+        "original": "refs/remotes/origin/feature/133",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/133",
+        "oid": "547b3145a7663daf3ebe8451fdf53fb1a9e980e6"
+      },
+      {
+        "original": "refs/remotes/origin/feature/134",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/134",
+        "oid": "12c0c547e3bee2732559461d3c4eddd9dc9cc9fb"
+      },
+      {
+        "original": "refs/remotes/origin/feature/135",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/135",
+        "oid": "867645d1bb9e99a9dfaf712e1c0507ffe8f86cb0"
+      },
+      {
+        "original": "refs/remotes/origin/feature/147",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/147",
+        "oid": "a4a72940912326d667133b0f0f68fe03c37bb942"
+      },
+      {
+        "original": "refs/remotes/origin/feature/148",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/148",
+        "oid": "c58b4d72539b85712fc1259fda6908a381d546b1"
+      },
+      {
+        "original": "refs/remotes/origin/feature/149",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/149",
+        "oid": "5f61a036731d6d795c6d6e31c261c9c67db9b41e"
+      },
+      {
+        "original": "refs/remotes/origin/feature/150",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/150",
+        "oid": "d1e347864bb33fe9d1b18748afb1baa09ddb5dfb"
+      },
+      {
+        "original": "refs/remotes/origin/feature/155",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/155",
+        "oid": "4ddcb4b77b337c14132b52462f99f20f4ed2b154"
+      },
+      {
+        "original": "refs/remotes/origin/feature/157",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/157",
+        "oid": "9b3bf2aa84b427e05b8312a0b230c9914faf0ac7"
+      },
+      {
+        "original": "refs/remotes/origin/feature/175",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/175",
+        "oid": "bc95d98362e88c81fb96c80092beb1627fd27d56"
+      },
+      {
+        "original": "refs/remotes/origin/feature/177",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/177",
+        "oid": "62df3d58219d82ba2ba737f354ca42cf7949a2dd"
+      },
+      {
+        "original": "refs/remotes/origin/feature/180",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/180",
+        "oid": "e85615742624016fb6191725bfbf560ad6f5ad29"
+      },
+      {
+        "original": "refs/remotes/origin/feature/204",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/204",
+        "oid": "919b88c1bac7f26ea378159cefe9bcf5a6302da3"
+      },
+      {
+        "original": "refs/remotes/origin/feature/205",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/205",
+        "oid": "d3e0967fe721f2d52a234b1a7fafe08fa750bb7a"
+      },
+      {
+        "original": "refs/remotes/origin/feature/207",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/207",
+        "oid": "5976d212cc7ab6a47f69d102c93e73d85b0cc260"
+      },
+      {
+        "original": "refs/remotes/origin/feature/213",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/213",
+        "oid": "a4522b5a18c92ecc95af53185021663757a8ba83"
+      },
+      {
+        "original": "refs/remotes/origin/feature/215",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/215",
+        "oid": "458cfef8d1f3ea643c557448f4bd85c99a3fecc9"
+      },
+      {
+        "original": "refs/remotes/origin/feature/217",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/217",
+        "oid": "555a4a43578b45a53121e352148a7f6aaad03ea9"
+      },
+      {
+        "original": "refs/remotes/origin/feature/221",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/221",
+        "oid": "0d310453115d92f43edfbbf00f41410098530451"
+      },
+      {
+        "original": "refs/remotes/origin/feature/222",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/222",
+        "oid": "70a2c9b6ed8f2ece541f93c0ffa02c6be036c79f"
+      },
+      {
+        "original": "refs/remotes/origin/feature/226",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/226",
+        "oid": "57b0bb70c78bf3b93606e0c4b1ca3a37258ad9d8"
+      },
+      {
+        "original": "refs/remotes/origin/feature/227",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/227",
+        "oid": "caa82c7e576be4b511f8496705c14ef2be6fd1ef"
+      },
+      {
+        "original": "refs/remotes/origin/feature/232",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/232",
+        "oid": "80020e6272cd8dc4447ac47c4e0d25efae0fa803"
+      },
+      {
+        "original": "refs/remotes/origin/feature/235",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/235",
+        "oid": "d655a50a22c8f38a537c6839d2763023279fd965"
+      },
+      {
+        "original": "refs/remotes/origin/feature/238",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/238",
+        "oid": "346c6a4a88c61f9e38a80dbbaca568456c943d24"
+      },
+      {
+        "original": "refs/remotes/origin/feature/242",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/242",
+        "oid": "2cd446d7a8f338bbc653f2bdb2406799185179fc"
+      },
+      {
+        "original": "refs/remotes/origin/feature/252",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/252",
+        "oid": "a3f06c77777c14b46fa0f5d6fb70f99f7bf37f16"
+      },
+      {
+        "original": "refs/remotes/origin/feature/254",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/254",
+        "oid": "0c731638a3281639e680e3c02d0ec1a747d5c624"
+      },
+      {
+        "original": "refs/remotes/origin/feature/256",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/256",
+        "oid": "861fae66ea8e56ad52dfd004b6a4c06d335812d6"
+      },
+      {
+        "original": "refs/remotes/origin/feature/259",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/259",
+        "oid": "b25ddddb182b7e9c98342733cc867c0e501da56e"
+      },
+      {
+        "original": "refs/remotes/origin/feature/261",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/261",
+        "oid": "e070c1b5b23c998bf358bc442a3d7adb9fba9f83"
+      },
+      {
+        "original": "refs/remotes/origin/feature/263",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/263",
+        "oid": "3f66984240594dac2f58ecc31f8bad08722c8ef5"
+      },
+      {
+        "original": "refs/remotes/origin/feature/266",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/266",
+        "oid": "b845a77ed95a1d31ef34aba6142a8c65a6c4e830"
+      },
+      {
+        "original": "refs/remotes/origin/feature/268",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/268",
+        "oid": "e2cbef6c27038bcd9dd51d4ea6f2ecc7415ffb3d"
+      },
+      {
+        "original": "refs/remotes/origin/feature/271",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/271",
+        "oid": "dc2e1a7ee2364213123e3d5b8ed844a415e90f78"
+      },
+      {
+        "original": "refs/remotes/origin/feature/274",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/274",
+        "oid": "16db36c31efee3dcac6b0c806b12a3b64867cb94"
+      },
+      {
+        "original": "refs/remotes/origin/feature/275",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/275",
+        "oid": "681138c8f18e3c36f92e9cdfa6fef90111f8509b"
+      },
+      {
+        "original": "refs/remotes/origin/feature/276",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/276",
+        "oid": "6914ee33733de71ad66686316a79173a60496b22"
+      },
+      {
+        "original": "refs/remotes/origin/feature/277",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/277",
+        "oid": "31ad36d10d16531cd43eef68019a5f941b03c01e"
+      },
+      {
+        "original": "refs/remotes/origin/feature/287",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/287",
+        "oid": "6cab6b552f65eebfb13e361421c9eda966bf7be6"
+      },
+      {
+        "original": "refs/remotes/origin/feature/289",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/289",
+        "oid": "b458c9bb866ae18ee100195047409b097150e507"
+      },
+      {
+        "original": "refs/remotes/origin/feature/292",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/292",
+        "oid": "504fbd0c91a0c39961a500bcc4de36eae7b6a15c"
+      },
+      {
+        "original": "refs/remotes/origin/feature/296",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/296",
+        "oid": "bfe7acff2f4b57df43a286ea61629a5699a6fe1a"
+      },
+      {
+        "original": "refs/remotes/origin/feature/299",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/299",
+        "oid": "000ab1b2faee2fa13bd9a4d9c87d8e8d31bef02c"
+      },
+      {
+        "original": "refs/remotes/origin/feature/301",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/301",
+        "oid": "a7540b07f0a5378e1ebe69cb30288542731ff01c"
+      },
+      {
+        "original": "refs/remotes/origin/feature/302",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/302",
+        "oid": "f253ae26757ab2ea1a3e0857d83add50252ec12c"
+      },
+      {
+        "original": "refs/remotes/origin/feature/303",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/303",
+        "oid": "f0592c15683d74ae4756744507531d98c85e243c"
+      },
+      {
+        "original": "refs/remotes/origin/feature/304",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/304",
+        "oid": "812d91101febe60b10a9d5b6ac4d2804880692b9"
+      },
+      {
+        "original": "refs/remotes/origin/feature/307",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/307",
+        "oid": "d43e078d0027d7a51b14476e0204b99e62d10e00"
+      },
+      {
+        "original": "refs/remotes/origin/feature/309",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/309",
+        "oid": "9cb942f5d800d1576c2ef0c0aa22622fda1259ab"
+      },
+      {
+        "original": "refs/remotes/origin/feature/312",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/312",
+        "oid": "9707484cb09adfce57d5bfa901964e19f74614f8"
+      },
+      {
+        "original": "refs/remotes/origin/feature/314",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/314",
+        "oid": "96748fe3377eed204c121547e464eab30134723b"
+      },
+      {
+        "original": "refs/remotes/origin/feature/317",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/317",
+        "oid": "f3d9ed9cd865cf7a096c80ba0f0c9301bfeab89d"
+      },
+      {
+        "original": "refs/remotes/origin/feature/318",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/318",
+        "oid": "4efbeec5d6fd1ff7eaf987bc981ca53a4ef36f98"
+      },
+      {
+        "original": "refs/remotes/origin/feature/320",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/320",
+        "oid": "f5a92ff728823c217bb89da7539ed5f77e3b6121"
+      },
+      {
+        "original": "refs/remotes/origin/feature/324",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/324",
+        "oid": "fab88ff89cac523f329cb9234ea03467fc227f93"
+      },
+      {
+        "original": "refs/remotes/origin/feature/329",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/329",
+        "oid": "14e1d55d0aceb394e196a23e9a38e23aad40569c"
+      },
+      {
+        "original": "refs/remotes/origin/feature/330",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/330",
+        "oid": "e2a15136af1ab9e89307a9ebe29ed701fc264226"
+      },
+      {
+        "original": "refs/remotes/origin/feature/334",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/334",
+        "oid": "285541646d94b277cb5911064221b561c1d5672c"
+      },
+      {
+        "original": "refs/remotes/origin/feature/336",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/336",
+        "oid": "fd0cfd46c1094075820851e4740900b50b364e97"
+      },
+      {
+        "original": "refs/remotes/origin/feature/338",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/338",
+        "oid": "7fb6790370c5442eabb48b04ff3f6fd7ae817581"
+      },
+      {
+        "original": "refs/remotes/origin/feature/340",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/340",
+        "oid": "133c6fd1f5e365e770cb3bc94740fa4bc108d23f"
+      },
+      {
+        "original": "refs/remotes/origin/feature/345",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/345",
+        "oid": "9478fb31da8c0fbeee072320b43591e2408dcf90"
+      },
+      {
+        "original": "refs/remotes/origin/feature/348",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/348",
+        "oid": "a6cf36e29f6bfe02ecf7825c5d1558b414e845c8"
+      },
+      {
+        "original": "refs/remotes/origin/feature/359",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/359",
+        "oid": "1fc2ed446147979664d365e309344f934472dd56"
+      },
+      {
+        "original": "refs/remotes/origin/feature/360",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/360",
+        "oid": "8cc728b8306fbef58a0951fdeec0739430b04d0c"
+      },
+      {
+        "original": "refs/remotes/origin/feature/372",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/372",
+        "oid": "5c073cc81bd045f243d06b914b586056b29732ca"
+      },
+      {
+        "original": "refs/remotes/origin/feature/379",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/379",
+        "oid": "caf82e475f0dfb14ab92b19810e9e080e2d59810"
+      },
+      {
+        "original": "refs/remotes/origin/feature/400",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/400",
+        "oid": "541daa07afef9e90b1ffd2a0cd715579f1eb2f40"
+      },
+      {
+        "original": "refs/remotes/origin/feature/402",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/402",
+        "oid": "7fad57a8940b46b09304bd8a9e51430cfd351999"
+      },
+      {
+        "original": "refs/remotes/origin/feature/408",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/408",
+        "oid": "30c58ceb46e8744625a7cf22a5e552bdef700c84"
+      },
+      {
+        "original": "refs/remotes/origin/feature/430",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/430",
+        "oid": "290913a41b9de35d0080faaa527afb1c7e02b65a"
+      },
+      {
+        "original": "refs/remotes/origin/feature/436",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/436",
+        "oid": "5c8eda98681cef7d9b69432ec92ff6cf7561508b"
+      },
+      {
+        "original": "refs/remotes/origin/feature/447",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/447",
+        "oid": "b91741686e3d06ffdd5c91ed5c2de1de3c5aee9d"
+      },
+      {
+        "original": "refs/remotes/origin/feature/449",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/449",
+        "oid": "461c49109a559a22ae1389b0cb454fbb45d454a9"
+      },
+      {
+        "original": "refs/remotes/origin/feature/449-stacked",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/449-stacked",
+        "oid": "5d0ebe3d72044bb9813470fb40541dabca251395"
+      },
+      {
+        "original": "refs/remotes/origin/feature/451",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/451",
+        "oid": "c25e25fdd17a3a9d9f5f46bdffb15a0e9e1c8f2a"
+      },
+      {
+        "original": "refs/remotes/origin/feature/457",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/457",
+        "oid": "e2ad3d16ad089e57bfd1ae484d324fc8a93f101e"
+      },
+      {
+        "original": "refs/remotes/origin/feature/459",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/459",
+        "oid": "14fa5a1616343b6e91ed1fa8d25d574f2de19173"
+      },
+      {
+        "original": "refs/remotes/origin/feature/460",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/460",
+        "oid": "84d14735016eaaf8095557342e5b362f61647829"
+      },
+      {
+        "original": "refs/remotes/origin/feature/461-art-rollout",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/461-art-rollout",
+        "oid": "2ee69723c5b1cf370db2e56043cf91997278328b"
+      },
+      {
+        "original": "refs/remotes/origin/feature/467",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/467",
+        "oid": "8d7b662dd162fc68a83960d46d0e4e25931aa399"
+      },
+      {
+        "original": "refs/remotes/origin/feature/478",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/478",
+        "oid": "a0130bf7be9297f17378c67de5c702dded388798"
+      },
+      {
+        "original": "refs/remotes/origin/feature/494",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/494",
+        "oid": "ab0a2a5f8e40ae85b282cbf2aaa4fa534763f422"
+      },
+      {
+        "original": "refs/remotes/origin/feature/498",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/498",
+        "oid": "5fba0bd88ace144c922f6c08fd38d17cdbfecedf"
+      },
+      {
+        "original": "refs/remotes/origin/feature/511",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/511",
+        "oid": "fc672270c1ef1691b247fa257b1f520afd738de4"
+      },
+      {
+        "original": "refs/remotes/origin/feature/522",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/522",
+        "oid": "390fd04afff5648f91e624257b6dcaf8ae883871"
+      },
+      {
+        "original": "refs/remotes/origin/feature/540",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/540",
+        "oid": "6e2377df7353807095b27dc47b60dff8d75909e4"
+      },
+      {
+        "original": "refs/remotes/origin/feature/544",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/544",
+        "oid": "b52cf656a351b0510c9a8975908649bc36bdf156"
+      },
+      {
+        "original": "refs/remotes/origin/feature/545",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/545",
+        "oid": "9887c5202a217d62745008d63fb4762ae917f78b"
+      },
+      {
+        "original": "refs/remotes/origin/feature/554",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/554",
+        "oid": "77fb3d8b10fab3cd146dc1dab03f07d63790c6a3"
+      },
+      {
+        "original": "refs/remotes/origin/feature/555",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/555",
+        "oid": "50379d882d36edee40bb7286d4bd6429dd0f9843"
+      },
+      {
+        "original": "refs/remotes/origin/feature/575",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/575",
+        "oid": "27b18bda0d95ae213dd20bf09283d21788807640"
+      },
+      {
+        "original": "refs/remotes/origin/feature/581",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/581",
+        "oid": "c254ebdd8fb2f758e47ac65d6765f6a04e461d77"
+      },
+      {
+        "original": "refs/remotes/origin/feature/584",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/584",
+        "oid": "e6d26e6d9cd9af15524587a93d9733a30655cd6f"
+      },
+      {
+        "original": "refs/remotes/origin/feature/586",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/586",
+        "oid": "e65bb92a9752045c3594adba3dc9d693fddd1b16"
+      },
+      {
+        "original": "refs/remotes/origin/feature/588",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/588",
+        "oid": "8ecad61983cda0c5ac592bb5ef99dd987c57d5d8"
+      },
+      {
+        "original": "refs/remotes/origin/feature/593",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/593",
+        "oid": "75af8bb36621504269b312e4b5c2621cc4c92480"
+      },
+      {
+        "original": "refs/remotes/origin/feature/594",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/594",
+        "oid": "c1aa9d15fb43f15ec47e75c14fedbcfe9519143a"
+      },
+      {
+        "original": "refs/remotes/origin/feature/595",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/595",
+        "oid": "152718b85819f54c9d773a70a0429dec510d6d06"
+      },
+      {
+        "original": "refs/remotes/origin/feature/601",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/601",
+        "oid": "152718b85819f54c9d773a70a0429dec510d6d06"
+      },
+      {
+        "original": "refs/remotes/origin/feature/603",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/603",
+        "oid": "ff7919eb5b72c3bfccf82ca12b2ea63a1631e029"
+      },
+      {
+        "original": "refs/remotes/origin/feature/607",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/607",
+        "oid": "152718b85819f54c9d773a70a0429dec510d6d06"
+      },
+      {
+        "original": "refs/remotes/origin/feature/608",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/608",
+        "oid": "29f3d1c1eb1c75a4463fc3164f0d25d44a003d82"
+      },
+      {
+        "original": "refs/remotes/origin/feature/62",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/62",
+        "oid": "52bd1ce7fdd7290ec9d7e9d9a5ebed078f787515"
+      },
+      {
+        "original": "refs/remotes/origin/feature/627",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/627",
+        "oid": "8b495000130ec4bc8011f294f82b6fb5a4f0bc21"
+      },
+      {
+        "original": "refs/remotes/origin/feature/628",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/628",
+        "oid": "61612f3e659c6f8cbcaf9424330efc007d4182c3"
+      },
+      {
+        "original": "refs/remotes/origin/feature/629",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/629",
+        "oid": "4f8d8b125ff1525982c1cef3d9a910fe6e9f2994"
+      },
+      {
+        "original": "refs/remotes/origin/feature/63",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/63",
+        "oid": "d1d28b4329ca1872aeb54ec0147b300421069c49"
+      },
+      {
+        "original": "refs/remotes/origin/feature/630",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/630",
+        "oid": "40bb2eb0864cfb5997b5cba2f8e54c7b0106bb25"
+      },
+      {
+        "original": "refs/remotes/origin/feature/631",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/631",
+        "oid": "87b429e06bb5b236fb6a9a6257ac466bb56ae874"
+      },
+      {
+        "original": "refs/remotes/origin/feature/632",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/632",
+        "oid": "45eae937eda656615610a0eaa2593842d8e9d1f9"
+      },
+      {
+        "original": "refs/remotes/origin/feature/642",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/642",
+        "oid": "b02bb11164974ee16074b4949bee650b072ff12d"
+      },
+      {
+        "original": "refs/remotes/origin/feature/644",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/644",
+        "oid": "06624b1be7f96f420425c4bba189d5302db184da"
+      },
+      {
+        "original": "refs/remotes/origin/feature/651",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/651",
+        "oid": "1334d53836e66e6d629abfa1ae6908cfef64e14a"
+      },
+      {
+        "original": "refs/remotes/origin/feature/658",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/658",
+        "oid": "6545dab82fc652fe5ea0d3d4ca7fddaca200d2e0"
+      },
+      {
+        "original": "refs/remotes/origin/feature/672",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/672",
+        "oid": "bec20d0bc194e1a9762527b0a78cd0b3899ec52e"
+      },
+      {
+        "original": "refs/remotes/origin/feature/676",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/676",
+        "oid": "412a241753af9c56cb9cbd4a5cbfb4af21912857"
+      },
+      {
+        "original": "refs/remotes/origin/feature/681",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/681",
+        "oid": "fab1ee7742a970a02fad9096e63108c570df23dc"
+      },
+      {
+        "original": "refs/remotes/origin/feature/682",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/682",
+        "oid": "c8765df16df7f7e2f84820986b258c16e24e723e"
+      },
+      {
+        "original": "refs/remotes/origin/feature/683",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/683",
+        "oid": "9f0895b6eb0ca9b19556a915bfb33e4739aeb79b"
+      },
+      {
+        "original": "refs/remotes/origin/feature/694-cloud",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/694-cloud",
+        "oid": "82dd4a4b730f4c17e09da54eaa082c1fa1c4ab62"
+      },
+      {
+        "original": "refs/remotes/origin/feature/694-frames",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/694-frames",
+        "oid": "5e4c7e7679aab1e8112d99850fb75160465c4af4"
+      },
+      {
+        "original": "refs/remotes/origin/feature/705",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/705",
+        "oid": "c30f4bb051aa7538bf373a1e454fc8e9184508e1"
+      },
+      {
+        "original": "refs/remotes/origin/feature/72",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/72",
+        "oid": "b263706b0b0ca6c8acd79d4b664719320c61da5e"
+      },
+      {
+        "original": "refs/remotes/origin/feature/721",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/721",
+        "oid": "82c5d99dbbba8fe16c6062a9247ea55f400311f3"
+      },
+      {
+        "original": "refs/remotes/origin/feature/92",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/92",
+        "oid": "144f051c25e85ff1f24a7b2f3489515dae36ce7c"
+      },
+      {
+        "original": "refs/remotes/origin/feature/93",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/93",
+        "oid": "4aa0cde4a933325dc26f7a744a180ea80e787b5a"
+      },
+      {
+        "original": "refs/remotes/origin/feature/bot-player-appearance-art",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/bot-player-appearance-art",
+        "oid": "88a1915e5b663833b382967418d22c908f92cccf"
+      },
+      {
+        "original": "refs/remotes/origin/feature/bot-player-appearance-code",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/bot-player-appearance-code",
+        "oid": "ed4bbd96c40112943b0bb4b65d56836bd73859f0"
+      },
+      {
+        "original": "refs/remotes/origin/feature/gate-corrupted-spirits",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/gate-corrupted-spirits",
+        "oid": "4fc966f8b3664cbb9263fffb4a75b6a28f563748"
+      },
+      {
+        "original": "refs/remotes/origin/feature/gate-story",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/gate-story",
+        "oid": "90d4a4af83e1bfcf035fb39fb2dc6858d4bfbbc7"
+      },
+      {
+        "original": "refs/remotes/origin/feature/lobby-own-appearance",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/lobby-own-appearance",
+        "oid": "ca39bded97858da2de27b4d786c826687bcc70b1"
+      },
+      {
+        "original": "refs/remotes/origin/feature/lobby-profile-entry",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/lobby-profile-entry",
+        "oid": "655b1c4b6385ba6f8fc1584be59103b47e3bb34b"
+      },
+      {
+        "original": "refs/remotes/origin/feature/lockstep",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/lockstep",
+        "oid": "93749821011b089912eb1c967a0a4e500bd3a83e"
+      },
+      {
+        "original": "refs/remotes/origin/feature/unity-cli-skill",
+        "archived": "refs/archive/windows-client/remotes/origin/feature/unity-cli-skill",
+        "oid": "b868c0e660ec6564bfde71d9d353af81bc5d4c46"
+      },
+      {
+        "original": "refs/remotes/origin/fix-reward-ui-panel-typo-2258960026303517004",
+        "archived": "refs/archive/windows-client/remotes/origin/fix-reward-ui-panel-typo-2258960026303517004",
+        "oid": "a7e8506c928fc554c09f979e0462501f75675cf6"
+      },
+      {
+        "original": "refs/remotes/origin/fix/166",
+        "archived": "refs/archive/windows-client/remotes/origin/fix/166",
+        "oid": "65b10cee494311eea260c7593f612e5c87882b5c"
+      },
+      {
+        "original": "refs/remotes/origin/fix/169",
+        "archived": "refs/archive/windows-client/remotes/origin/fix/169",
+        "oid": "d93e297d4c39535bb75006ee4b665ceafffa9cf4"
+      },
+      {
+        "original": "refs/remotes/origin/fix/172",
+        "archived": "refs/archive/windows-client/remotes/origin/fix/172",
+        "oid": "e912dcbca5d02b20a95eb3ab56bb93eff4237e03"
+      },
+      {
+        "original": "refs/remotes/origin/fix/269",
+        "archived": "refs/archive/windows-client/remotes/origin/fix/269",
+        "oid": "24f0e3be50ee7c72dbdffdf3fd3ffd858c4e2adc"
+      },
+      {
+        "original": "refs/remotes/origin/fix/270",
+        "archived": "refs/archive/windows-client/remotes/origin/fix/270",
+        "oid": "a8e50521b236cfc847f833485e84aaaed45c47e3"
+      },
+      {
+        "original": "refs/remotes/origin/fix/272",
+        "archived": "refs/archive/windows-client/remotes/origin/fix/272",
+        "oid": "d4a15d3f064b329827e987e655941962f9a7b04e"
+      },
+      {
+        "original": "refs/remotes/origin/fix/312",
+        "archived": "refs/archive/windows-client/remotes/origin/fix/312",
+        "oid": "a5c0fdde49caecbcf6d64a952bd1f4b49751051c"
+      },
+      {
+        "original": "refs/remotes/origin/fix/327",
+        "archived": "refs/archive/windows-client/remotes/origin/fix/327",
+        "oid": "7ea82f7d784219e5d4bd6b464fa7720b0c8f6337"
+      },
+      {
+        "original": "refs/remotes/origin/fix/339",
+        "archived": "refs/archive/windows-client/remotes/origin/fix/339",
+        "oid": "04322988fb9b87fb6100e9c1216ccfc02cb958c6"
+      },
+      {
+        "original": "refs/remotes/origin/fix/350",
+        "archived": "refs/archive/windows-client/remotes/origin/fix/350",
+        "oid": "fabaaf992f6f36ccff35547f201bfa86bc2b4aca"
+      },
+      {
+        "original": "refs/remotes/origin/fix/397",
+        "archived": "refs/archive/windows-client/remotes/origin/fix/397",
+        "oid": "c0bd37b67594a4654a380202fef0de317fdcd52e"
+      },
+      {
+        "original": "refs/remotes/origin/fix/414",
+        "archived": "refs/archive/windows-client/remotes/origin/fix/414",
+        "oid": "2f1633fcf6879222c254ad5ee7d76df5102f06c7"
+      },
+      {
+        "original": "refs/remotes/origin/fix/415",
+        "archived": "refs/archive/windows-client/remotes/origin/fix/415",
+        "oid": "6ed69b751f4cbece86dd99c25bb92a49d937b308"
+      },
+      {
+        "original": "refs/remotes/origin/fix/417",
+        "archived": "refs/archive/windows-client/remotes/origin/fix/417",
+        "oid": "b27d3be5c70759d6075e652d258dd52c564b4d7c"
+      },
+      {
+        "original": "refs/remotes/origin/fix/468",
+        "archived": "refs/archive/windows-client/remotes/origin/fix/468",
+        "oid": "9ee591b34b85f6a0dff68c12b8a0103c7c0e4b97"
+      },
+      {
+        "original": "refs/remotes/origin/fix/470",
+        "archived": "refs/archive/windows-client/remotes/origin/fix/470",
+        "oid": "e7b6fb04661fe251c161352c3e1f8de8594ad157"
+      },
+      {
+        "original": "refs/remotes/origin/fix/512",
+        "archived": "refs/archive/windows-client/remotes/origin/fix/512",
+        "oid": "8ba1c132b45b58bf876594ac915a85362cf009c3"
+      },
+      {
+        "original": "refs/remotes/origin/fix/514",
+        "archived": "refs/archive/windows-client/remotes/origin/fix/514",
+        "oid": "aa64eb694dd8195fe744d12dc828c62e747859fc"
+      },
+      {
+        "original": "refs/remotes/origin/fix/518",
+        "archived": "refs/archive/windows-client/remotes/origin/fix/518",
+        "oid": "056b30dbc254bbcb5c596d496baf1a3caa4bdec1"
+      },
+      {
+        "original": "refs/remotes/origin/fix/52",
+        "archived": "refs/archive/windows-client/remotes/origin/fix/52",
+        "oid": "d27e9b8b0d0c6fff55bf7798c95ca2a291df0cab"
+      },
+      {
+        "original": "refs/remotes/origin/fix/536",
+        "archived": "refs/archive/windows-client/remotes/origin/fix/536",
+        "oid": "c01453195cedc86f6b984734681874d9984d6d8f"
+      },
+      {
+        "original": "refs/remotes/origin/fix/554",
+        "archived": "refs/archive/windows-client/remotes/origin/fix/554",
+        "oid": "7dd9f0ebbfa0a8f0f96c5e1232ab9afa11eeee5e"
+      },
+      {
+        "original": "refs/remotes/origin/fix/556",
+        "archived": "refs/archive/windows-client/remotes/origin/fix/556",
+        "oid": "2b70723d9350fcb8a3036b885929a27b85037d5c"
+      },
+      {
+        "original": "refs/remotes/origin/fix/562",
+        "archived": "refs/archive/windows-client/remotes/origin/fix/562",
+        "oid": "55f3c0eab0021ac4f077a03e17c8dba42f241f31"
+      },
+      {
+        "original": "refs/remotes/origin/fix/564",
+        "archived": "refs/archive/windows-client/remotes/origin/fix/564",
+        "oid": "78090cc8eaf4a3a9dc8a179d6bd742061bf8c311"
+      },
+      {
+        "original": "refs/remotes/origin/fix/566",
+        "archived": "refs/archive/windows-client/remotes/origin/fix/566",
+        "oid": "027190ce41d92fbcc44f2a168130fd58e2d2e844"
+      },
+      {
+        "original": "refs/remotes/origin/fix/591",
+        "archived": "refs/archive/windows-client/remotes/origin/fix/591",
+        "oid": "dfcfc20be81e5951776f25187a30c56a11681beb"
+      },
+      {
+        "original": "refs/remotes/origin/fix/671",
+        "archived": "refs/archive/windows-client/remotes/origin/fix/671",
+        "oid": "3f8d3f869e252e2eb8a30dfcf026b83322fe805a"
+      },
+      {
+        "original": "refs/remotes/origin/fix/679",
+        "archived": "refs/archive/windows-client/remotes/origin/fix/679",
+        "oid": "4545277b8181b32a9ece1a577738e5fda6aaae49"
+      },
+      {
+        "original": "refs/remotes/origin/fix/729",
+        "archived": "refs/archive/windows-client/remotes/origin/fix/729",
+        "oid": "b0d08969fafc2fb13bcc9c632fbf91bb4ef48423"
+      },
+      {
+        "original": "refs/remotes/origin/fix/94",
+        "archived": "refs/archive/windows-client/remotes/origin/fix/94",
+        "oid": "4da474b5a022776db1255698452499878aff6607"
+      },
+      {
+        "original": "refs/remotes/origin/fix/95",
+        "archived": "refs/archive/windows-client/remotes/origin/fix/95",
+        "oid": "fb1649f7f4387f06ca3d3ff089bbdde94078d203"
+      },
+      {
+        "original": "refs/remotes/origin/fix/96",
+        "archived": "refs/archive/windows-client/remotes/origin/fix/96",
+        "oid": "b1167f29f070f7ff97757bd6cfa961d199c44fda"
+      },
+      {
+        "original": "refs/remotes/origin/fix/98",
+        "archived": "refs/archive/windows-client/remotes/origin/fix/98",
+        "oid": "8f40e8197576ac55ad560aa13c3c39d3627ee1d4"
+      },
+      {
+        "original": "refs/remotes/origin/fix/android-landscape-lock",
+        "archived": "refs/archive/windows-client/remotes/origin/fix/android-landscape-lock",
+        "oid": "2fa9b4e5d57eed71e7bc876ac11706edc0d6b3f8"
+      },
+      {
+        "original": "refs/remotes/origin/fix/background-covers-wide-screens",
+        "archived": "refs/archive/windows-client/remotes/origin/fix/background-covers-wide-screens",
+        "oid": "789345880aa9e7f8b9b76b277174263611ae43fe"
+      },
+      {
+        "original": "refs/remotes/origin/fix/death-presentation-tween-capacity",
+        "archived": "refs/archive/windows-client/remotes/origin/fix/death-presentation-tween-capacity",
+        "oid": "dd0c37c42533ab5b4ab0f3962f790691b0616bac"
+      },
+      {
+        "original": "refs/remotes/origin/fix/hp-bar-anchor-2-5d",
+        "archived": "refs/archive/windows-client/remotes/origin/fix/hp-bar-anchor-2-5d",
+        "oid": "6e299ac67c081e7f85cbdb23f6ed6e1cf0a2f3d8"
+      },
+      {
+        "original": "refs/remotes/origin/fix/insecure-user-id-generation-174675238670327306",
+        "archived": "refs/archive/windows-client/remotes/origin/fix/insecure-user-id-generation-174675238670327306",
+        "oid": "06d1c46d19ff5367f03760340d7b3ffbbd906d9d"
+      },
+      {
+        "original": "refs/remotes/origin/fix/magic-unused-rule-deprecated-api-14614419789564642302",
+        "archived": "refs/archive/windows-client/remotes/origin/fix/magic-unused-rule-deprecated-api-14614419789564642302",
+        "oid": "b1d361114d441407f324e973aa9978d4591f8857"
+      },
+      {
+        "original": "refs/remotes/origin/fix/profile-total-wins-label",
+        "archived": "refs/archive/windows-client/remotes/origin/fix/profile-total-wins-label",
+        "oid": "25a2b307412d7012117014b5313672e104f3a66e"
+      },
+      {
+        "original": "refs/remotes/origin/fix/profile-total-wins-label-dev",
+        "archived": "refs/archive/windows-client/remotes/origin/fix/profile-total-wins-label-dev",
+        "oid": "11bbf2c0c9b7e05f306af6b728f46a9772f4ebd4"
+      },
+      {
+        "original": "refs/remotes/origin/fix/register-cleartext-logging-2624361621398644635",
+        "archived": "refs/archive/windows-client/remotes/origin/fix/register-cleartext-logging-2624361621398644635",
+        "oid": "ac016e105579c69c6d4b9c5658e07a5b09a1394b"
+      },
+      {
+        "original": "refs/remotes/origin/fix/register-cleartext-logging-2624361621398644635-9703494973820910987",
+        "archived": "refs/archive/windows-client/remotes/origin/fix/register-cleartext-logging-2624361621398644635-9703494973820910987",
+        "oid": "6066f6569e945e70f5abe173216400581db2a2f5"
+      },
+      {
+        "original": "refs/remotes/origin/fix/remove-sensitive-login-logging-3864213601622942685",
+        "archived": "refs/archive/windows-client/remotes/origin/fix/remove-sensitive-login-logging-3864213601622942685",
+        "oid": "ea107594eb863eacd11d72f24a906c1c5684eec8"
+      },
+      {
+        "original": "refs/remotes/origin/fix/revert-stale-199",
+        "archived": "refs/archive/windows-client/remotes/origin/fix/revert-stale-199",
+        "oid": "cbab816a1853005b419d75af438a59c70adf859a"
+      },
+      {
+        "original": "refs/remotes/origin/fix/sensitive-data-exposure-error-logs-5264188937958937409",
+        "archived": "refs/archive/windows-client/remotes/origin/fix/sensitive-data-exposure-error-logs-5264188937958937409",
+        "oid": "852f1a9b4f68b6120a6fd7328ee336b492950775"
+      },
+      {
+        "original": "refs/remotes/origin/fix/ttl-gauge-billboard",
+        "archived": "refs/archive/windows-client/remotes/origin/fix/ttl-gauge-billboard",
+        "oid": "53ab261cd4d931a5c300da633759bced080c5bb5"
+      },
+      {
+        "original": "refs/remotes/origin/fix/tutorial-ui-cache-player-transforms-250130736068340830",
+        "archived": "refs/archive/windows-client/remotes/origin/fix/tutorial-ui-cache-player-transforms-250130736068340830",
+        "oid": "3cb0fb0fd2fac8523db92a7f51a9c75870779d05"
+      },
+      {
+        "original": "refs/remotes/origin/integration/gate-adventure",
+        "archived": "refs/archive/windows-client/remotes/origin/integration/gate-adventure",
+        "oid": "355a1271845ef52eb66b410d1ea4c540ac579730"
+      },
+      {
+        "original": "refs/remotes/origin/jules-7712786015510349156-57a28a79",
+        "archived": "refs/archive/windows-client/remotes/origin/jules-7712786015510349156-57a28a79",
+        "oid": "dede2e1ee4118756b44603826c53d8e435b929a2"
+      },
+      {
+        "original": "refs/remotes/origin/magic-card",
+        "archived": "refs/archive/windows-client/remotes/origin/magic-card",
+        "oid": "a537fda343f1588a66a6ec0278aeb96c35dec5fb"
+      },
+      {
+        "original": "refs/remotes/origin/main",
+        "archived": "refs/archive/windows-client/remotes/origin/main",
+        "oid": "e3ad66fcd99b06af3409f9f0efbf313867ca2d96"
+      },
+      {
+        "original": "refs/remotes/origin/perf/cache-camera-in-served-object-9761088711657726922",
+        "archived": "refs/archive/windows-client/remotes/origin/perf/cache-camera-in-served-object-9761088711657726922",
+        "oid": "e54442abca7dbcbef44f6515cfb9709b595bea28"
+      },
+      {
+        "original": "refs/remotes/origin/perf/cache-camera-in-served-object-gauge-bar-513060739096062502",
+        "archived": "refs/archive/windows-client/remotes/origin/perf/cache-camera-in-served-object-gauge-bar-513060739096062502",
+        "oid": "3c38eacf0182295128ed125c42727a4711ea9263"
+      },
+      {
+        "original": "refs/remotes/origin/perf/cache-camera-main-pve-speech-bubble-13189515839432683840",
+        "archived": "refs/archive/windows-client/remotes/origin/perf/cache-camera-main-pve-speech-bubble-13189515839432683840",
+        "oid": "2a57b2819fe24aefacf281c0464c5efd87f23dae"
+      },
+      {
+        "original": "refs/remotes/origin/perf/cache-camera-pve-speech-bubble-5739871314604390305",
+        "archived": "refs/archive/windows-client/remotes/origin/perf/cache-camera-pve-speech-bubble-5739871314604390305",
+        "oid": "4dee84e97b38cbada064d1916c2fa1f0c6080d69"
+      },
+      {
+        "original": "refs/remotes/origin/perf/cache-camera-served-object-gauge-bar-9504780974110509794",
+        "archived": "refs/archive/windows-client/remotes/origin/perf/cache-camera-served-object-gauge-bar-9504780974110509794",
+        "oid": "94aa71b9907c142d5ed41e9262b4fc55d6442ab3"
+      },
+      {
+        "original": "refs/remotes/origin/perf/cache-servedobject-camera-8101464114848301446",
+        "archived": "refs/archive/windows-client/remotes/origin/perf/cache-servedobject-camera-8101464114848301446",
+        "oid": "d1a6c0ccc036329be73417ec9a3e74286ab03ea3"
+      },
+      {
+        "original": "refs/remotes/origin/perf/cache-tutorial-field-selector-skill-indicator-16924674195772001575",
+        "archived": "refs/archive/windows-client/remotes/origin/perf/cache-tutorial-field-selector-skill-indicator-16924674195772001575",
+        "oid": "045f80e6b72dfb6d4d601aa6cecd7651044aa9ea"
+      },
+      {
+        "original": "refs/remotes/origin/perf/optimize-field-selector-ground-find-1556025447145884507",
+        "archived": "refs/archive/windows-client/remotes/origin/perf/optimize-field-selector-ground-find-1556025447145884507",
+        "oid": "3b616667150c1b041be19c4fdbb838388670e03a"
+      },
+      {
+        "original": "refs/remotes/origin/perf/tutorial-field-selector-cache-211475618472824613",
+        "archived": "refs/archive/windows-client/remotes/origin/perf/tutorial-field-selector-cache-211475618472824613",
+        "oid": "0d3e225ad47bab6f99eed23bc286421b1dc0c2a6"
+      },
+      {
+        "original": "refs/remotes/origin/performance/cache-served-object-gauge-bar-13988166144917103382",
+        "archived": "refs/archive/windows-client/remotes/origin/performance/cache-served-object-gauge-bar-13988166144917103382",
+        "oid": "4c87c3432eb1aa64e666d546be7471e8dae0ff57"
+      },
+      {
+        "original": "refs/remotes/origin/preview/ui-polish",
+        "archived": "refs/archive/windows-client/remotes/origin/preview/ui-polish",
+        "oid": "98cda22049b36b4740b0c8d634fe59658dacbbbc"
+      },
+      {
+        "original": "refs/remotes/origin/refactor/209-1913843066005386278",
+        "archived": "refs/archive/windows-client/remotes/origin/refactor/209-1913843066005386278",
+        "oid": "bc021d14ad3269171eebcc737fb629f02b2e9965"
+      },
+      {
+        "original": "refs/remotes/origin/refactor/309",
+        "archived": "refs/archive/windows-client/remotes/origin/refactor/309",
+        "oid": "093896a5eabe60cc71fc4f7c5b2829b0924e13dc"
+      },
+      {
+        "original": "refs/remotes/origin/refactor/462",
+        "archived": "refs/archive/windows-client/remotes/origin/refactor/462",
+        "oid": "c02878465264a15dcc5c9370184f36e70ac8ac65"
+      },
+      {
+        "original": "refs/remotes/origin/refactor/475",
+        "archived": "refs/archive/windows-client/remotes/origin/refactor/475",
+        "oid": "5e258fae5b782c1fa873700775c9c81ea5f15c94"
+      },
+      {
+        "original": "refs/remotes/origin/refactor/cache-tutorial-field-selector-components-1140543939805380015",
+        "archived": "refs/archive/windows-client/remotes/origin/refactor/cache-tutorial-field-selector-components-1140543939805380015",
+        "oid": "20a55b478e846ad0b7c13a84962e60a7d5003e58"
+      },
+      {
+        "original": "refs/remotes/origin/refactor/optimize-sea-serpent-body-trail-camera-3888820578382132244",
+        "archived": "refs/archive/windows-client/remotes/origin/refactor/optimize-sea-serpent-body-trail-camera-3888820578382132244",
+        "oid": "5b10928de726432eebd0c1c7e2106e820151177e"
+      },
+      {
+        "original": "refs/remotes/origin/revert-274-feat/lockstep-phase3",
+        "archived": "refs/archive/windows-client/remotes/origin/revert-274-feat/lockstep-phase3",
+        "oid": "c6ce41fc4b7be32943652901cb84274d49bedc1d"
+      },
+      {
+        "original": "refs/remotes/origin/revert-313-feature/312",
+        "archived": "refs/archive/windows-client/remotes/origin/revert-313-feature/312",
+        "oid": "b07f5950ee4319ad56b3aba62cd0ea6cfc380650"
+      },
+      {
+        "original": "refs/remotes/origin/revert-341-copilot/fix-buildwebgl-failure",
+        "archived": "refs/archive/windows-client/remotes/origin/revert-341-copilot/fix-buildwebgl-failure",
+        "oid": "e3d01d4dfc1fee41a6f49872a586216ff76c3e66"
+      },
+      {
+        "original": "refs/remotes/origin/test/jwks-service-fetch-error-tests-12723669511814046694",
+        "archived": "refs/archive/windows-client/remotes/origin/test/jwks-service-fetch-error-tests-12723669511814046694",
+        "oid": "f3e6a73a5563589a5e44db84b5cf817a257c7d62"
+      },
+      {
+        "original": "refs/remotes/origin/test/jwks-service-fetch-failure-test-595119845042330685",
+        "archived": "refs/archive/windows-client/remotes/origin/test/jwks-service-fetch-failure-test-595119845042330685",
+        "oid": "6df0d839795900d4387885d3a39d7d5066d2de94"
+      },
+      {
+        "original": "refs/remotes/origin/test/jwt-helper-is-admin-tests-15236026538052375000",
+        "archived": "refs/archive/windows-client/remotes/origin/test/jwt-helper-is-admin-tests-15236026538052375000",
+        "oid": "6df681f5327e3a2383c5b04b722805fb0faecda3"
+      },
+      {
+        "original": "refs/remotes/origin/test/jwt-helper-is-guest-10077592920849792898",
+        "archived": "refs/archive/windows-client/remotes/origin/test/jwt-helper-is-guest-10077592920849792898",
+        "oid": "0e0403f484e1c06756862615a9bdf4c4dac123de"
+      },
+      {
+        "original": "refs/remotes/origin/test/jwt-helper-verify-signature-5090780945880592775",
+        "archived": "refs/archive/windows-client/remotes/origin/test/jwt-helper-verify-signature-5090780945880592775",
+        "oid": "79285612460511636f7a2ade549000430e990566"
+      },
+      {
+        "original": "refs/remotes/origin/test/jwthelper-decode-header-tests-2466629807991979257",
+        "archived": "refs/archive/windows-client/remotes/origin/test/jwthelper-decode-header-tests-2466629807991979257",
+        "oid": "27597b9d38e5bbc03f5e769011231463fcdc01ca"
+      },
+      {
+        "original": "refs/remotes/origin/test/match-event-stream-drain-callbacks-18230872182343690049",
+        "archived": "refs/archive/windows-client/remotes/origin/test/match-event-stream-drain-callbacks-18230872182343690049",
+        "oid": "7d0371f4072caed16548857e74364cdfd3da33c3"
+      },
+      {
+        "original": "refs/remotes/origin/test/match-queue-api-service-12043042670222090324",
+        "archived": "refs/archive/windows-client/remotes/origin/test/match-queue-api-service-12043042670222090324",
+        "oid": "05f909e426812137c8d36c7687c3d79cf9deef30"
+      },
+      {
+        "original": "refs/remotes/origin/test/match-queue-api-service-error-path-3937365076083195386",
+        "archived": "refs/archive/windows-client/remotes/origin/test/match-queue-api-service-error-path-3937365076083195386",
+        "oid": "d2aa8a5737de67c40c0075e371317b41d35a33e1"
+      },
+      {
+        "original": "refs/remotes/origin/test/matchmaking-coordinator-enqueue-2237070114217580697",
+        "archived": "refs/archive/windows-client/remotes/origin/test/matchmaking-coordinator-enqueue-2237070114217580697",
+        "oid": "5582958d05cffcab3672651b3d99097761a61d08"
+      },
+      {
+        "original": "refs/remotes/origin/test/matchmaking-coordinator-recover-snapshot-12123110466279712740",
+        "archived": "refs/archive/windows-client/remotes/origin/test/matchmaking-coordinator-recover-snapshot-12123110466279712740",
+        "oid": "676eeee0b44964854a3073eaad71da6933481bba"
+      },
+      {
+        "original": "refs/remotes/origin/test/set-mmr-delta-color-mapping-16113764987391624077",
+        "archived": "refs/archive/windows-client/remotes/origin/test/set-mmr-delta-color-mapping-16113764987391624077",
+        "oid": "e8fe9c34dceeda2c7955faadc3859bb8239c3cee"
+      },
+      {
+        "original": "refs/stash",
+        "archived": "refs/archive/windows-client/stash",
+        "oid": "b2dd23aaf8e58d123bc62ef1588ca62441ca8a01"
+      },
+      {
+        "original": "refs/tags/v0.0.1-test",
+        "archived": "refs/archive/windows-client/tags/v0.0.1-test",
+        "oid": "50b67d238bad96e365116097c1e83101ac5aa2dd"
+      },
+      {
+        "original": "refs/tags/v0.0.2",
+        "archived": "refs/archive/windows-client/tags/v0.0.2",
+        "oid": "0a12a8b6d2dff7e478ff1fac3b8e4b8b247af934"
+      },
+      {
+        "original": "refs/tags/v0.4.0",
+        "archived": "refs/archive/windows-client/tags/v0.4.0",
+        "oid": "e0c04108480250bc4fbf7e37e305dac70b19cce6"
+      },
+      {
+        "original": "refs/tags/v1.0.0",
+        "archived": "refs/archive/windows-client/tags/v1.0.0",
+        "oid": "73c7e67c977f3178912d826643e0f44642ddb9fc"
+      },
+      {
+        "original": "refs/tags/v1.1.0",
+        "archived": "refs/archive/windows-client/tags/v1.1.0",
+        "oid": "6d497c9c40a0cd100c55f482c98be1d197368ca8"
+      },
+      {
+        "original": "refs/tags/v1.1.1",
+        "archived": "refs/archive/windows-client/tags/v1.1.1",
+        "oid": "bd6423af9ea1cce63ac7f4ddf97a1bf8da6e8d31"
+      },
+      {
+        "original": "refs/tags/v1.2.0",
+        "archived": "refs/archive/windows-client/tags/v1.2.0",
+        "oid": "b7bf7deffcc25dc9571a24f8d2186682ba1f6c3e"
+      },
+      {
+        "original": "refs/tags/v1.3.0",
+        "archived": "refs/archive/windows-client/tags/v1.3.0",
+        "oid": "40d0f532bc30c98aafa77463784d2bb82fdb700c"
+      },
+      {
+        "original": "refs/tags/v1.4.0",
+        "archived": "refs/archive/windows-client/tags/v1.4.0",
+        "oid": "93c3e1685ebf75ff8e3f09e200821a11d5308b90"
+      },
+      {
+        "original": "HEAD",
+        "archived": "refs/archive/windows-client/snapshot",
+        "oid": "6d5389b605a3aad1e4b09684fda485ebfc33f775"
+      }
+    ]
+  },
+  {
+    "origin": "windows",
+    "component": "website",
+    "head": "7964b52121852624a5cc959369c34983275966cb",
+    "refs": [
+      {
+        "original": "refs/heads/feature/28",
+        "archived": "refs/archive/windows-website/heads/feature/28",
+        "oid": "f9b7d297762251041c270fa903a5d9263a7c4002"
+      },
+      {
+        "original": "refs/heads/feature/30",
+        "archived": "refs/archive/windows-website/heads/feature/30",
+        "oid": "4e2b83883e1e1325d7e51b56f235e133248cbf43"
+      },
+      {
+        "original": "refs/heads/feature/33",
+        "archived": "refs/archive/windows-website/heads/feature/33",
+        "oid": "3d8def771cb2bfe50a78c0f1b3cdfd244962318c"
+      },
+      {
+        "original": "refs/heads/feature/34",
+        "archived": "refs/archive/windows-website/heads/feature/34",
+        "oid": "7964b52121852624a5cc959369c34983275966cb"
+      },
+      {
+        "original": "refs/heads/main",
+        "archived": "refs/archive/windows-website/heads/main",
+        "oid": "860526f4390c34081754fdc430c25e686dd2b363"
+      },
+      {
+        "original": "refs/remotes/origin/HEAD",
+        "archived": "refs/archive/windows-website/remotes/origin/HEAD",
+        "oid": "d87e8fb5d465fc32c95f4efc8b087aa718075a1f"
+      },
+      {
+        "original": "refs/remotes/origin/feature/21",
+        "archived": "refs/archive/windows-website/remotes/origin/feature/21",
+        "oid": "d8155d4aaa59bb480608be30f9fb8434fcb683b2"
+      },
+      {
+        "original": "refs/remotes/origin/feature/28",
+        "archived": "refs/archive/windows-website/remotes/origin/feature/28",
+        "oid": "abe785a5ca95823b9441f697bb1cb961fc5f2bfd"
+      },
+      {
+        "original": "refs/remotes/origin/feature/3",
+        "archived": "refs/archive/windows-website/remotes/origin/feature/3",
+        "oid": "4ecf62212ce2b3240bc2e2b5241db259a6cd5c72"
+      },
+      {
+        "original": "refs/remotes/origin/feature/30",
+        "archived": "refs/archive/windows-website/remotes/origin/feature/30",
+        "oid": "4e2b83883e1e1325d7e51b56f235e133248cbf43"
+      },
+      {
+        "original": "refs/remotes/origin/feature/33",
+        "archived": "refs/archive/windows-website/remotes/origin/feature/33",
+        "oid": "3d8def771cb2bfe50a78c0f1b3cdfd244962318c"
+      },
+      {
+        "original": "refs/remotes/origin/feature/34",
+        "archived": "refs/archive/windows-website/remotes/origin/feature/34",
+        "oid": "7964b52121852624a5cc959369c34983275966cb"
+      },
+      {
+        "original": "refs/remotes/origin/feature/7",
+        "archived": "refs/archive/windows-website/remotes/origin/feature/7",
+        "oid": "cb7b1bbe3cf7a602517175a2f203328ae4e23018"
+      },
+      {
+        "original": "refs/remotes/origin/main",
+        "archived": "refs/archive/windows-website/remotes/origin/main",
+        "oid": "d87e8fb5d465fc32c95f4efc8b087aa718075a1f"
+      },
+      {
+        "original": "HEAD",
+        "archived": "refs/archive/windows-website/snapshot",
+        "oid": "7964b52121852624a5cc959369c34983275966cb"
+      }
+    ]
+  }
+]

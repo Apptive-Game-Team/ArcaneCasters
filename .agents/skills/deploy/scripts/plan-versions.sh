@@ -18,16 +18,22 @@ read_version() { # <path> <ref> <file> <kind>
   esac
 }
 
-classify() { # <path>: conventional-commit level over origin/deploy..origin/dev
-  local log
-  log=$(git -C "$1" log --no-merges --format='%s%n%b%n--' origin/deploy..origin/dev 2>/dev/null)
+classify_log() { # <component> <commit messages>
+  local log="$2"
   if grep -qE '^[a-z]+(\([^)]*\))?!:' <<<"$log" || grep -q 'BREAKING[ -]CHANGE' <<<"$log"; then
     echo major
-  elif grep -qE '^feat(\([^)]*\))?:' <<<"$log"; then
+  elif { [ "$1" = client ] && grep -qiE '^Required-Update:[[:space:]]*true[[:space:]]*$' <<<"$log"; } ||
+       grep -qE '^feat(\([^)]*\))?:' <<<"$log"; then
     echo minor
   else
     echo patch
   fi
+}
+
+classify() { # <path>: conventional-commit level over origin/deploy..origin/dev
+  local log
+  log=$(git -C "$1" log --no-merges --format='%s%n%b%n--' origin/deploy..origin/dev 2>/dev/null)
+  classify_log "$1" "$log"
 }
 
 next_version() { # <current> <level>
@@ -39,6 +45,9 @@ next_version() { # <current> <level>
     patch) echo "${major}.${minor}.$((patch + 1))" ;;
   esac
 }
+
+# Allow classifier tests without fetching refs or running promotion discovery.
+if [[ "${BASH_SOURCE[0]}" != "$0" ]]; then return 0; fi
 
 while IFS='|' read -r path file kind; do
   [ -d "$path/.git" ] || [ -f "$path/.git" ] || { printf '%s\t-\t%s\t%s\t-\t-\t-\t-\t-\tskipped: not initialized\n' "$path" "$file" "$kind"; continue; }

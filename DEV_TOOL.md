@@ -1,3 +1,5 @@
+> Windows 로컬 복원본: 구성 요소는 독립 Git 서브모듈입니다. 보존된 이력과 로컬 Git 저장소 안내는 [MONOREPO-WINDOWS.md](MONOREPO-WINDOWS.md)를 확인하세요.
+
 # 개발 명령어
 
 이 저장소의 로컬 test 환경 작업은 루트의 `./dev` 하나로 합니다. docker 와 같은
@@ -42,7 +44,7 @@ source label 과 host, database 이름만 보여줍니다.
 
 - Docker 가 실행 중이어야 합니다. host 에 `psql`, `pg_dump`, `flyway` 는 없어도
   됩니다 — 셋 다 container 안에서 돕니다.
-- submodule 이 초기화되어 있어야 합니다 (`database/migration` 이 있어야
+- 구성 요소 파일이 checkout 되어 있어야 합니다 (`database/migration` 이 있어야
   합니다):
 
   ```bash
@@ -62,7 +64,7 @@ source label 과 host, database 이름만 보여줍니다.
 ## 여러 component 의 branch 맞추기
 
 이 저장소는 `game`, `lobby`, `client`, `database`, `admin`, `account`,
-`website`, `infra` 여덟 개 submodule 로 나뉘어 있습니다. 기능 하나가 이 중
+`website`, `infra`, `game-rust` 아홉 개 submodule 로 나뉘어 있습니다. 기능 하나가 이 중
 여러 submodule 에 걸쳐 있을 때, 각 component 가 지금 어느 branch 에 있는지
 한 번에 보고 맞추거나, 나중에 다시 쓰려고 그 조합을 이름 붙여 저장하려면
 `./dev branch` 를 씁니다. subcommand 는 `show`, `use`, `save`, `load`,
@@ -74,7 +76,7 @@ source label 과 host, database 이름만 보여줍니다.
 
 component 목록은 `.dev/config.sh` 의 `DEV_COMPONENTS` 배열을 먼저 찾고,
 없으면 `.gitmodules` 의 submodule 경로를 씁니다. 이 저장소는
-`DEV_COMPONENTS` 를 정의하지 않으므로 `.gitmodules` 에 적힌 여덟 submodule
+`DEV_COMPONENTS` 를 정의하지 않으므로 `.gitmodules` 에 적힌 아홉 submodule
 이 그대로 component 목록이 됩니다.
 
 ### `use` — 누구를 옮길지 정하는 규칙
