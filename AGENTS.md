@@ -16,7 +16,8 @@ Module-specific instructions supplement this file. When instructions conflict, t
 ## 2. Module Map
 
 - `client/`: Unity web and desktop client
-- `game/`: Spring Boot in-game server
+- `game/`: Spring Boot in-game server (Java; frozen to bug fixes while `game-rust/` replaces it)
+- `game-rust/`: Rust port of the in-game server, the same HTTP, STOMP and database contracts as `game/`
 - `lobby/`: Spring Boot matchmaking and lobby server
 - `account/`: Spring Boot authentication and key-value server
 - `admin/`: Spring Boot administration web server
@@ -39,9 +40,13 @@ own home directory does not see these, so open the file by path.
 - `.agents/skills/deploy/SKILL.md` — create or reuse pull requests from `dev`
   to `deploy` across the monorepo root and its submodules, bump each versioned
   component once per promotion, then merge, tag, and release.
+- `.agents/skills/itch-devlog/SKILL.md` — draft an English itch.io devlog
+  with images from the player-facing changes in a commit range.
 - `.agents/skills/game-capacity-test/SKILL.md` — measure how many concurrent
   game sessions a game server holds at a given CPU and memory limit by binary
   searching the bot session count against the loop frame rate.
+- `.agents/skills/x-post/SKILL.md` — draft an English X post with one image
+  from the player-facing changes in a commit range.
 - `.agents/skills/test-env/SKILL.md` — clone the shared game database into a
   local Docker Postgres, apply the WordOnlineDatabase Flyway migrations, and
   run the game, lobby, account, and admin servers against it.
@@ -78,7 +83,7 @@ Do not commit a parent-repository submodule pointer that references an unpublish
 
 ### Submodule branch tracking
 
-`game`, `lobby`, `client`, `database`, and `admin` track their own `dev` branch. `.gitmodules` records `branch = dev` for those five, so `git submodule update --remote` follows it. Update and commit the pointer here every time a submodule pull request merges into that submodule's `dev`.
+`game`, `game-rust`, `lobby`, `client`, `database`, and `admin` track their own `dev` branch. `.gitmodules` records `branch = dev` for those six, so `git submodule update --remote` follows it. Update and commit the pointer here every time a submodule pull request merges into that submodule's `dev`.
 
 `account`, `website`, and `infra` also track `dev`: `.gitmodules` leaves them without an explicit `branch =` line, so `git submodule update --remote` follows each submodule's own default branch, which is `dev`.
 
@@ -87,6 +92,7 @@ Do not commit a parent-repository submodule pointer that references an unpublish
 Deployable components use independent Semantic Versions:
 
 - `game/build.gradle`: game server
+- `game-rust/Cargo.toml` (`[workspace.package] version`, mirrored in `Cargo.lock`): Rust game server
 - `lobby/build.gradle`: lobby server
 - `account/build.gradle`: account server
 - `admin/build.gradle`: admin server

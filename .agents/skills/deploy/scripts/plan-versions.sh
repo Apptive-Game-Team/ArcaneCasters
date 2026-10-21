@@ -9,12 +9,14 @@ COMPONENTS='game|build.gradle|gradle
 lobby|build.gradle|gradle
 account|build.gradle|gradle
 admin|build.gradle|gradle
-client|ProjectSettings/ProjectSettings.asset|unity'
+client|ProjectSettings/ProjectSettings.asset|unity
+game-rust|Cargo.toml|cargo'
 
 read_version() { # <path> <ref> <file> <kind>
   case "$4" in
     gradle) git -C "$1" show "$2:$3" 2>/dev/null | sed -n "s/^version = '\(.*\)'\r\?$/\1/p" | head -1 ;;
     unity)  git -C "$1" show "$2:$3" 2>/dev/null | sed -n "s/^  bundleVersion: \(.*\)\r\?$/\1/p" | head -1 ;;
+    cargo)  git -C "$1" show "$2:$3" 2>/dev/null | sed -n 's/^version = "\(.*\)"\r\?$/\1/p' | head -1 ;;
   esac
 }
 

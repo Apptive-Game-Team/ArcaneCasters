@@ -38,7 +38,7 @@ pull requests. Preserve every local checkout and working tree.
 
 ## Versioned Components
 
-Only these five repositories carry a version, and only they get a bump, tag, and
+Only these six repositories carry a version, and only they get a bump, tag, and
 release. Every other repository is promoted without any of the three.
 
 | Path | Version file | Kind |
@@ -48,6 +48,13 @@ release. Every other repository is promoted without any of the three.
 | `account` | `build.gradle` | `gradle` |
 | `admin` | `build.gradle` | `gradle` |
 | `client` | `ProjectSettings/ProjectSettings.asset` | `unity` |
+| `game-rust` | `Cargo.toml` | `cargo` |
+
+`cargo`: the version is the `[workspace.package] version` line of the root
+`Cargo.toml`. Every workspace crate repeats it in `Cargo.lock`, and the image
+builds with `--locked`, so `bump-version.sh` rewrites both files in one commit
+through the Git Data API instead of the single-file Contents API the other
+kinds use.
 
 ## Workflow
 
