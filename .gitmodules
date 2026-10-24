@@ -32,5 +32,5 @@
 	url = https://github.com/Apptive-Game-Team/ArcaneCastersGameRust
 	branch = dev
 [submodule "ArcaneCastersBot"]
-	path = ArcaneCastersBot
+	path = bot
 	url = https://github.com/Apptive-Game-Team/ArcaneCastersBot
