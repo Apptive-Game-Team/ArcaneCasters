@@ -177,10 +177,24 @@ its own request once `Options.Proxy` is set. Both give false negatives.
 
 Every module's `application.yml` defaults `management.server.port` to `8081`,
 so the second server to start dies with `Port 8081 was already in use`. The
-application ports differ per module and come from each `.env`; only the
-actuator port needs assigning, and the skill gives each module its own from
-`LOCAL_MANAGEMENT_PORT_BASE`. `ports` prints the assignment and what is holding
-each one.
+skill gives each module its own from `LOCAL_MANAGEMENT_PORT_BASE`. `ports`
+prints the assignment and what is holding each one.
+
+**The game and lobby application ports are pinned, not read from `.env`.** The
+skill passes `--server.port` from `LOCAL_LOBBY_PORT` (6209) and
+`LOCAL_GAME_PORT` (7777), and `module_app_port` reports those same numbers.
+`PORT=` in `game/.env` or `lobby/.env` is ignored for these two.
+
+The Unity client hardcodes its local entries at these numbers —
+`MatchingServerOption.Local` is `localhost:6209`, and the local game server
+entry is `7777`. Each module's `.env` is gitignored, so its `PORT=` line differs
+per developer; a lobby that followed it landed on 6210 while the client's
+dropdown kept pointing at 6209. **Nothing reports that.** The client's `Local`
+option simply fails to reach anything, which reads as "local does not work"
+rather than as a wrong port, so the mismatch costs far more time than it should.
+
+Change these only together with the client's hardcoded entries. `account` and
+`admin` take no `--server.port` and still read `PORT=` from their own `.env`.
 
 **`account` and `admin` are opt-in — start them only when the user asks.** They
 read their database settings from `.env` only, so they must be wired with

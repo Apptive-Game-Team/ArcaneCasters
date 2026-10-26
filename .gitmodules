@@ -27,3 +27,10 @@
 [submodule "infra"]
 	path = infra
 	url = https://github.com/Apptive-Game-Team/ArcaneCastersInfra
+[submodule "game-rust"]
+	path = game-rust
+	url = https://github.com/Apptive-Game-Team/ArcaneCastersGameRust
+	branch = dev
+[submodule "ArcaneCastersBot"]
+	path = bot
+	url = https://github.com/Apptive-Game-Team/ArcaneCastersBot

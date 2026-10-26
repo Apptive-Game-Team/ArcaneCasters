@@ -16,7 +16,8 @@ Module-specific instructions supplement this file. When instructions conflict, t
 ## 2. Module Map
 
 - `client/`: Unity web and desktop client
-- `game/`: Spring Boot in-game server
+- `game/`: Spring Boot in-game server (Java; frozen to bug fixes while `game-rust/` replaces it)
+- `game-rust/`: Rust port of the in-game server, the same HTTP, STOMP and database contracts as `game/`
 - `lobby/`: Spring Boot matchmaking and lobby server
 - `account/`: Spring Boot authentication and key-value server
 - `admin/`: Spring Boot administration web server
@@ -82,7 +83,7 @@ Do not commit a parent-repository submodule pointer that references an unpublish
 
 ### Submodule branch tracking
 
-`game`, `lobby`, `client`, `database`, and `admin` track their own `dev` branch. `.gitmodules` records `branch = dev` for those five, so `git submodule update --remote` follows it. Update and commit the pointer here every time a submodule pull request merges into that submodule's `dev`.
+`game`, `game-rust`, `lobby`, `client`, `database`, and `admin` track their own `dev` branch. `.gitmodules` records `branch = dev` for those six, so `git submodule update --remote` follows it. Update and commit the pointer here every time a submodule pull request merges into that submodule's `dev`.
 
 `account`, `website`, and `infra` also track `dev`: `.gitmodules` leaves them without an explicit `branch =` line, so `git submodule update --remote` follows each submodule's own default branch, which is `dev`.
 
@@ -91,6 +92,7 @@ Do not commit a parent-repository submodule pointer that references an unpublish
 Deployable components use independent Semantic Versions:
 
 - `game/build.gradle`: game server
+- `game-rust/Cargo.toml` (`[workspace.package] version`, mirrored in `Cargo.lock`): Rust game server
 - `lobby/build.gradle`: lobby server
 - `account/build.gradle`: account server
 - `admin/build.gradle`: admin server
@@ -134,3 +136,18 @@ of this workspace. They are not merged into each other, in either direction.
 - The redesign's design notes live on the root `magic-card` branch
   (`docs/magic-card.md`, `.plan/issues/2026-09-08-issue-23-magic-card-redesign.md`).
   `main` carries no copy, so read them from that branch.
+
+## Code Review Rules
+
+- Write all code review titles, descriptions, comments, and summaries in Korean.
+- Preserve code identifiers, file paths, commands, error messages, and technical terms in their original form.
+- For each finding, concisely explain the cause, impact, and suggested fix.
+
+## Writing Style
+
+Follow [`.agents/docs/writing-style.md`](.agents/docs/writing-style.md) for chat
+replies, reviews, plans, handoffs, issues, commit titles and bodies, pull
+requests, release notes, source comments, and all frontend copy (including
+localization, errors, labels, and accessibility text).
+Its wording and title rules take precedence over older style examples;
+preserve project-specific technical constraints and workflows.

@@ -1,6 +1,6 @@
 ---
 name: deploy
-description: Create or reuse GitHub pull requests from dev to deploy across the ArcaneCasters monorepo root and its Git submodules, bump each versioned component once per promotion, then merge, tag, and release, and finish by suggesting an X post and an itch.io devlog for the player-facing changes. Use when the user invokes $deploy or asks to promote, merge, or deploy all eligible repository dev branches into deploy.
+description: Create or reuse GitHub pull requests from dev to deploy across the ArcaneCasters monorepo root and its Git submodules, bump each versioned component once per promotion, then merge, tag, and release, and finish by suggesting an X post and an itch.io devlog and opening a draft website news entry for the player-facing changes. Use when the user invokes $deploy or asks to promote, merge, or deploy all eligible repository dev branches into deploy.
 ---
 
 # Deploy Dev Branches
@@ -38,7 +38,7 @@ pull requests. Preserve every local checkout and working tree.
 
 ## Versioned Components
 
-Only these five repositories carry a version, and only they get a bump, tag, and
+Only these six repositories carry a version, and only they get a bump, tag, and
 release. Every other repository is promoted without any of the three.
 
 | Path | Version file | Kind |
@@ -48,6 +48,13 @@ release. Every other repository is promoted without any of the three.
 | `account` | `build.gradle` | `gradle` |
 | `admin` | `build.gradle` | `gradle` |
 | `client` | `ProjectSettings/ProjectSettings.asset` | `unity` |
+| `game-rust` | `Cargo.toml` | `cargo` |
+
+`cargo`: the version is the `[workspace.package] version` line of the root
+`Cargo.toml`. Every workspace crate repeats it in `Cargo.lock`, and the image
+builds with `--locked`, so `bump-version.sh` rewrites both files in one commit
+through the Git Data API instead of the single-file Contents API the other
+kinds use.
 
 ## Workflow
 
@@ -278,6 +285,11 @@ release. Every other repository is promoted without any of the three.
       the images to attach.
 
     Never post or publish either one; the user does that by hand.
+
+    Then pass the same ranges to [`website-news`](../website-news/SKILL.md),
+    which adds a Korean and English entry with images to the website's update
+    news page and opens a draft pull request in `website`. Leave that pull
+    request in draft; the user reviews the copy before it ships.
 
 ## Failure Handling
 

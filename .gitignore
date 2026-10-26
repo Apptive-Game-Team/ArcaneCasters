@@ -38,3 +38,31 @@ lerna-debug.log*
 
 # Graphify generated data
 graphify-out/
+
+# Local-only skill: drives the Windows client checkout on this machine
+.agents/skills/windows-client-local-test/
+
+# Local configuration and generated caches
+
+.env
+.env.*
+*.env
+!.env.example
+!.env.sample
+!.env.template
+!*.env.example
+!*.env.sample
+!*.env.template
+*.pem
+*.key
+*.p12
+*.pfx
+keys/
+.captures/
+.worktrees/
+**/node_modules/
+**/Library/
+**/Temp/
+**/.venv/
+**/__pycache__/
+worktrees/
