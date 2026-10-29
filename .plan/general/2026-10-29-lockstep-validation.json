@@ -1,0 +1,53 @@
+{
+  "date": "2026-10-29",
+  "simulation_original": {
+    "mapped": 915,
+    "verified": 915,
+    "remaining": 0
+  },
+  "model_original": {
+    "verified": 127,
+    "client_contracts": 38
+  },
+  "unity_editmode": {
+    "passed": 43,
+    "failed": 0,
+    "fixture_only_skipped": 2
+  },
+  "dual_unity": {
+    "session": "session-3",
+    "frames": 54,
+    "left_result": "Win",
+    "right_result": "Lose",
+    "result_rows": 1,
+    "statistic_rows": 1,
+    "casts": 1,
+    "outbox_rows": 1,
+    "outbox_acknowledged": true,
+    "players_online": true,
+    "lobby_active_keys": 0
+  },
+  "doctest": {
+    "literal_passed": 0,
+    "ignored": 2,
+    "contract_evidence": ".plan/general/2026-10-29-lockstep-doctest-contracts.json"
+  },
+  "limits": [
+    "Local fixtures and mock provider; no production deployment or paid model call.",
+    "Other CPU architectures and load capacity were not tested.",
+    "Graphify executable unavailable."
+  ],
+  "local_artifact_sha256": {
+    "client/Tools/LockstepProbe/.generated/completion-final-probe.log": "2f3e0cfe602f615842cc7207a7c39070fe5008c77b1a63f1b313725592153941",
+    "client/Tools/LockstepProbe/.generated/completion-unity-parity.log": "efee9e3f396e5d993690b8d39ae60908abb8c2041ef61e504ac8a740f6dbcdfe",
+    "client/Tools/LockstepProbe/.generated/completion-webgl-build.log": "41025f26fb38aa66b9ad19f3ebd2771e38d0d620d1145f582a96bbd3bf6d898e",
+    "client/Tools/LockstepProbe/.generated/completion-webgl-replay.log": "3c538c70cc090ee6e26d4f350eb11b314d3c741d2e9b21185dc691af5299a67d",
+    "client/Tools/LockstepProbe/.generated/latest-unity-parity-results.xml": "5a6d017d528bedf04a232c60f6e10617b59cd69610dc9ca8339f6c94aa039ef4",
+    "client/Tools/LockstepProbe/.generated/completion-rust-workspace.log": "5a142d306248a5b711d899053e525dd5d6d7044ca20ed56cbf9ac66947c3883c",
+    ".generated/lockstep-lobby-ui/dual-left-tests.xml": "b023239a278b403993df642b4b89fab8771125300db8d03d1e1c80af8213f4cd",
+    ".generated/lockstep-lobby-ui/dual-right-tests.xml": "cb471cbb6db8ebe0e5fbdb694ec9bb4f3af1790053d911ed27e8aa2a0e493958",
+    ".generated/lockstep-lobby-ui/dual-left-result.json": "997b7939bffa10c058cf1406d854f69ce54f21fc3d43cf356c35cbbc90b03b47",
+    ".generated/lockstep-lobby-ui/dual-right-result.json": "9822b5359a15d31b86b5c05286a79be646c7aa2135550859131640fa370f82f6",
+    ".generated/lockstep-lobby-ui/persistence-after-dual.log": "876f058ac27d681b64ff1719982664d30dc813c7916112877dea01d1d9989c47"
+  }
+}

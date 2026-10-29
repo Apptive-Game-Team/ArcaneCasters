@@ -1,0 +1,167 @@
+{
+  "game/domain/session_object.rs::sends_to_per_user_destinations_and_skips_bots": {
+    "reason": "기존 per-user DTO 전송은 서버 SessionObject 책임으로 유지한다. lockstep은 참가자/관리자만 읽는 확정-input topic을 사용하므로 음수 봇 슬롯 입력 자동 확정과 비참가자 접근 차단도 실제 WebSocket 검사로 요구한다.",
+    "checks": [
+      {
+        "package": "ac-sim",
+        "target": "lib",
+        "test": "game::domain::session_object::tests::sends_to_per_user_destinations_and_skips_bots",
+        "source": "game-rust/crates/sim/src/game/domain/session_object.rs"
+      },
+      {
+        "package": "ac-game-server",
+        "target": "stomp_broker",
+        "test": "lockstep_confirms_human_bot_frames_over_websocket",
+        "source": "game-rust/crates/server/tests/stomp_broker.rs"
+      },
+      {
+        "package": "ac-game-server",
+        "target": "stomp_broker",
+        "test": "lockstep_admin_spectator_reads_frames_but_cannot_submit_or_complete",
+        "source": "game-rust/crates/server/tests/stomp_broker.rs"
+      }
+    ]
+  },
+  "game/util/java_math.rs::matches_java_at_the_edges": {
+    "reason": "기존 서버 float 경계의 Java NaN/signed-zero 계약은 원본 검사로 유지한다. 새 전투 수치는 Fix64이므로 클라이언트 실제 입력 경계에서 NaN/Infinity 거부와 -0의 raw0 양자화를 별도 Unity 검사로 요구한다.",
+    "checks": [
+      {
+        "package": "ac-sim",
+        "target": "lib",
+        "test": "game::util::java_math::tests::matches_java_at_the_edges",
+        "source": "game-rust/crates/sim/src/game/util/java_math.rs"
+      }
+    ]
+  },
+  "game/service/game_loop.rs::reports_running_once_started_and_stops_reporting_after_close": {
+    "reason": "기존 실시간 thread loop의 await/FPS 계약은 서버 원본에서 유지한다. 새 lockstep runtime은 확정 tick이 시작/진행/종료를 결정하며 해당 상태와 tick 기반 시계를 C# 대응 검사에서 요구한다.",
+    "checks": [
+      {
+        "package": "ac-sim",
+        "target": "lib",
+        "test": "game::service::game_loop::tests::reports_running_once_started_and_stops_reporting_after_close",
+        "source": "game-rust/crates/sim/src/game/service/game_loop.rs"
+      }
+    ]
+  },
+  "game/service/game_loop.rs::counts_frames_for_monitoring": {
+    "reason": "기존 서버의 frame count/last-frame-end wall-clock monitoring은 원본에서 유지한다. lockstep의 재생 상태에는 Context.FrameNumber와 FrameMillisClock만 사용하며 중복 확정 입력이 카운터를 늘리지 않는 C# 대응 검사를 함께 요구한다.",
+    "checks": [
+      {
+        "package": "ac-sim",
+        "target": "lib",
+        "test": "game::service::game_loop::tests::counts_frames_for_monitoring",
+        "source": "game-rust/crates/sim/src/game/service/game_loop.rs"
+      }
+    ]
+  },
+  "game/service/game_loop.rs::broadcasts_result_and_marks_both_users_online_when_update_panics": {
+    "reason": "기존 서버의 panic 최종화 계약은 원본 검사로 유지한다. lockstep은 C# 프레임/종료콜백 예외로 runtime을 한 번만 종료하고 인증된 runtimeFailure를 durable 중단으로 전달한다. 실패한 재생은 승패·보상·통계 대신 인간 Online 복귀와 종료 outbox만 확정하며 중복 abort의 효과는 한 번이다.",
+    "checks": [
+      {
+        "package": "ac-sim",
+        "target": "lib",
+        "test": "game::service::game_loop::tests::broadcasts_result_and_marks_both_users_online_when_update_panics",
+        "source": "game-rust/crates/sim/src/game/service/game_loop.rs"
+      },
+      {
+        "package": "ac-game-server",
+        "target": "lockstep_recovery",
+        "test": "committed_frames_survive_process_replacement_and_desync_ends_once_with_retried_outbox",
+        "source": "game-rust/crates/server/tests/lockstep_recovery.rs"
+      }
+    ]
+  },
+  "game/service/game_loop.rs::does_not_end_twice_when_the_frame_panics_after_the_game_already_ended": {
+    "reason": "기존 서버의 panic 최종화 계약은 원본 검사로 유지한다. lockstep은 C# 프레임/종료콜백 예외로 runtime을 한 번만 종료하고 인증된 runtimeFailure를 durable 중단으로 전달한다. 실패한 재생은 승패·보상·통계 대신 인간 Online 복귀와 종료 outbox만 확정하며 중복 abort의 효과는 한 번이다.",
+    "checks": [
+      {
+        "package": "ac-sim",
+        "target": "lib",
+        "test": "game::service::game_loop::tests::does_not_end_twice_when_the_frame_panics_after_the_game_already_ended",
+        "source": "game-rust/crates/sim/src/game/service/game_loop.rs"
+      },
+      {
+        "package": "ac-game-server",
+        "target": "lockstep_recovery",
+        "test": "committed_frames_survive_process_replacement_and_desync_ends_once_with_retried_outbox",
+        "source": "game-rust/crates/server/tests/lockstep_recovery.rs"
+      },
+      {
+        "package": "ac-game-server",
+        "target": "lockstep_model_network",
+        "test": "a_provider_driven_network_battle_finishes_and_persists_once",
+        "source": "game-rust/crates/server/tests/lockstep_model_network.rs"
+      }
+    ]
+  },
+  "game/service/pve_loop.rs::a_cleared_scenario_reports_the_result_before_broadcasting_zero_mmr": {
+    "reason": "C# 대응은 PVE decided→결과전달 순서와 네 MMR0, 중복전달 금지를 검사한다. 인간 Online 복귀와 PVE 비평점·진행저장은 원본 서버 검사 및 실제 DB/WebSocket/C# 경기 검사로 함께 검증한다.",
+    "checks": [
+      {
+        "package": "ac-sim",
+        "target": "lib",
+        "test": "game::service::pve_loop::tests::a_cleared_scenario_reports_the_result_before_broadcasting_zero_mmr",
+        "source": "game-rust/crates/sim/src/game/service/pve_loop.rs"
+      },
+      {
+        "package": "ac-game-server",
+        "target": "lockstep_client_network",
+        "test": "two_client_processes_finish_a_database_created_network_battle",
+        "source": "game-rust/crates/server/tests/lockstep_client_network.rs"
+      }
+    ]
+  },
+  "game/dto/ping_checker.rs::times_out_then_recovers": {
+    "reason": "기존 PingChecker의 timeout→Recovered 계약은 legacy 서버에서 유지한다. 승인된 lockstep 계약은 누락입력 제한시간 전에는 초기상태·확정이력을 재생해 복구하고, 제한시간 이후에는 서버가 inputTimeout 종단을 확정해 후속 입력으로 되살리지 않는다. 이 차이를 숨기지 않고 원본/릴레이/실제 재접속 검사를 모두 요구한다.",
+    "checks": [
+      {
+        "package": "ac-sim",
+        "target": "lib",
+        "test": "game::dto::ping_checker::tests::times_out_then_recovers",
+        "source": "game-rust/crates/sim/src/game/dto/ping_checker.rs"
+      },
+      {
+        "package": "ac-game-server",
+        "target": "lib",
+        "test": "lockstep::tests::repeated_input_does_not_extend_timeout_or_discard_history",
+        "source": "game-rust/crates/server/src/lockstep.rs"
+      },
+      {
+        "package": "ac-game-server",
+        "target": "stomp_broker",
+        "test": "lockstep_authenticates_orders_and_replays_confirmed_input_over_websocket",
+        "source": "game-rust/crates/server/tests/stomp_broker.rs"
+      },
+      {
+        "package": "ac-game-server",
+        "target": "lockstep_client_network",
+        "test": "two_client_processes_finish_a_database_created_network_battle",
+        "source": "game-rust/crates/server/tests/lockstep_client_network.rs"
+      }
+    ]
+  },
+  "game/dto/ping_checker.rs::negative_user_is_ignored": {
+    "reason": "음수 봇은 heartbeat/네트워크 입력을 제출할 수 없고, 양수 인간 입력이 오면 음수 슬롯은 합성 빈 batch로 진행한다. legacy PingChecker 무시 계약과 lockstep 양쪽 봇슬롯·실제WebSocket 검사를 함께 요구한다.",
+    "checks": [
+      {
+        "package": "ac-sim",
+        "target": "lib",
+        "test": "game::dto::ping_checker::tests::negative_user_is_ignored",
+        "source": "game-rust/crates/sim/src/game/dto/ping_checker.rs"
+      },
+      {
+        "package": "ac-game-server",
+        "target": "lib",
+        "test": "lockstep::tests::bot_slots_advance_only_with_human_input_and_reject_bot_senders",
+        "source": "game-rust/crates/server/src/lockstep.rs"
+      },
+      {
+        "package": "ac-game-server",
+        "target": "stomp_broker",
+        "test": "lockstep_confirms_human_bot_frames_over_websocket",
+        "source": "game-rust/crates/server/tests/stomp_broker.rs"
+      }
+    ]
+  }
+}

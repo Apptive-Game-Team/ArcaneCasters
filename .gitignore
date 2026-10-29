@@ -66,3 +66,6 @@ keys/
 **/.venv/
 **/__pycache__/
 worktrees/
+
+# 로컬 DB·인증 fixture와 Unity 복제·빌드 산출물
+/.generated/

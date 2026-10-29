@@ -1,0 +1,369 @@
+{
+  "schema_version": 1,
+  "title": "ignore된 Rust 문서 예제의 실행 계약 대응",
+  "counting": {
+    "literal_doctest_passes": 0,
+    "literal_doctest_ignored": 2,
+    "new_test_cases_added": 0,
+    "simulation_inventory_count": 915,
+    "model_inventory_count": 127,
+    "note": "두 snippet의 실행 통과를 주장하지 않는다. 기존 실행 검사의 interface/PVE 구성 계약 증거이며 915/127 집계에 더하지 않는다."
+  },
+  "literal_doctest_observation": {
+    "evidence": {
+      "path": "client/Tools/LockstepProbe/.generated/completion-rust-workspace.log",
+      "sha256": "5a142d306248a5b711d899053e525dd5d6d7044ca20ed56cbf9ac66947c3883c",
+      "line": 1666,
+      "marker": "test result: ok. 0 passed; 0 failed; 2 ignored; 0 measured; 0 filtered out; finished in 0.00s"
+    },
+    "note": "원본의 ```ignore는 imports/객체 정의를 생략한 사용 예시다. literal snippet은 Rustdoc에서 계속 ignored이며 여기서 제외를 새로 만들거나 pass로 바꾸지 않았다."
+  },
+  "contracts": [
+    {
+      "source": {
+        "path": "game-rust/crates/sim/src/game/domain/object/component/component.rs",
+        "sha256": "8fceb702737ccc38b88baa22802369c6c13467729de674b57ca0d2b539d66ded",
+        "symbol": "component_interfaces!",
+        "line": 150
+      },
+      "example_line": 150,
+      "rustdoc_result": "ignored",
+      "counted_as_doctest_pass": false,
+      "contract": [
+        "Component 구현이 선언한 dyn trait로 GetComponent/GetComponents에서 원본 컴포넌트를 찾는다.",
+        "찾은 interface를 통한 메서드 호출과 변경이 실제 객체에 적용된다."
+      ],
+      "rust_executable_tests": [
+        {
+          "source": {
+            "path": "game-rust/crates/sim/src/game/domain/object/component/interval_attacker.rs",
+            "sha256": "9db5d2ac75546647e0b3d73d0d3e82e239bd20b6fbada7ad76bb63ecc4915ea3",
+            "symbol": "a_paced_component_is_found_through_the_interface",
+            "line": 56
+          },
+          "test_id": "game::domain::object::component::interval_attacker::tests::a_paced_component_is_found_through_the_interface",
+          "evidence": {
+            "path": "client/Tools/LockstepProbe/.generated/completion-rust-ac-sim-lib-all.log",
+            "sha256": "a91fb85c8c0d1607819cbd623c7e39d00c2eeaa879272183ba79f9f5d04be41f",
+            "line": 230,
+            "marker": "test game::domain::object::component::interval_attacker::tests::a_paced_component_is_found_through_the_interface ... ok",
+            "source_manifest": {
+              "path": "client/Tools/LockstepProbe/.generated/completion-rust-ac-sim-lib-all.evidence.json",
+              "sha256": "4d72653623e851ce628b1e64524d1d32b602f984dba62c46c72846f08645aa71",
+              "exit_code": 0,
+              "unchanged_during_run": true,
+              "log_hash_matches": true,
+              "current_inputs_match": true
+            }
+          }
+        },
+        {
+          "source": {
+            "path": "game-rust/crates/sim/src/game/domain/object/component/magic/explode.rs",
+            "sha256": "45b437f38b661bd8155a89a28eb2cb805f2ab5eaed7f87ad982249aba7f77278",
+            "symbol": "reports_its_radius_through_the_area_explode_trait",
+            "line": 199
+          },
+          "test_id": "game::domain::object::component::magic::explode::tests::reports_its_radius_through_the_area_explode_trait",
+          "evidence": {
+            "path": "client/Tools/LockstepProbe/.generated/completion-rust-ac-sim-lib-all.log",
+            "sha256": "a91fb85c8c0d1607819cbd623c7e39d00c2eeaa879272183ba79f9f5d04be41f",
+            "line": 261,
+            "marker": "test game::domain::object::component::magic::explode::tests::reports_its_radius_through_the_area_explode_trait ... ok",
+            "source_manifest": {
+              "path": "client/Tools/LockstepProbe/.generated/completion-rust-ac-sim-lib-all.evidence.json",
+              "sha256": "4d72653623e851ce628b1e64524d1d32b602f984dba62c46c72846f08645aa71",
+              "exit_code": 0,
+              "unchanged_during_run": true,
+              "log_hash_matches": true,
+              "current_inputs_match": true
+            }
+          }
+        }
+      ],
+      "rust_collidable_example_crosscheck": {
+        "source": {
+          "path": "game-rust/crates/sim/tests/porting_examples.rs",
+          "sha256": "1b09153b1803b4fd77bedf29161ef12e319df84935a2ba98660558a28e2c22bd",
+          "symbol": "interfaces_lookups_spawning_status_events_and_randomness",
+          "line": 253
+        },
+        "evidence": {
+          "path": "client/Tools/LockstepProbe/.generated/completion-rust-workspace.log",
+          "sha256": "5a142d306248a5b711d899053e525dd5d6d7044ca20ed56cbf9ac66947c3883c",
+          "line": 1540,
+          "marker": "test interfaces_lookups_spawning_status_events_and_randomness ... ok"
+        },
+        "scope": "원본 macro로 Collidable/Damageable을 등록한 Spiky fixture의 실제 interface 조회/호출. workspace 로그 관찰이며 별도 source-manifest 증거는 위 Rust lib 검사에 둔다."
+      },
+      "csharp_executable_tests": [
+        {
+          "source": {
+            "path": "client/Tools/LockstepProbe/PortedTests/EffectParityTests.cs",
+            "sha256": "5184669d4405b8223f80cff538aa1cc9e786dbac5cba905d90b324c2baf56070",
+            "symbol": "EffectParityTests.a_paced_component_is_found_through_the_interface",
+            "line": 8
+          },
+          "test_or_check": "EffectParityTests.a_paced_component_is_found_through_the_interface",
+          "original_test_id": "game/domain/object/component/interval_attacker.rs::a_paced_component_is_found_through_the_interface",
+          "evidence": {
+            "path": "client/Tools/LockstepProbe/.generated/completion-model-client.log",
+            "sha256": "825641c7878ca013e9e724022d08a851cd7d2ad01489a83284e922c05bac93ce",
+            "line": 162,
+            "marker": "PARITY PASS game/domain/object/component/interval_attacker.rs::a_paced_component_is_found_through_the_interface",
+            "source_manifest": {
+              "path": "client/Tools/LockstepProbe/.generated/completion-model-client.evidence.json",
+              "sha256": "d36f6032da074a6fef2197c7dda8d6fea1eccdd6160cd4bcbee8d4c4ad851f64",
+              "exit_code": 0,
+              "unchanged_during_run": true,
+              "log_hash_matches": true,
+              "current_inputs_match": true
+            }
+          }
+        },
+        {
+          "source": {
+            "path": "client/Tools/LockstepProbe/PortedTests/ExplosionParityTests.cs",
+            "sha256": "97d9472b4bc70f14a11b7bd9f9c79787deed21d6bece2276d8387b5f69c04c2d",
+            "symbol": "ExplosionParityTests.reports_its_radius_through_the_area_explode_trait",
+            "line": 36
+          },
+          "test_or_check": "ExplosionParityTests.reports_its_radius_through_the_area_explode_trait",
+          "original_test_id": "game/domain/object/component/magic/explode.rs::reports_its_radius_through_the_area_explode_trait",
+          "evidence": {
+            "path": "client/Tools/LockstepProbe/.generated/completion-model-client.log",
+            "sha256": "825641c7878ca013e9e724022d08a851cd7d2ad01489a83284e922c05bac93ce",
+            "line": 376,
+            "marker": "PARITY PASS game/domain/object/component/magic/explode.rs::reports_its_radius_through_the_area_explode_trait",
+            "source_manifest": {
+              "path": "client/Tools/LockstepProbe/.generated/completion-model-client.evidence.json",
+              "sha256": "d36f6032da074a6fef2197c7dda8d6fea1eccdd6160cd4bcbee8d4c4ad851f64",
+              "exit_code": 0,
+              "unchanged_during_run": true,
+              "log_hash_matches": true,
+              "current_inputs_match": true
+            }
+          }
+        },
+        {
+          "source": {
+            "path": "client/Tools/LockstepProbe/PortedTests/ObjectParityTests.cs",
+            "sha256": "f8f01825cc2b0cfca0f2047b12dc0ea1a94b40b620fa53a74c10a21988a69926",
+            "symbol": "ObjectParityTests.interfaces_lookups_spawning_status_events_and_randomness",
+            "line": 61
+          },
+          "test_or_check": "ObjectParityTests.interfaces_lookups_spawning_status_events_and_randomness",
+          "original_test_id": "tests/porting_examples.rs::interfaces_lookups_spawning_status_events_and_randomness",
+          "evidence": {
+            "path": "client/Tools/LockstepProbe/.generated/completion-model-client.log",
+            "sha256": "825641c7878ca013e9e724022d08a851cd7d2ad01489a83284e922c05bac93ce",
+            "line": 129,
+            "marker": "PARITY PASS tests/porting_examples.rs::interfaces_lookups_spawning_status_events_and_randomness",
+            "source_manifest": {
+              "path": "client/Tools/LockstepProbe/.generated/completion-model-client.evidence.json",
+              "sha256": "d36f6032da074a6fef2197c7dda8d6fea1eccdd6160cd4bcbee8d4c4ad851f64",
+              "exit_code": 0,
+              "unchanged_during_run": true,
+              "log_hash_matches": true,
+              "current_inputs_match": true
+            }
+          }
+        }
+      ],
+      "scope_note": "C#는 Rust macro를 복제하지 않고 GetComponent<T>/GetComponents<T>의 동일 interface 조회/호출 계약을 검증한다."
+    },
+    {
+      "source": {
+        "path": "game-rust/crates/sim/src/game/domain/object/component/mob/pve_scenario_components_impl.rs",
+        "sha256": "8d7f0dc91a7b77d5a0d06539d7a0c3d59847d72be6795dd33b006bdc51f6dc7b",
+        "symbol": "PveScenarioComponentsImpl::standard()",
+        "line": 9
+      },
+      "example_line": 9,
+      "rustdoc_result": "ignored",
+      "counted_as_doctest_pass": false,
+      "contract": [
+        "표준 PVE 구성 객체를 installer와 script runner에 실제로 주입할 수 있다.",
+        "주입된 실제 구현이 설치·수명 제거·spawner·shield 동작을 제공한다."
+      ],
+      "rust_executable_tests": [
+        {
+          "source": {
+            "path": "game-rust/crates/sim/src/game/service/pve_loop.rs",
+            "sha256": "78c6f3284f18fe7b766363bba3ac67fb10d17fb13b406f94fb91e8073f026c6e",
+            "symbol": "init_installs_the_default_scenario_and_registers_the_pve_sync_service",
+            "line": 317
+          },
+          "test_id": "game::service::pve_loop::tests::init_installs_the_default_scenario_and_registers_the_pve_sync_service",
+          "evidence": {
+            "path": "client/Tools/LockstepProbe/.generated/completion-rust-ac-sim-lib-all.log",
+            "sha256": "a91fb85c8c0d1607819cbd623c7e39d00c2eeaa879272183ba79f9f5d04be41f",
+            "line": 696,
+            "marker": "test game::service::pve_loop::tests::init_installs_the_default_scenario_and_registers_the_pve_sync_service ... ok",
+            "source_manifest": {
+              "path": "client/Tools/LockstepProbe/.generated/completion-rust-ac-sim-lib-all.evidence.json",
+              "sha256": "4d72653623e851ce628b1e64524d1d32b602f984dba62c46c72846f08645aa71",
+              "exit_code": 0,
+              "unchanged_during_run": true,
+              "log_hash_matches": true,
+              "current_inputs_match": true
+            }
+          }
+        }
+      ],
+      "rust_wiring": [
+        {
+          "path": "game-rust/crates/sim/src/game/service/pve_loop.rs",
+          "sha256": "78c6f3284f18fe7b766363bba3ac67fb10d17fb13b406f94fb91e8073f026c6e",
+          "symbol": "pve_loop fixture -> PveScenarioComponentsImpl::standard()",
+          "line": 305
+        },
+        {
+          "path": "game-rust/crates/sim/src/game/service/pve/pve_match.rs",
+          "sha256": "f0866fc9c3fc0a17d3fc689489b3693e22469b8bba65a093bf9fd1d89c34fa86",
+          "symbol": "PveMatch::setup -> installer.set_components",
+          "line": 50
+        },
+        {
+          "path": "game-rust/crates/sim/src/game/domain/object/component/mob/pve_scenario_components_impl.rs",
+          "sha256": "8d7f0dc91a7b77d5a0d06539d7a0c3d59847d72be6795dd33b006bdc51f6dc7b",
+          "symbol": "PveScenarioComponentsImpl::standard -> MagicSpawnerFactory",
+          "line": 54
+        }
+      ],
+      "csharp_executable_tests": [
+        {
+          "source": {
+            "path": "client/Tools/LockstepProbe/PortedTests/PveMatchParityTests.cs",
+            "sha256": "2f048b0c02a8051b33ae563de508eefc58d5f1df2e0cbdb0b81545d4ff904f08",
+            "symbol": "PveMatchParityTests.init_installs_the_default_scenario_and_registers_the_pve_sync_service",
+            "line": 9
+          },
+          "test_or_check": "PveMatchParityTests.init_installs_the_default_scenario_and_registers_the_pve_sync_service",
+          "original_test_id": "game/service/pve_loop.rs::init_installs_the_default_scenario_and_registers_the_pve_sync_service",
+          "evidence": {
+            "path": "client/Tools/LockstepProbe/.generated/completion-model-client.log",
+            "sha256": "825641c7878ca013e9e724022d08a851cd7d2ad01489a83284e922c05bac93ce",
+            "line": 871,
+            "marker": "PARITY PASS game/service/pve_loop.rs::init_installs_the_default_scenario_and_registers_the_pve_sync_service",
+            "source_manifest": {
+              "path": "client/Tools/LockstepProbe/.generated/completion-model-client.evidence.json",
+              "sha256": "d36f6032da074a6fef2197c7dda8d6fea1eccdd6160cd4bcbee8d4c4ad851f64",
+              "exit_code": 0,
+              "unchanged_during_run": true,
+              "log_hash_matches": true,
+              "current_inputs_match": true
+            }
+          }
+        },
+        {
+          "source": {
+            "path": "client/Tools/LockstepProbe/PortedTests/PveMatchParityTests.cs",
+            "sha256": "2f048b0c02a8051b33ae563de508eefc58d5f1df2e0cbdb0b81545d4ff904f08",
+            "symbol": "PveMatchParityTests.setup_uses_the_session_scenario_and_rules_and_clears_when_the_boss_dies",
+            "line": 67
+          },
+          "test_or_check": "PveMatchParityTests.setup_uses_the_session_scenario_and_rules_and_clears_when_the_boss_dies",
+          "original_test_id": "tests/pve_engine.rs::setup_uses_the_session_scenario_and_rules_and_clears_when_the_boss_dies",
+          "evidence": {
+            "path": "client/Tools/LockstepProbe/.generated/completion-model-client.log",
+            "sha256": "825641c7878ca013e9e724022d08a851cd7d2ad01489a83284e922c05bac93ce",
+            "line": 873,
+            "marker": "PARITY PASS tests/pve_engine.rs::setup_uses_the_session_scenario_and_rules_and_clears_when_the_boss_dies",
+            "source_manifest": {
+              "path": "client/Tools/LockstepProbe/.generated/completion-model-client.evidence.json",
+              "sha256": "d36f6032da074a6fef2197c7dda8d6fea1eccdd6160cd4bcbee8d4c4ad851f64",
+              "exit_code": 0,
+              "unchanged_during_run": true,
+              "log_hash_matches": true,
+              "current_inputs_match": true
+            }
+          }
+        },
+        {
+          "source": {
+            "path": "client/Tools/LockstepProbe/PortedTests/PveInstallerParityTests.cs",
+            "sha256": "47ac846cd3f9da773a0fe79728077b4ea4f8a8089f7556d59261649ee2a0aea3",
+            "symbol": "PveInstallerParityTests.CheckInstallLifecycle",
+            "line": 15
+          },
+          "test_or_check": "PveInstallerParityTests.CheckInstallLifecycle",
+          "runner": {
+            "path": "client/Tools/LockstepProbe/CoreTests.cs",
+            "sha256": "b8f213e6f6fce6807ead4b1bd5c252fb6bcaa5ea3934e2285fd7199d4c5c1fb5",
+            "symbol": "CoreTests.Run -> PveInstallerParityTests.CheckInstallLifecycle",
+            "line": 172
+          },
+          "evidence": {
+            "path": "client/Tools/LockstepProbe/.generated/completion-model-client.log",
+            "sha256": "825641c7878ca013e9e724022d08a851cd7d2ad01489a83284e922c05bac93ce",
+            "line": 957,
+            "marker": "PASS core: economy, ordered replay, damage, placement, physics queries, match clock, scheduled actions",
+            "source_manifest": {
+              "path": "client/Tools/LockstepProbe/.generated/completion-model-client.evidence.json",
+              "sha256": "d36f6032da074a6fef2197c7dda8d6fea1eccdd6160cd4bcbee8d4c4ad851f64",
+              "exit_code": 0,
+              "unchanged_during_run": true,
+              "log_hash_matches": true,
+              "current_inputs_match": true
+            }
+          },
+          "evidence_kind": "core runner reached its success marker after this throwing assertion-based check returned; not an additional PortedTest"
+        },
+        {
+          "source": {
+            "path": "client/Tools/LockstepProbe/PortedTests/HealingParityTests.cs",
+            "sha256": "74915da966091de05f6b4ea491010e8527b2c6820ac3f80525218ace4783f400",
+            "symbol": "HealingParityTests.CheckScenarioComponents",
+            "line": 37
+          },
+          "test_or_check": "HealingParityTests.CheckScenarioComponents",
+          "runner": {
+            "path": "client/Tools/LockstepProbe/CoreTests.cs",
+            "sha256": "b8f213e6f6fce6807ead4b1bd5c252fb6bcaa5ea3934e2285fd7199d4c5c1fb5",
+            "symbol": "CoreTests.Run -> HealingParityTests.CheckScenarioComponents",
+            "line": 79
+          },
+          "evidence": {
+            "path": "client/Tools/LockstepProbe/.generated/completion-model-client.log",
+            "sha256": "825641c7878ca013e9e724022d08a851cd7d2ad01489a83284e922c05bac93ce",
+            "line": 957,
+            "marker": "PASS core: economy, ordered replay, damage, placement, physics queries, match clock, scheduled actions",
+            "source_manifest": {
+              "path": "client/Tools/LockstepProbe/.generated/completion-model-client.evidence.json",
+              "sha256": "d36f6032da074a6fef2197c7dda8d6fea1eccdd6160cd4bcbee8d4c4ad851f64",
+              "exit_code": 0,
+              "unchanged_during_run": true,
+              "log_hash_matches": true,
+              "current_inputs_match": true
+            }
+          },
+          "evidence_kind": "core runner reached its success marker after this throwing assertion-based check returned; not an additional PortedTest"
+        }
+      ],
+      "csharp_wiring": [
+        {
+          "path": "client/LocalPackages/com.arcanecasters.lockstep/Runtime/Simulation/BattleSessionRuntime.cs",
+          "sha256": "26727692cd436245b35e438665c23fbb99fb0dde60aa052c9eea9d2d3125074d",
+          "symbol": "BattleSessionRuntime.InitializePve -> new PveScenarioComponents",
+          "line": 79
+        },
+        {
+          "path": "client/LocalPackages/com.arcanecasters.lockstep/Runtime/Simulation/PveMatch.cs",
+          "sha256": "2e5b7ca3a4a52ef95395bc0f2862e4772ced097746a1fb2154053d1f257610fe",
+          "symbol": "PveMatch -> Installer.Components",
+          "line": 53
+        },
+        {
+          "path": "client/LocalPackages/com.arcanecasters.lockstep/Runtime/Simulation/PveHealth.cs",
+          "sha256": "61a98f2ac3f4d712251f4d265bf18e592656040b699e3cd262c6cdc5a08d95bc",
+          "symbol": "PveScenarioComponents",
+          "line": 31
+        }
+      ],
+      "scope_note": "Rust lib 검사는 표준 구성의 실제 주입과 PveSync/결과 checker 초기화를 검증한다. C# init 검사는 실제 marker 설치와 sync 출력을 검증하고 core check는 실제 lifetime/spawner/shield 구현을 실행한다. Rustdoc snippet 자체를 실행한 결과는 아니다."
+    }
+  ],
+  "gaps": [],
+  "contract_mapping_complete": true
+}

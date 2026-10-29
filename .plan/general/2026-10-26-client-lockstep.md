@@ -2,7 +2,7 @@
 
 - Date: 2026-10-26
 - GitHub Issue: https://github.com/Apptive-Game-Team/ArcaneCastersClient/issues/378
-- Status: In progress — 고정 소수점 코어와 인증 입력 중계 구현, 전체 전투·GameScene 통합 미완료
+- Status: Completed — 2026-10-29 잔여 구현·전체 원본 대응·실제 양쪽 Unity 로비 경기 검증 완료, 운영 적용 전
 - Worktree: `C:/Users/jys09/.codex/worktrees/lockstep/ArcaneCasters`
 - Branch: 루트/client/game-rust/lobby/database 모두 `lockstep`
 - 분기 SHA: root `2c7681edff525d2579304a5dfb4da3f5b3b4e690`, client `bcba32316ffd3e5e0dfe1bfdf73fb9de4dc00279`, game-rust `cea4754e3965a37cb040d8041ef2b9007971bbae`, lobby `f10c515a9c639d9ec339f02cae7f86318d7091b4`
@@ -27,11 +27,11 @@
 ## Approach (Checklist)
 
 - [x] **Step 0: Recon** — 모듈 지침, 기존 물리 코드, SDK 의존성, 작업 상태 확인. 루트/client/game-rust/lobby 브랜치 생성.
-- [ ] **Step 1: Implementation** — 엔진 소스를 고정 버전으로 도입하고 Unity 독립 시뮬레이션 assembly에서 충돌·고정 tick을 실행한다. 입력은 tick/player/sequence 순서로 적용하며 누락 tick은 대기한다. seed, 규칙 버전, 콘텐츠 해시를 시작 시 합의한다.
-- [ ] 전투 기능 목록을 서버 파일과 일대일로 추적한다. 카드/마법/상태효과/이동/충돌/표적/봇/PVE/종료 조건을 순차 이관하며 매 단계 기존 frame DTO로 렌더링을 검증한다.
-- [ ] game-rust는 인증된 입력 중계, tick 확정, 재전송과 입력 기록을 담당한다. lobby는 시뮬레이션 버전과 콘텐츠를 합의한 매치를 생성한다. 서버 결과 검증 없이 클라이언트가 보상을 확정할 수 없게 한다.
-- [ ] **Step 2: Tests** — 고정 소수점 경계, 입력 재정렬/중복/누락/잘못된 플레이어, 동일 seed 재생, 충돌, 장기 재생 상태 해시, 재접속과 종료를 검사한다.
-- [ ] **Step 3: Rollout / Rollback** — 명시적 lockstep 매치 모드로 연결한다. 이관되지 않은 기능을 지원한다고 광고하지 않는다. 전투 규칙/플랫폼 검증을 마친 뒤 전환한다.
+- [x] **Step 1: Implementation** — 엔진 소스를 고정 버전으로 도입하고 Unity 독립 시뮬레이션 assembly에서 충돌·고정 tick을 실행한다. 입력은 tick/player/sequence 순서로 적용하며 누락 tick은 대기한다. seed, 규칙 버전, 콘텐츠 해시를 시작 시 합의한다.
+- [x] 전투 기능 목록을 서버 파일과 일대일로 추적한다. 카드/마법/상태효과/이동/충돌/표적/봇/PVE/종료 조건을 순차 이관하며 매 단계 기존 frame DTO로 렌더링을 검증한다.
+- [x] game-rust는 인증된 입력 중계, tick 확정, 재전송과 입력 기록을 담당한다. lobby는 시뮬레이션 버전과 콘텐츠를 합의한 매치를 생성한다. 서버 결과 검증 없이 클라이언트가 보상을 확정할 수 없게 한다.
+- [x] **Step 2: Tests** — 고정 소수점 경계, 입력 재정렬/중복/누락/잘못된 플레이어, 동일 seed 재생, 충돌, 장기 재생 상태 해시, 재접속과 종료를 검사한다.
+- [x] **Step 3: Rollout / Rollback** — 명시적 lockstep 매치 모드로 연결한다. 이관되지 않은 기능을 지원한다고 광고하지 않는다. 전투 규칙/플랫폼 검증을 마친 뒤 전환한다.
 
 ## Validation
 
@@ -1525,3 +1525,6 @@ WebGL 추가 검증: 새 worktree에서 IL2CPP WebGL 빌드가 종료 코드 0�
 - 사용자 요청으로 database 4f00e80, game-rust c056d24, lobby 752b2f3, client 5e57af80을 각각 origin/lockstep에 커밋·푸시했다. 루트 포인터는 이 게시된 커밋을 참조한다.
 - Unity 실행 중 변경된 Assets/Art/Fonts/LilitaOne SDF.asset의 동적 glyph/atlas 캐시는 커밋에서 제외하고 작업 폴더에 보존했다. .generated 로그·빌드 산출물·환경파일도 포함하지 않았다.
 - DB migration 정적 검사 전체 통과. 클라이언트에 포함한 upstream 물리엔진 원본과 Unity metadata에는 기존 trailing whitespace가 있어 일반 staged diff --check가 이를 보고한다. upstream 소스와 GUID metadata를 일괄 포맷하지 않았으며, EOL/EOF 공백만 제외한 검사와 다른 서브모듈 검사는 통과했다.
+
+### 잔여 구현과 검증 완료 (2026-10-29)
+현재 판정은 [최종 완료 계획](2026-10-29-lockstep-completion.md)을 따른다. 앞의 날짜별 수치와 미완료 메모는 당시 기록이다. 원본915/915와 모델127/127의 현재 소스 실행 증거, 매 tick 전체 상태 checkpoint, 재시작·lease·commit 응답 유실·outbox, .NET/Editor/WebGL, 실제 두 Unity의 로비→전투→결과를 확인했다. ignored doctest2개는 기존 실행 계약과 대응하며 literal pass로 세지 않았다. 운영 배포와 유료 모델 호출은 수행하지 않았다.
