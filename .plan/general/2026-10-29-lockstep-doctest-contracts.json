@@ -44,12 +44,12 @@
           "test_id": "game::domain::object::component::interval_attacker::tests::a_paced_component_is_found_through_the_interface",
           "evidence": {
             "path": "client/Tools/LockstepProbe/.generated/completion-rust-ac-sim-lib-all.log",
-            "sha256": "a91fb85c8c0d1607819cbd623c7e39d00c2eeaa879272183ba79f9f5d04be41f",
-            "line": 230,
+            "sha256": "b1cee8c2f3cc51911d44a423635e0a1113c80d71a54acb7a8b2ebea33541b8bb",
+            "line": 240,
             "marker": "test game::domain::object::component::interval_attacker::tests::a_paced_component_is_found_through_the_interface ... ok",
             "source_manifest": {
               "path": "client/Tools/LockstepProbe/.generated/completion-rust-ac-sim-lib-all.evidence.json",
-              "sha256": "4d72653623e851ce628b1e64524d1d32b602f984dba62c46c72846f08645aa71",
+              "sha256": "e4920ec6bd32b74ee17a3784b5fd97becbe86d097f516d593ede76c588a20cc9",
               "exit_code": 0,
               "unchanged_during_run": true,
               "log_hash_matches": true,
@@ -67,12 +67,12 @@
           "test_id": "game::domain::object::component::magic::explode::tests::reports_its_radius_through_the_area_explode_trait",
           "evidence": {
             "path": "client/Tools/LockstepProbe/.generated/completion-rust-ac-sim-lib-all.log",
-            "sha256": "a91fb85c8c0d1607819cbd623c7e39d00c2eeaa879272183ba79f9f5d04be41f",
-            "line": 261,
+            "sha256": "b1cee8c2f3cc51911d44a423635e0a1113c80d71a54acb7a8b2ebea33541b8bb",
+            "line": 258,
             "marker": "test game::domain::object::component::magic::explode::tests::reports_its_radius_through_the_area_explode_trait ... ok",
             "source_manifest": {
               "path": "client/Tools/LockstepProbe/.generated/completion-rust-ac-sim-lib-all.evidence.json",
-              "sha256": "4d72653623e851ce628b1e64524d1d32b602f984dba62c46c72846f08645aa71",
+              "sha256": "e4920ec6bd32b74ee17a3784b5fd97becbe86d097f516d593ede76c588a20cc9",
               "exit_code": 0,
               "unchanged_during_run": true,
               "log_hash_matches": true,
@@ -108,12 +108,12 @@
           "original_test_id": "game/domain/object/component/interval_attacker.rs::a_paced_component_is_found_through_the_interface",
           "evidence": {
             "path": "client/Tools/LockstepProbe/.generated/completion-model-client.log",
-            "sha256": "825641c7878ca013e9e724022d08a851cd7d2ad01489a83284e922c05bac93ce",
+            "sha256": "855f7e578e5bc71bb9827de662dc67523fbca63d4a867cdfaed786eac8b77906",
             "line": 162,
             "marker": "PARITY PASS game/domain/object/component/interval_attacker.rs::a_paced_component_is_found_through_the_interface",
             "source_manifest": {
               "path": "client/Tools/LockstepProbe/.generated/completion-model-client.evidence.json",
-              "sha256": "d36f6032da074a6fef2197c7dda8d6fea1eccdd6160cd4bcbee8d4c4ad851f64",
+              "sha256": "2207f69bf0e3393fd96c4a3c512becf55c2b046d138dc58f03fd7bd3a8334ba0",
               "exit_code": 0,
               "unchanged_during_run": true,
               "log_hash_matches": true,
@@ -132,12 +132,12 @@
           "original_test_id": "game/domain/object/component/magic/explode.rs::reports_its_radius_through_the_area_explode_trait",
           "evidence": {
             "path": "client/Tools/LockstepProbe/.generated/completion-model-client.log",
-            "sha256": "825641c7878ca013e9e724022d08a851cd7d2ad01489a83284e922c05bac93ce",
+            "sha256": "855f7e578e5bc71bb9827de662dc67523fbca63d4a867cdfaed786eac8b77906",
             "line": 376,
             "marker": "PARITY PASS game/domain/object/component/magic/explode.rs::reports_its_radius_through_the_area_explode_trait",
             "source_manifest": {
               "path": "client/Tools/LockstepProbe/.generated/completion-model-client.evidence.json",
-              "sha256": "d36f6032da074a6fef2197c7dda8d6fea1eccdd6160cd4bcbee8d4c4ad851f64",
+              "sha256": "2207f69bf0e3393fd96c4a3c512becf55c2b046d138dc58f03fd7bd3a8334ba0",
               "exit_code": 0,
               "unchanged_during_run": true,
               "log_hash_matches": true,
@@ -156,12 +156,12 @@
           "original_test_id": "tests/porting_examples.rs::interfaces_lookups_spawning_status_events_and_randomness",
           "evidence": {
             "path": "client/Tools/LockstepProbe/.generated/completion-model-client.log",
-            "sha256": "825641c7878ca013e9e724022d08a851cd7d2ad01489a83284e922c05bac93ce",
+            "sha256": "855f7e578e5bc71bb9827de662dc67523fbca63d4a867cdfaed786eac8b77906",
             "line": 129,
             "marker": "PARITY PASS tests/porting_examples.rs::interfaces_lookups_spawning_status_events_and_randomness",
             "source_manifest": {
               "path": "client/Tools/LockstepProbe/.generated/completion-model-client.evidence.json",
-              "sha256": "d36f6032da074a6fef2197c7dda8d6fea1eccdd6160cd4bcbee8d4c4ad851f64",
+              "sha256": "2207f69bf0e3393fd96c4a3c512becf55c2b046d138dc58f03fd7bd3a8334ba0",
               "exit_code": 0,
               "unchanged_during_run": true,
               "log_hash_matches": true,
@@ -197,12 +197,12 @@
           "test_id": "game::service::pve_loop::tests::init_installs_the_default_scenario_and_registers_the_pve_sync_service",
           "evidence": {
             "path": "client/Tools/LockstepProbe/.generated/completion-rust-ac-sim-lib-all.log",
-            "sha256": "a91fb85c8c0d1607819cbd623c7e39d00c2eeaa879272183ba79f9f5d04be41f",
-            "line": 696,
+            "sha256": "b1cee8c2f3cc51911d44a423635e0a1113c80d71a54acb7a8b2ebea33541b8bb",
+            "line": 704,
             "marker": "test game::service::pve_loop::tests::init_installs_the_default_scenario_and_registers_the_pve_sync_service ... ok",
             "source_manifest": {
               "path": "client/Tools/LockstepProbe/.generated/completion-rust-ac-sim-lib-all.evidence.json",
-              "sha256": "4d72653623e851ce628b1e64524d1d32b602f984dba62c46c72846f08645aa71",
+              "sha256": "e4920ec6bd32b74ee17a3784b5fd97becbe86d097f516d593ede76c588a20cc9",
               "exit_code": 0,
               "unchanged_during_run": true,
               "log_hash_matches": true,
@@ -243,12 +243,12 @@
           "original_test_id": "game/service/pve_loop.rs::init_installs_the_default_scenario_and_registers_the_pve_sync_service",
           "evidence": {
             "path": "client/Tools/LockstepProbe/.generated/completion-model-client.log",
-            "sha256": "825641c7878ca013e9e724022d08a851cd7d2ad01489a83284e922c05bac93ce",
+            "sha256": "855f7e578e5bc71bb9827de662dc67523fbca63d4a867cdfaed786eac8b77906",
             "line": 871,
             "marker": "PARITY PASS game/service/pve_loop.rs::init_installs_the_default_scenario_and_registers_the_pve_sync_service",
             "source_manifest": {
               "path": "client/Tools/LockstepProbe/.generated/completion-model-client.evidence.json",
-              "sha256": "d36f6032da074a6fef2197c7dda8d6fea1eccdd6160cd4bcbee8d4c4ad851f64",
+              "sha256": "2207f69bf0e3393fd96c4a3c512becf55c2b046d138dc58f03fd7bd3a8334ba0",
               "exit_code": 0,
               "unchanged_during_run": true,
               "log_hash_matches": true,
@@ -267,12 +267,12 @@
           "original_test_id": "tests/pve_engine.rs::setup_uses_the_session_scenario_and_rules_and_clears_when_the_boss_dies",
           "evidence": {
             "path": "client/Tools/LockstepProbe/.generated/completion-model-client.log",
-            "sha256": "825641c7878ca013e9e724022d08a851cd7d2ad01489a83284e922c05bac93ce",
+            "sha256": "855f7e578e5bc71bb9827de662dc67523fbca63d4a867cdfaed786eac8b77906",
             "line": 873,
             "marker": "PARITY PASS tests/pve_engine.rs::setup_uses_the_session_scenario_and_rules_and_clears_when_the_boss_dies",
             "source_manifest": {
               "path": "client/Tools/LockstepProbe/.generated/completion-model-client.evidence.json",
-              "sha256": "d36f6032da074a6fef2197c7dda8d6fea1eccdd6160cd4bcbee8d4c4ad851f64",
+              "sha256": "2207f69bf0e3393fd96c4a3c512becf55c2b046d138dc58f03fd7bd3a8334ba0",
               "exit_code": 0,
               "unchanged_during_run": true,
               "log_hash_matches": true,
@@ -296,12 +296,12 @@
           },
           "evidence": {
             "path": "client/Tools/LockstepProbe/.generated/completion-model-client.log",
-            "sha256": "825641c7878ca013e9e724022d08a851cd7d2ad01489a83284e922c05bac93ce",
+            "sha256": "855f7e578e5bc71bb9827de662dc67523fbca63d4a867cdfaed786eac8b77906",
             "line": 957,
             "marker": "PASS core: economy, ordered replay, damage, placement, physics queries, match clock, scheduled actions",
             "source_manifest": {
               "path": "client/Tools/LockstepProbe/.generated/completion-model-client.evidence.json",
-              "sha256": "d36f6032da074a6fef2197c7dda8d6fea1eccdd6160cd4bcbee8d4c4ad851f64",
+              "sha256": "2207f69bf0e3393fd96c4a3c512becf55c2b046d138dc58f03fd7bd3a8334ba0",
               "exit_code": 0,
               "unchanged_during_run": true,
               "log_hash_matches": true,
@@ -326,12 +326,12 @@
           },
           "evidence": {
             "path": "client/Tools/LockstepProbe/.generated/completion-model-client.log",
-            "sha256": "825641c7878ca013e9e724022d08a851cd7d2ad01489a83284e922c05bac93ce",
+            "sha256": "855f7e578e5bc71bb9827de662dc67523fbca63d4a867cdfaed786eac8b77906",
             "line": 957,
             "marker": "PASS core: economy, ordered replay, damage, placement, physics queries, match clock, scheduled actions",
             "source_manifest": {
               "path": "client/Tools/LockstepProbe/.generated/completion-model-client.evidence.json",
-              "sha256": "d36f6032da074a6fef2197c7dda8d6fea1eccdd6160cd4bcbee8d4c4ad851f64",
+              "sha256": "2207f69bf0e3393fd96c4a3c512becf55c2b046d138dc58f03fd7bd3a8334ba0",
               "exit_code": 0,
               "unchanged_during_run": true,
               "log_hash_matches": true,
