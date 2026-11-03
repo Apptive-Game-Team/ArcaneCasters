@@ -137,23 +137,18 @@ of this workspace. They are not merged into each other, in either direction.
   (`docs/magic-card.md`, `.plan/issues/2026-09-08-issue-23-magic-card-redesign.md`).
   `main` carries no copy, so read them from that branch.
 
-## 9. Blocking Requires Necessity
+## 9. Blocking and API Failures
 
-Do not block user interaction, navigation, startup, or gameplay unless the
-requested action cannot safely or correctly proceed without that dependency.
-Apply this rule to API calls, initialization, loading UI, dialogs, and background
-work. Keep independent work available and limit any necessary block to the
-affected action. For each exception, state the prerequisite, why blocking is
-necessary, the timeout, and the retry/cancel or recovery path in the change
-and its verification notes. Never wait synchronously on network or background
-work on the Unity main thread or a server event loop.
-
-## 10. API Failure and Compatibility
-
-Follow [API failure and compatibility](.agents/docs/api-failure-and-compatibility.md)
-when adding or changing API calls, initialization, loading/error UI, or
-client/server contracts. Optional service failures must not block unrelated play;
-recovery must preserve authoritative state and avoid duplicate effects.
+- Do not block interaction, navigation, startup, or gameplay unless correctness
+  requires it. Block only the affected action, with a timeout and recovery path.
+- Keep optional requests off critical initialization paths. On failure, keep
+  unrelated play available and recover in the background without modal dialogs.
+- Retry transient failures with backoff. For unsupported APIs or incompatible
+  responses, suspend only that feature and recheck when conditions change.
+- Cancel retries when their owner exits. Retry writes only when repetition is
+  safe; never invent success or duplicate rewards. Show recovered rewards once.
+- Never synchronously wait on network work on the Unity main thread or server
+  event loop. Verify both failure and recovery, including continued play.
 
 ## Code Review Rules
 
