@@ -137,6 +137,12 @@ of this workspace. They are not merged into each other, in either direction.
   (`docs/magic-card.md`, `.plan/issues/2026-09-08-issue-23-magic-card-redesign.md`).
   `main` carries no copy, so read them from that branch.
 
+## 9. Blocking and API Failures
+
+Do not block unrelated play unless correctness requires it. Follow
+[blocking and API failure rules](.agents/docs/api-failure-and-compatibility.md)
+when changing API calls, initialization, loading UI, or background work.
+
 ## Code Review Rules
 
 - Write all code review titles, descriptions, comments, and summaries in Korean.
