@@ -139,16 +139,9 @@ of this workspace. They are not merged into each other, in either direction.
 
 ## 9. Blocking and API Failures
 
-- Do not block interaction, navigation, startup, or gameplay unless correctness
-  requires it. Block only the affected action, with a timeout and recovery path.
-- Keep optional requests off critical initialization paths. On failure, keep
-  unrelated play available and recover in the background without modal dialogs.
-- Retry transient failures with backoff. For unsupported APIs or incompatible
-  responses, suspend only that feature and recheck when conditions change.
-- Cancel retries when their owner exits. Retry writes only when repetition is
-  safe; never invent success or duplicate rewards. Show recovered rewards once.
-- Never synchronously wait on network work on the Unity main thread or server
-  event loop. Verify both failure and recovery, including continued play.
+Do not block unrelated play unless correctness requires it. Follow
+[blocking and API failure rules](.agents/docs/api-failure-and-compatibility.md)
+when changing API calls, initialization, loading UI, or background work.
 
 ## Code Review Rules
 
