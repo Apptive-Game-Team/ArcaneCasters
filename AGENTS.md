@@ -16,8 +16,8 @@ Module-specific instructions supplement this file. When instructions conflict, t
 ## 2. Module Map
 
 - `client/`: Unity web and desktop client
-- `game/`: Spring Boot in-game server (Java; frozen to bug fixes while `game-rust/` replaces it)
-- `game-rust/`: Rust port of the in-game server, the same HTTP, STOMP and database contracts as `game/`
+- `game/`: Archived Spring Boot in-game server (Java; read-only historical reference)
+- `game-rust/`: Active Rust in-game server
 - `lobby/`: Spring Boot matchmaking and lobby server
 - `account/`: Spring Boot authentication and key-value server
 - `admin/`: Spring Boot administration web server
@@ -26,6 +26,10 @@ Module-specific instructions supplement this file. When instructions conflict, t
 - `infra/`: Deployment and runtime configuration for the servers (private repository)
 
 Keep changes within the owning module unless the task requires an explicit cross-module contract change.
+
+Implement all in-game server changes, including bug fixes, only in `game-rust/`.
+Do not modify or mirror changes into the archived Java `game/` module unless the
+user explicitly requests Java changes.
 
 ## 3. Project Skills
 
@@ -91,7 +95,6 @@ Do not commit a parent-repository submodule pointer that references an unpublish
 
 Deployable components use independent Semantic Versions:
 
-- `game/build.gradle`: game server
 - `game-rust/Cargo.toml` (`[workspace.package] version`, mirrored in `Cargo.lock`): Rust game server
 - `lobby/build.gradle`: lobby server
 - `account/build.gradle`: account server
