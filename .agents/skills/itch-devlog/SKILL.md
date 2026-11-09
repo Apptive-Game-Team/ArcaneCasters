@@ -1,6 +1,6 @@
 ---
 name: itch-devlog
-description: Draft an English itch.io devlog for ArcaneCasters as copyable HTML, with tags and images to attach. Use after a deploy promotion, when asked for an itch.io devlog, patch notes, or an update post on itch.io.
+description: Draft an English itch.io devlog for ArcaneCasters as copyable HTML, with tags and images to attach, and short Korean Google Play release notes. Use after a deploy promotion or when asked for release notes for either store.
 ---
 
 # itch.io Devlog Draft
@@ -47,3 +47,10 @@ say so in one line and write no draft.
    for example `strategy, card-game, fantasy,`. Keep tags outside the HTML and
    omit hashtag prefixes. List the image files below the tags for attachment.
    Show the images and attach them when the chat supports file attachments.
+
+5. Provide separate, copyable Google Play release notes in Korean plain text.
+   Default to about three short lines in 해요체. Summarize what players will
+   notice at a high level, leaving out internal details, exact numbers, and
+   minor fixes. Use a longer note when a significant player-facing feature is
+   worth highlighting, and spend the extra space on what players can do with
+   it. When asked only for Google Play notes, return only that draft.
