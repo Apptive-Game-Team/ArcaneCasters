@@ -1,6 +1,6 @@
 ---
 name: itch-devlog
-description: Draft an English itch.io devlog for ArcaneCasters from the player-facing changes in a commit range, with the images to attach, and show it in the chat for the user to publish by hand. Use after a deploy promotion, when asked for an itch.io devlog, patch notes, or an update post on itch.io.
+description: Draft an English itch.io devlog for ArcaneCasters as copyable HTML, with tags and images to attach. Use after a deploy promotion, when asked for an itch.io devlog, patch notes, or an update post on itch.io.
 ---
 
 # itch.io Devlog Draft
@@ -28,17 +28,22 @@ say so in one line and write no draft.
    room for more than one image, so take one per main change. Use the same
    fallback when none changed.
 
-3. Write the devlog:
+3. Write the title and HTML body:
    - Title that names the release and the main change, such as
-     `v0.8.0: Frost Wyrm adventure and three new spells`. Take the version from
+     `v0.8.0 adds the Frost Wyrm adventure and three new spells`. Take the version from
      the client release, since the client is what players download.
    - A two-line intro that says what the update is about.
-   - The New, Changed, and Fixed lists. Leave out an empty group.
-   - A closing line with the Google Play link
+   - Use an HTML fragment with `<p>` for paragraphs, `<h2>` for New, Changed,
+     and Fixed, and `<ul>` and `<li>` for lists. Leave out an empty group.
+   - A closing paragraph with an HTML link to Google Play
      `https://play.google.com/store/apps/details?id=com.team6515.wordonline`.
-   - Mark where each image goes with a line such as `[image: <path>]`.
+   - Mark image placement with an HTML comment such as
+     `<!-- Insert the faction selection screenshot here. -->`.
    - Never claim a feature the commits do not show.
 
-4. Show the result in the chat: the devlog in its own fenced Markdown block so
-   it can be pasted into the itch.io editor, followed by the image paths. Show
-   each image with Read, and send them with SendUserFile.
+4. Show the title separately and put the body in a fenced `html` block for
+   pasting into the itch.io HTML editor. Put relevant itch.io tags on a separate
+   plain-text line with a comma and a space between tags and a trailing comma,
+   for example `strategy, card-game, fantasy,`. Keep tags outside the HTML and
+   omit hashtag prefixes. List the image files below the tags for attachment.
+   Show the images and attach them when the chat supports file attachments.
