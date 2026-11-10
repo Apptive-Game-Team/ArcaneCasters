@@ -27,6 +27,19 @@ Module-specific instructions supplement this file. When instructions conflict, t
 
 Keep changes within the owning module unless the task requires an explicit cross-module contract change.
 
+### Magic Aim Indicators
+
+Store aim indicator definitions as JSONB in PostgreSQL's `magics.indicator`
+column. Configure per-magic layers in a Flyway migration and have the client
+interpret them by layer type. Reference gameplay values in `parameter_values`
+by game object and parameter name. Read live object positions and collider
+radii from the combat frame when resolving object-based layers.
+
+Before implementing an indicator change, show the user the complete proposed
+JSON and the referenced parameter values for review. Follow the
+[aim indicator contract](docs/magic-card.md#조준-indicator-문서) when changing
+the document or its client parser.
+
 ## 3. Project Skills
 
 This repository keeps its own skills under `.agents/skills/`. Read the one that
