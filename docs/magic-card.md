@@ -66,7 +66,7 @@ layer 공통 항목
 
 | 항목 | 필수 | 값 |
 | --- | --- | --- |
-| `shape` | 예 | `circle` 또는 `lane` |
+| `shape` | 예 | `circle`, `lane`, `objectCircles` |
 | `origin` | 아니오 (기본 `target`) | `caster` 는 시전자 위치, `target` 은 커서가 가리키는 조준점 |
 
 `shape` 가 `circle` 일 때
@@ -76,6 +76,45 @@ layer 공통 항목
 | `radius` | 예 | 반지름 |
 | `forwardOffset` | 아니오 (기본 0) | 중심을 시전자 전방으로 밀어내는 거리 |
 | `edgeWidth` | 아니오 (기본 0) | 0 이면 채운 원, 0 보다 크면 그 굵기의 테두리만 |
+
+`shape`가 `objectCircles`일 때는 선택 범위에 들어온 물체마다 원을 그린다.
+`prefabs`에는 서버가 전투 프레임에서 보내는 prefab type을 적고,
+`selectionRadius`에는 `origin`을 중심으로 검사할 구의 반경을 적는다.
+`target`은 높이를 포함해 사거리로 자른 조준점이다. 중심 간 거리가 `selectionRadius`와
+물체의 충돌 반경을 더한 값보다 짧으면, 물체 위치를 중심으로 `radius`의 원을 그린다.
+`edgeWidth`와 `forwardOffset`은 일반 원과 같은 형식이다.
+
+아래는 돌 폭발의 전체 문서다. 두 크기는 `rock_blast.radius`로 폭발 대상을 고르고,
+서로 다른 `rock_explode` 파라미터로 피해 반경을 정한다.
+
+```json
+{
+  "version": 1,
+  "layers": [
+    {
+      "shape": "circle",
+      "origin": "target",
+      "radius": {"object": "rock_blast", "parameter": "radius"}
+    },
+    {
+      "shape": "objectCircles",
+      "origin": "target",
+      "prefabs": ["RockRemnant"],
+      "selectionRadius": {"object": "rock_blast", "parameter": "radius"},
+      "radius": {"object": "rock_explode", "parameter": "radius"},
+      "edgeWidth": 0.12
+    },
+    {
+      "shape": "objectCircles",
+      "origin": "target",
+      "prefabs": ["MediumRockRemnant"],
+      "selectionRadius": {"object": "rock_blast", "parameter": "radius"},
+      "radius": {"object": "rock_explode", "parameter": "medium_blast_radius"},
+      "edgeWidth": 0.12
+    }
+  ]
+}
+```
 
 `shape` 가 `lane` 일 때
 
