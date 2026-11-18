@@ -156,6 +156,13 @@ Do not block unrelated play unless correctness requires it. Follow
 [blocking and API failure rules](.agents/docs/api-failure-and-compatibility.md)
 when changing API calls, initialization, loading UI, or background work.
 
+## Imports
+
+Use file-level imports or using directives and refer to symbols by their short
+names. When names collide, use an import alias where the language supports it.
+Use a fully qualified path only when the collision cannot be resolved with an
+import or alias.
+
 ## Code Review Rules
 
 - Write all code review titles, descriptions, comments, and summaries in Korean.
